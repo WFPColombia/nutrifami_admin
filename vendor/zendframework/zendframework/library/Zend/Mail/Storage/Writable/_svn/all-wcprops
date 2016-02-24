@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Storage/Writable
+END
+WritableInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Storage/Writable/WritableInterface.php
+END
+Maildir.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Storage/Writable/Maildir.php
+END

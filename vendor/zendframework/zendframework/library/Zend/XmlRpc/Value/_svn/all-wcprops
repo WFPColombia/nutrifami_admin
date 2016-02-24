@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value
+END
+AbstractScalar.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/AbstractScalar.php
+END
+Double.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/Double.php
+END
+ArrayValue.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/ArrayValue.php
+END
+DateTime.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/DateTime.php
+END
+Integer.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/Integer.php
+END
+AbstractCollection.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/AbstractCollection.php
+END
+BigInteger.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/BigInteger.php
+END
+Boolean.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/Boolean.php
+END
+Nil.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/Nil.php
+END
+Base64.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/Base64.php
+END
+Struct.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/Struct.php
+END
+String.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/XmlRpc/Value/String.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/TableGateway
+END
+TableGateway.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/TableGateway/TableGateway.php
+END
+TableGatewayInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/TableGateway/TableGatewayInterface.php
+END
+AbstractTableGateway.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/TableGateway/AbstractTableGateway.php
+END

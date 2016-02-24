@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/File/Transfer/Adapter
+END
+FilterPluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/File/Transfer/Adapter/FilterPluginManager.php
+END
+Http.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/File/Transfer/Adapter/Http.php
+END
+ValidatorPluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/File/Transfer/Adapter/ValidatorPluginManager.php
+END
+AbstractAdapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/File/Transfer/Adapter/AbstractAdapter.php
+END

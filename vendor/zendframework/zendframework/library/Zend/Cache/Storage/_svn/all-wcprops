@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage
+END
+PluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/PluginManager.php
+END
+Capabilities.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/Capabilities.php
+END
+AdapterPluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/AdapterPluginManager.php
+END
+OptimizableInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/OptimizableInterface.php
+END
+ExceptionEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/ExceptionEvent.php
+END
+IterableInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/IterableInterface.php
+END
+IteratorInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/IteratorInterface.php
+END
+ClearByNamespaceInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/ClearByNamespaceInterface.php
+END
+ClearByPrefixInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/ClearByPrefixInterface.php
+END
+Event.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/Event.php
+END
+StorageInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/StorageInterface.php
+END
+AvailableSpaceCapableInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/AvailableSpaceCapableInterface.php
+END
+FlushableInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/FlushableInterface.php
+END
+PostEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/PostEvent.php
+END
+TaggableInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/TaggableInterface.php
+END
+ClearExpiredInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/ClearExpiredInterface.php
+END
+TotalSpaceCapableInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/Storage/TotalSpaceCapableInterface.php
+END

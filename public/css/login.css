@@ -1,0 +1,94 @@
+/*************************************************************************************
+by forcing `height: 100%` in the html and body tag will make sure there are no white areas in vicinity (this is optional though, use it only if you need it)
+*************************************************************************************/
+html,
+body{
+    height: 100%;
+    font-family: Tahoma,Verdana,Segoe,sans-serif;
+}
+
+/*************************************************************************************
+by using `background-size: cover;`, you will make sure the image will cover everything
+*************************************************************************************/
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/img/bg1.jpg");
+    background-attachment: fixed;
+    position: relative;
+    min-height: 550px;
+}
+
+
+.lbox {
+    display: block;
+    margin: 0 auto;
+    width: 370px;
+    background: #fff;
+    -webkit-box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.36);
+    box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.36);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 30px 30px 10px 30px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.lbox .error {
+    color: #ff0000;
+    font-size: 12px;
+    text-align: center;
+}
+
+.lbox .logo {
+    background: url("/img/mini-logo-pma.png") no-repeat center top;
+    margin-bottom: 20px;
+    height: 109px;
+}
+.lbox form span {
+    width: 120px;
+    text-align: left;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+.lbox form input[type="text"], .lbox form input[type="password"] {
+    padding: 7px 5px;
+    width: 200px;
+    font-size: 18px;
+    color: #777;
+    border: 1px solid #aaa;
+    display: inline-block;
+}
+.lbox form input[type="submit"] {
+    padding: 15px 5px;
+    width: 250px;
+    color: #fff;
+    border: 1px solid #ffa800;
+    background: #ffb11b;
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.lbox form input[type="submit"]:hover {
+    background: #ffa800;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0; right: 0;
+    color: #fff;
+    border-top: 1px solid #fff;
+    padding: 10px 20px 0 20px;
+}

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter
+END
+AdapterServiceFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/AdapterServiceFactory.php
+END
+AdapterAbstractServiceFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/AdapterAbstractServiceFactory.php
+END
+Adapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Adapter.php
+END
+AdapterAwareInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/AdapterAwareInterface.php
+END
+AdapterInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/AdapterInterface.php
+END
+ParameterContainer.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/ParameterContainer.php
+END
+AdapterAwareTrait.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/AdapterAwareTrait.php
+END
+StatementContainer.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/StatementContainer.php
+END
+StatementContainerInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/StatementContainerInterface.php
+END

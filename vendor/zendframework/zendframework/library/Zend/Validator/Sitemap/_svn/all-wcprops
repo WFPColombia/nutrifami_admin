@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Sitemap
+END
+Loc.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Sitemap/Loc.php
+END
+Priority.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Sitemap/Priority.php
+END
+Changefreq.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Sitemap/Changefreq.php
+END
+Lastmod.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Sitemap/Lastmod.php
+END

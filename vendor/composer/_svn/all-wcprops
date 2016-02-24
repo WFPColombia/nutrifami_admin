@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/composer
+END
+autoload_classmap.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/composer/autoload_classmap.php
+END
+autoload_real.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/composer/autoload_real.php
+END
+ClassLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/composer/ClassLoader.php
+END
+installed.json
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/composer/installed.json
+END
+autoload_namespaces.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/composer/autoload_namespaces.php
+END

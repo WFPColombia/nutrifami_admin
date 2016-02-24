@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Exception
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Exception/ExceptionInterface.php
+END
+LdapException.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Exception/LdapException.php
+END
+BadMethodCallException.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Exception/BadMethodCallException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Exception/InvalidArgumentException.php
+END

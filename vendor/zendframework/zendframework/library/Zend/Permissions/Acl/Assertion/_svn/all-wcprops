@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Assertion
+END
+AssertionAggregate.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Assertion/AssertionAggregate.php
+END
+AssertionManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Assertion/AssertionManager.php
+END
+AssertionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Assertion/AssertionInterface.php
+END

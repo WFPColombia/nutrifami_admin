@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Barcode/Object/Exception
+END
+BarcodeValidationException.php
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Barcode/Object/Exception/BarcodeValidationException.php
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Barcode/Object/Exception/ExceptionInterface.php
+END
+RuntimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Barcode/Object/Exception/RuntimeException.php
+END
+ExtensionNotLoadedException.php
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Barcode/Object/Exception/ExtensionNotLoadedException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Barcode/Object/Exception/InvalidArgumentException.php
+END
+OutOfRangeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Barcode/Object/Exception/OutOfRangeException.php
+END

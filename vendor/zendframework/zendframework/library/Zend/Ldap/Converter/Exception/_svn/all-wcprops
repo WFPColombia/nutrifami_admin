@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Converter/Exception
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Converter/Exception/ExceptionInterface.php
+END
+UnexpectedValueException.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Converter/Exception/UnexpectedValueException.php
+END
+ConverterException.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Converter/Exception/ConverterException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Converter/Exception/InvalidArgumentException.php
+END

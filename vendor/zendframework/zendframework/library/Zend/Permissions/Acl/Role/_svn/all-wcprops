@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role
+END
+GenericRole.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/GenericRole.php
+END
+RoleInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/RoleInterface.php
+END
+Registry.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/Registry.php
+END

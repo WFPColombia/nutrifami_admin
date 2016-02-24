@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Soap/AutoDiscover/DiscoveryStrategy
+END
+DiscoveryStrategyInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Soap/AutoDiscover/DiscoveryStrategy/DiscoveryStrategyInterface.php
+END
+ReflectionDiscovery.php
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Soap/AutoDiscover/DiscoveryStrategy/ReflectionDiscovery.php
+END

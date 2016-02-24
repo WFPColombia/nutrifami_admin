@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Text/Table
+END
+Column.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Text/Table/Column.php
+END
+DecoratorManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Text/Table/DecoratorManager.php
+END
+Row.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Text/Table/Row.php
+END
+Table.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Text/Table/Table.php
+END

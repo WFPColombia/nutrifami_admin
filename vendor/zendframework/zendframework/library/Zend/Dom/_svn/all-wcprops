@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom/composer.json
+END
+Document.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom/Document.php
+END
+Css2Xpath.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom/Css2Xpath.php
+END
+NodeList.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom/NodeList.php
+END
+DOMXPath.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom/DOMXPath.php
+END
+Query.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom/Query.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Dom/README.md
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Filter/Exception
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Filter/Exception/ExceptionInterface.php
+END
+FilterException.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Filter/Exception/FilterException.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/IbmDb2
+END
+Result.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/IbmDb2/Result.php
+END
+Connection.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/IbmDb2/Connection.php
+END
+IbmDb2.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/IbmDb2/IbmDb2.php
+END
+Statement.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/IbmDb2/Statement.php
+END

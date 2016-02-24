@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Paginator/ScrollingStyle
+END
+Jumping.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Paginator/ScrollingStyle/Jumping.php
+END
+Sliding.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Paginator/ScrollingStyle/Sliding.php
+END
+ScrollingStyleInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Paginator/ScrollingStyle/ScrollingStyleInterface.php
+END
+Elastic.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Paginator/ScrollingStyle/Elastic.php
+END
+All.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Paginator/ScrollingStyle/All.php
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Navigation/Exception
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Navigation/Exception/ExceptionInterface.php
+END
+BadMethodCallException.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Navigation/Exception/BadMethodCallException.php
+END
+DomainException.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Navigation/Exception/DomainException.php
+END
+OutOfBoundsException.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Navigation/Exception/OutOfBoundsException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Navigation/Exception/InvalidArgumentException.php
+END

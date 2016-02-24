@@ -1,0 +1,53 @@
+<div class="control">
+		<h3>M&oacute;dulos <?php echo $this->breadcrumbs; ?></h3>
+		<a alt="Cancelar" title="Cancelar" href="list?pid=<?php echo $this->pid; ?>" class="cancel">Cancelar</a>
+</div>
+<form method="post" action="save" name="form_module">
+    <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+		<tbody>
+            <tr>
+            	<td align="right">Padre</td>
+                <td align="left">
+                	<select id="pid_module" name="pid">
+                		<option value="1">Ra&iacute;z</option>
+                		<?php foreach ( $this->modules as $module ){ ?>
+                		<option value="<?php echo $module['COR_MOD_ID']; ?>"><?php echo $module['COR_MOD_NAME']; ?></option>
+                		<?php } ?>
+                	</select>
+                	<script>$('#pid_module').val('<?php echo $this->pid; ?>');</script>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Nombre</td>
+                <td align="left">
+                	<input type="text" name="name" value="<?php echo $this->module['COR_MOD_NAME']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Descripci&oacute;n</td>
+                <td align="left">
+                	<textarea name="description"><?php echo $this->module['COR_MOD_DESCRIPTION']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Url</td>
+                <td align="left">
+                	<input type="text" name="url" value="<?php echo $this->module['COR_MOD_URL']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Icon</td>
+                <td align="left">
+                	<input type="text" name="icon" value="<?php echo $this->module['COR_MOD_ICON']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right"></td>
+                <td align="left">
+                	<input type="submit" value="Guardar" />
+                	<input type="hidden" name="id" value="<?php echo $id; ?>">
+                </td>
+            </tr>
+        </tbody>
+	</table>
+</form>

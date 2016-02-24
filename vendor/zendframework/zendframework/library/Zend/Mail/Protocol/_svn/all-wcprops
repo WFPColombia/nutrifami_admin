@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Protocol
+END
+SmtpPluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Protocol/SmtpPluginManager.php
+END
+Pop3.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Protocol/Pop3.php
+END
+Smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Protocol/Smtp.php
+END
+AbstractProtocol.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Protocol/AbstractProtocol.php
+END
+Imap.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Protocol/Imap.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/Pgsql
+END
+Result.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/Pgsql/Result.php
+END
+Connection.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/Pgsql/Connection.php
+END
+Statement.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/Pgsql/Statement.php
+END
+Pgsql.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Driver/Pgsql/Pgsql.php
+END

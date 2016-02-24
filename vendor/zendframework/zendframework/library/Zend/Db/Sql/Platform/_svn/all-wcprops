@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Sql/Platform
+END
+Platform.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Sql/Platform/Platform.php
+END
+AbstractPlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Sql/Platform/AbstractPlatform.php
+END
+PlatformDecoratorInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Sql/Platform/PlatformDecoratorInterface.php
+END

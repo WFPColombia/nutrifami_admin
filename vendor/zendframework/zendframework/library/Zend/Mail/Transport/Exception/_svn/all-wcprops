@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Transport/Exception
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Transport/Exception/ExceptionInterface.php
+END
+RuntimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Transport/Exception/RuntimeException.php
+END
+DomainException.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Transport/Exception/DomainException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Mail/Transport/Exception/InvalidArgumentException.php
+END

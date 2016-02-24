@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Serializer/Exception
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Serializer/Exception/ExceptionInterface.php
+END
+RuntimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Serializer/Exception/RuntimeException.php
+END
+ExtensionNotLoadedException.php
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Serializer/Exception/ExtensionNotLoadedException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Serializer/Exception/InvalidArgumentException.php
+END

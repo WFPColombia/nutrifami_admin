@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Json/Server/Exception
+END
+HttpException.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Json/Server/Exception/HttpException.php
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Json/Server/Exception/ExceptionInterface.php
+END
+RuntimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Json/Server/Exception/RuntimeException.php
+END
+ErrorException.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Json/Server/Exception/ErrorException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Json/Server/Exception/InvalidArgumentException.php
+END

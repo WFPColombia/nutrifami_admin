@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter
+END
+ValidatableAdapterInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/ValidatableAdapterInterface.php
+END
+DbTable.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/DbTable.php
+END
+Digest.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/Digest.php
+END
+Http.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/Http.php
+END
+Ldap.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/Ldap.php
+END
+AdapterInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/AdapterInterface.php
+END
+AbstractAdapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/AbstractAdapter.php
+END

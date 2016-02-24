@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/composer.json
+END
+PluginClassLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/PluginClassLoader.php
+END
+SplAutoloader.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/SplAutoloader.php
+END
+StandardAutoloader.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/StandardAutoloader.php
+END
+ClassMapAutoloader.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php
+END
+ShortNameLocator.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/ShortNameLocator.php
+END
+ModuleAutoloader.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/ModuleAutoloader.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/README.md
+END
+AutoloaderFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/AutoloaderFactory.php
+END
+PluginClassLocator.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Loader/PluginClassLocator.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/Model
+END
+SubscriptionPersistenceInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/Model/SubscriptionPersistenceInterface.php
+END
+AbstractModel.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/Model/AbstractModel.php
+END
+Subscription.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/Model/Subscription.php
+END

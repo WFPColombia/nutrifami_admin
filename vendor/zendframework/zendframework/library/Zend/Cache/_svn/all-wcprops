@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/composer.json
+END
+StorageFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/StorageFactory.php
+END
+PatternFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/PatternFactory.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/README.md
+END
+PatternPluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Cache/PatternPluginManager.php
+END

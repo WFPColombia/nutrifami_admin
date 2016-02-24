@@ -1,0 +1,93 @@
+	<div class="control">
+		<h3><a href="list">M&oacute;dulos</a> <?php echo $this->breadcrumbs; ?></h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add?pid=<?php echo $this->pid; ?>" class="add">Nuevo M&oacute;dulo</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="modules_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Nombre</th>
+                <th>Descripci&oacute;n</th>
+                <th>Url</th>
+                <th>Icon</th>
+                <th></th>
+            </tr>
+        </thead>
+		
+	</table>
+<script>
+var editorModules; // use a global for the submit and return data rendering in the examples
+ 
+$(document).ready(function() {
+	
+	var table = $('#modules_table').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo $this->serverUrl()?>/admin/modules/get-list?pid=<?php echo $this->pid; ?>",
+        "columns": [
+            { data: "COR_MOD_ID", "visible": false },
+            { data: "COR_MOD_NAME" },
+            { data: "COR_MOD_DESCRIPTION" },
+            { data: "COR_MOD_URL" },
+            { data: "COR_MOD_ICON" },
+            { data: null,
+              "orderable": false,
+              className: "right",
+              defaultContent: '<a href="javascript:void(0);" alt="Sub Modulos" title="Sub Modulos" class="tree"></a> <?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+            }
+        ],
+        "iDisplayLength": 10
+    } ); 
+	
+	editorModules = new $.fn.dataTable.Editor( {
+        ajax: "<?php echo $this->serverUrl()?>/admin/modules/update-row",
+        table: "#modules_table",
+        idSrc:  'COR_MOD_ID',
+        fields: [ {
+	                label: "Id:",
+	                name: "COR_MOD_ID"
+	            }, {
+	                label: "Nombre:",
+	                name: "COR_MOD_NAME"
+	            }, {
+	                label: "Descripci&oacute;n:",
+	                name: "COR_MOD_DESCRIPTION"
+	            }, {
+	                label: "Url:",
+	                name: "COR_MOD_URL"
+	            }, {
+	                label: "Icon:",
+	                name: "COR_MOD_ICON"
+	            }
+	        ]
+	    } );
+	
+	// Activate an inline edit on click of a table cell
+    $('#modules_table').on( 'click', 'td', function (e) { 
+        editorModules.inline( this , {
+            submitOnBlur: true
+        });
+    } );
+    
+    $('#modules_table').on( 'click', 'a.tree', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"?pid="+data['COR_MOD_ID']);
+    } );
+
+    $('#modules_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?pid=<?php echo $this->pid; ?>&id="+data['COR_MOD_ID']);
+        }
+    } );
+
+    $('#modules_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"edit?id="+data['COR_MOD_ID']);
+    } );
+    
+      
+} );
+</script>

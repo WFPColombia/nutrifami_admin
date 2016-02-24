@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer
+END
+FeedFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/FeedFactory.php
+END
+Writer.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/Writer.php
+END
+Source.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/Source.php
+END
+Entry.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/Entry.php
+END
+Feed.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/Feed.php
+END
+Version.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/Version.php
+END
+Deleted.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/Deleted.php
+END
+ExtensionPluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/ExtensionPluginManager.php
+END
+AbstractFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/AbstractFeed.php
+END
+ExtensionManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/ExtensionManager.php
+END
+ExtensionManagerInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/Writer/ExtensionManagerInterface.php
+END

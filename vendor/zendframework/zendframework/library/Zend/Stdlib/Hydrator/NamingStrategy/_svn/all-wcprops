@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/NamingStrategy
+END
+NamingStrategyInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/NamingStrategy/NamingStrategyInterface.php
+END
+UnderscoreNamingStrategy.php
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/NamingStrategy/UnderscoreNamingStrategy.php
+END

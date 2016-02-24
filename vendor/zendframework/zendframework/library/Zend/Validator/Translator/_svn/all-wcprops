@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Translator
+END
+TranslatorAwareInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Translator/TranslatorAwareInterface.php
+END
+TranslatorInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Translator/TranslatorInterface.php
+END

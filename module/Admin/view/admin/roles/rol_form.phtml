@@ -1,0 +1,29 @@
+<div class="control">
+		<h3>Roles <?php echo $this->breadcrumbs; ?></h3>
+		<a alt="Cancelar" title="Cancelar" href="list" class="cancel">Cancelar</a>
+</div>
+<form method="post" action="save" name="form_module">
+    <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+		<tbody>
+            <tr>
+            	<td align="right">Nombre</td>
+                <td align="left">
+                	<input type="text" name="name" value="<?php echo $this->rol['COR_ROL_NAME']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Descripci&oacute;n</td>
+                <td align="left">
+                	<textarea name="description"><?php echo $this->rol['COR_ROL_DESCRIPTION']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right"></td>
+                <td align="left">
+                	<input type="submit" value="Guardar" />
+                	<input type="hidden" name="id" value="<?php echo $id; ?>">
+                </td>
+            </tr>
+        </tbody>
+	</table>
+</form>

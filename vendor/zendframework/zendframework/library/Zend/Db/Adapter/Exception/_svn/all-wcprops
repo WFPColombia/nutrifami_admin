@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception
+END
+InvalidConnectionParametersException.php
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception/InvalidConnectionParametersException.php
+END
+InvalidQueryException.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception/InvalidQueryException.php
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception/ExceptionInterface.php
+END
+UnexpectedValueException.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception/UnexpectedValueException.php
+END
+RuntimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception/RuntimeException.php
+END
+ErrorException.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception/ErrorException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Exception/InvalidArgumentException.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/DbTable
+END
+CallbackCheckAdapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/DbTable/CallbackCheckAdapter.php
+END
+CredentialTreatmentAdapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/DbTable/CredentialTreatmentAdapter.php
+END
+AbstractAdapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Authentication/Adapter/DbTable/AbstractAdapter.php
+END

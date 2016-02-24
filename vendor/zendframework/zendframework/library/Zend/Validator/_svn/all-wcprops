@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator
+END
+Identical.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Identical.php
+END
+Callback.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Callback.php
+END
+EmailAddress.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/EmailAddress.php
+END
+ValidatorPluginManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/ValidatorPluginManager.php
+END
+Explode.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Explode.php
+END
+CreditCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/CreditCard.php
+END
+InArray.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/InArray.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/README.md
+END
+Ip.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Ip.php
+END
+DateStep.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/DateStep.php
+END
+Step.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Step.php
+END
+NotEmpty.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/NotEmpty.php
+END
+LessThan.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/LessThan.php
+END
+IsInstanceOf.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/IsInstanceOf.php
+END
+ValidatorChain.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/ValidatorChain.php
+END
+Between.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Between.php
+END
+Isbn.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Isbn.php
+END
+StaticValidator.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/StaticValidator.php
+END
+Csrf.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Csrf.php
+END
+Uri.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Uri.php
+END
+Barcode.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Barcode.php
+END
+ValidatorPluginManagerAwareInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/ValidatorPluginManagerAwareInterface.php
+END
+GreaterThan.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/GreaterThan.php
+END
+ValidatorInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/ValidatorInterface.php
+END
+Bitwise.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Bitwise.php
+END
+StringLength.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/StringLength.php
+END
+Iban.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Iban.php
+END
+AbstractValidator.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/AbstractValidator.php
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/composer.json
+END
+Regex.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Regex.php
+END
+Date.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Date.php
+END
+Hostname.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Hostname.php
+END
+Digits.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Digits.php
+END
+Hex.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Validator/Hex.php
+END

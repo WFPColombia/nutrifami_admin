@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/aosmorac/PMA/!svn/ver/4/branches/develo/module/User
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/aosmorac/PMA/!svn/ver/4/branches/develo/module/User/LICENSE.txt
+END
+autoload_classmap.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/aosmorac/PMA/!svn/ver/4/branches/develo/module/User/autoload_classmap.php
+END
+autoload_register.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/aosmorac/PMA/!svn/ver/4/branches/develo/module/User/autoload_register.php
+END
+autoload_function.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/aosmorac/PMA/!svn/ver/4/branches/develo/module/User/autoload_function.php
+END
+Module.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/aosmorac/PMA/!svn/ver/4/branches/develo/module/User/Module.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/aosmorac/PMA/!svn/ver/4/branches/develo/module/User/README.md
+END

@@ -1,0 +1,301 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+	min-width: 1000px;
+}
+
+body .main{
+	padding-top: 70px;
+	min-width: 900px;
+}
+
+input[type="submit"]{
+	margin: 0;
+	background: #FF5F00;
+	color: #fff;
+	padding: 5px;
+	font-size: 16px;
+	width: 310px;
+	margin: 20px 0;
+	border: #C54900 1px solid;
+}
+input[type="submit"]:hover{
+	background: #FF8339;
+}
+
+.zf-green {
+    color: #68b604;
+}
+
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
+}
+
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
+}
+
+.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, div.container{
+	width: 90%;
+}
+div.container a.brand {
+    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
+    margin-left: 0;
+    padding: 8px 20px 12px 40px;
+}
+
+.navbar .header{
+	background: #fff url(/img/mini-logo-pma.png) no-repeat;
+    background-size: auto 80px;
+    background-position: 0;
+	height: 80px;
+	width: 90%;
+	padding: 3px 5px;
+	margin: 0 auto;
+	text-align: right;
+}
+.navbar .header a{
+	margin: 0 5px;
+}
+
+.navbar-inverse .navbar-inner{
+	background: #4284D3;
+	border-bottom: #0E53A7;
+}
+
+.module_title{
+	
+}
+
+.control{
+	display: block;
+	margin: 0 0 30px 0;
+	padding: 0 0 5px 0;
+	border-bottom: #dedede 1px solid;
+}
+.control h3{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	color: #888;
+}
+.control h3 a{
+	color: #555;
+}
+.control h3 a:hover{
+	color: #555;
+	text-decoration: underline;
+}
+
+.control a.add{
+	background: url(../img/icons/add.png) center left no-repeat;
+	background-size: 20px;
+	padding: 5px 0 5px 22px;
+	margin: 8px 0 0;
+	float: right;
+	color: #555;
+}
+.control a.add:hover{
+	text-decoration: underline;
+}
+
+.control a.cancel{
+	background: url(../img/icons/cancel.png) center right no-repeat;
+	background-size: 20px;
+	padding: 5px 25px 5px 0;
+	margin: 8px 0 0;
+	float: right;
+	color: #555;
+}
+.control a.cancel:hover{
+	text-decoration: underline;
+}
+
+
+div.DTE_Inline div.DTE_Field input{
+	padding: 3px 5px;
+	height: 30px;
+}
+
+a.tree{
+	background: url(../img/icons/tree.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+	cursor: pointer;
+}
+a.edit{
+	background: url(../img/icons/edit.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
+a.delete{
+	background: url(../img/icons/delete.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
+a.allow{
+	background: url(../img/icons/allow.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
+a.basket{
+	background: url(../img/icons/basket.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
+a.path{
+	background: url(../img/icons/path.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
+
+.form_table{
+	
+}
+.form_table tr td{
+	padding: 10px 5px;
+	vertical-align: middle;
+}
+.form_table tr td input[type="text"], .form_table tr td textarea, .form_table tr td select{
+	margin: 0;
+	width: 300px;
+}
+.form_table tr td input[type="submit"]{
+	margin: 0;
+	background: #FF5F00;
+	color: #fff;
+	padding: 5px;
+	font-size: 16px;
+	width: 310px;
+	margin: 5px 0;
+	border: #C54900 1px solid;
+}
+.form_table tr td input[type="submit"]:hover{
+	background: #FF8339;
+}
+
+
+
+#overlay {
+	position: fixed;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	z-index: 9999;
+}
+#overlay .bg{
+	position: absolute;
+	top: 0; height: 100%;
+	left: 0; width: 100%;
+	background: #ffffff;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";       /* IE 8 */
+	filter: alpha(opacity=70);  /* IE 5-7 */
+	-moz-opacity: 0.7;          /* Netscape */
+	-khtml-opacity: 0.7;        /* Safari 1.x */
+	opacity: 0.7;               /* Good browsers */
+}
+#overlay .content{
+	position: absolute;
+	top: 50px; bottom: 50px;
+	left: 50px; right: 50px;
+	background: #fff;
+	overflow: auto;
+	box-shadow: 0 -10px 5px -10px #4284d3;
+}
+#overlay .close{
+	background: url(../img/close.png) center no-repeat;
+	background-size: 40px;
+	position: absolute;
+	top: 5px; right: 50px;
+	width: 40px; height: 40px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";       /* IE 8 */
+	filter: alpha(opacity=80);  /* IE 5-7 */
+	-moz-opacity: 0.8;          /* Netscape */
+	-khtml-opacity: 0.8;        /* Safari 1.x */
+	opacity: 0.8;               /* Good browsers */
+}
+
+#overlay_content .header{
+	background: #4284d3;
+	padding: 5px 20px;
+	color: #ffffff;
+}
+#overlay_content .header h4{
+	color: #ffffff;
+	padding: 0;
+	margin: 0;
+}
+#overlay_content .content-overlay{
+	padding: 20px 0;
+}
+#overlay_content .content-overlay table{
+	margin: 0 auto;
+}
+#overlay_content .content-overlay table th{
+    font-weight: normal;
+    line-height: 12px;
+    padding: 10px 20px;
+    text-align: center;
+}
+#overlay_content .content-overlay table tr.parent{
+	margin-top: 10px;
+}
+#overlay_content .content-overlay table tr.parent td{
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+    font-weight: normal;
+    padding: 10px 20px;
+    text-align: center;
+}
+#overlay_content .content-overlay table tr.child td{
+	border-top: 1px solid #ddd;
+    font-weight: normal;
+    padding: 5px 20px;
+    text-align: center;
+}
+#overlay_content .content-overlay table tr.parent td.name{
+	text-align: left;
+}
+#overlay_content .content-overlay table tr.child td.name{
+	text-align: right;
+}
+
+

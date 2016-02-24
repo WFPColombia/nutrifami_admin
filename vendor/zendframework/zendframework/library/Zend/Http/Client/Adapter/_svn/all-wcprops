@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter
+END
+StreamInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/StreamInterface.php
+END
+Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Test.php
+END
+AdapterInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/AdapterInterface.php
+END
+Proxy.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Proxy.php
+END
+Curl.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Curl.php
+END
+Socket.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Socket.php
+END

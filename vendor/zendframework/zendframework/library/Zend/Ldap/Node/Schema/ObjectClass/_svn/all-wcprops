@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Node/Schema/ObjectClass
+END
+ObjectClassInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Node/Schema/ObjectClass/ObjectClassInterface.php
+END
+ActiveDirectory.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Node/Schema/ObjectClass/ActiveDirectory.php
+END
+OpenLdap.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Node/Schema/ObjectClass/OpenLdap.php
+END

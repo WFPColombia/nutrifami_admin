@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/composer.json
+END
+Collection.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Collection.php
+END
+Ldap.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Ldap.php
+END
+Dn.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Dn.php
+END
+Attribute.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Attribute.php
+END
+Filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Filter.php
+END
+Node.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/Node.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Ldap/README.md
+END

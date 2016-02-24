@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/Strategy
+END
+SerializableStrategy.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/Strategy/SerializableStrategy.php
+END
+ClosureStrategy.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/Strategy/ClosureStrategy.php
+END
+StrategyInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/Strategy/StrategyInterface.php
+END
+DefaultStrategy.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/Strategy/DefaultStrategy.php
+END

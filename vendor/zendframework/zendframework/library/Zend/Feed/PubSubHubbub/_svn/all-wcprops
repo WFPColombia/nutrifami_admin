@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub
+END
+CallbackInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/CallbackInterface.php
+END
+Publisher.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/Publisher.php
+END
+HttpResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/HttpResponse.php
+END
+AbstractCallback.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/AbstractCallback.php
+END
+Subscriber.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/Subscriber.php
+END
+Version.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/Version.php
+END
+PubSubHubbub.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Feed/PubSubHubbub/PubSubHubbub.php
+END

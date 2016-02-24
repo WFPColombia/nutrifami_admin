@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Exception
+END
+ExceptionInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Exception/ExceptionInterface.php
+END
+RuntimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Exception/RuntimeException.php
+END
+TimeoutException.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Exception/TimeoutException.php
+END
+InitializationException.php
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Exception/InitializationException.php
+END
+InvalidArgumentException.php
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Exception/InvalidArgumentException.php
+END
+OutOfRangeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Http/Client/Adapter/Exception/OutOfRangeException.php
+END

@@ -1,0 +1,40 @@
+	<div class="control">
+		<h3><a href="list"></a></h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add" class="add">Nuevo Producto</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="commodities_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Nombre</th>
+                <th>Descripci&oacute;n</th>
+                <th>Unidad</th>
+                <th>Cantidad</th>
+                <th>Precio / Unidad</th>
+                <th></th>
+            </tr>
+        </thead>
+	</table>
+<script>
+var table = $('#commodities_table').dataTable( {
+    "processing": true,
+    "serverSide": true,
+    "ajax": "<?php echo $this->serverUrl()?>/commodity/kits/get-commodities?kid=<?php echo $this->kid; ?>",
+    "columns": [
+        { data: "BUS_KIT_ID", "visible": false },
+        { data: "BUS_COM_NAME" },
+        { data: "BUS_COM_DESCRIPTION" },
+        { data: "UNIT" },
+        { data: "BUS_COM_KIT_QUANTITY" },
+        { data: "BUS_COM_ATT_PRICE" },
+        { data: null,
+          "orderable": false,
+          className: "right",
+          defaultContent: ''
+        }
+    ],
+    "iDisplayLength": 10
+} ); 
+</script>

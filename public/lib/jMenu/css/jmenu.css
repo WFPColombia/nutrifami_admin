@@ -1,0 +1,10 @@
+.jMenu{display:table;margin:0;padding:0;list-style:none;}
+.jMenu li{display:table-cell;background-color:#4284D3;margin:0;list-style:none}
+.jMenu li a{padding:10px 15px;display:block;background-color:transparent;color:#fff;text-transform:uppercase;cursor:pointer;font-size:12px}
+.jMenu li a:hover{background-color:#0E53A7}
+.jMenu li:hover>a{background-color:#0E53A7}
+.jMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none}
+.jMenu li ul li{background-color:#4284D3;display:block;border-bottom:1px solid #0E53A7;padding:0;list-style:none;position:relative}
+.jMenu li ul li a{font-size:11px;text-transform:none;display:block;padding:7px;border-top:1px solid transparent;border-bottom:1px solid transparent}
+.jMenu li ul li a.isParent{background-color:#0E53A7}
+.jMenu li ul li a:hover{background-color:#0E53A7;border-top:1px solid #4284D3;border-bottom:1px solid #4284D3}

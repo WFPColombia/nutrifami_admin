@@ -1,0 +1,99 @@
+	<div class="control">
+		<h3><a href="list">Roles</a></h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add" class="add">Nuevo Rol</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="roles_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Nombre</th>
+                <th>Descripci&oacute;n</th>
+                <th></th>
+            </tr>
+        </thead>
+	</table>
+<script>
+var editorRoles;
+
+$(function() {
+
+	$('#privileges').dialog({
+	    autoOpen: false,
+        modal: true,
+        open: function ()
+        {
+            //$(this).load('allow');
+        },
+        title: 'Privilegios'
+    });
+	
+	var table = $('#roles_table').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo $this->serverUrl()?>/admin/roles/get-list",
+        "columns": [
+            { data: "COR_ROL_ID", "visible": false },
+            { data: "COR_ROL_NAME" },
+            { data: "COR_ROL_DESCRIPTION" },
+            { data: null,
+              "orderable": false,
+              className: "right",
+              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Permisos" title="Permisos" class="allow"></a> <a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+            }
+        ],
+        "iDisplayLength": 10
+    } ); 
+    
+
+    // Editar registros directamente en la lista
+	editorRoles = new $.fn.dataTable.Editor( {
+        ajax: "<?php echo $this->serverUrl()?>/admin/roles/update-row",
+        table: "#roles_table",
+        idSrc:  'COR_ROL_ID',
+        fields: [ {
+	                label: "Id:",
+	                name: "COR_ROL_ID"
+	            }, {
+	                label: "Nombre:",
+	                name: "COR_ROL_NAME"
+	            }, {
+	                label: "Descripci&oacute;n:",
+	                name: "COR_ROL_DESCRIPTION"
+	            }
+	        ]
+	    } );
+
+
+	// Activate an inline edit on click of a table cell
+    $('#roles_table').on( 'click', 'tbody td', function (e) {
+    	editorRoles.inline( this , {
+            submitOnBlur: true
+        });
+    } );
+
+
+
+	$('#roles_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?id="+data['COR_ROL_ID']);
+        }
+    } );
+
+    $('#roles_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"edit?id="+data['COR_ROL_ID']);
+    } );
+
+
+    $('#roles_table').on( 'click', 'a.allow', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        openOverlayAjax("allow?id="+data['COR_ROL_ID']);
+    } );
+
+
+
+});
+</script>

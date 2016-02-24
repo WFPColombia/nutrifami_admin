@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Sql/Platform/SqlServer/Ddl
+END
+CreateTableDecorator.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/library/Zend/Db/Sql/Platform/SqlServer/Ddl/CreateTableDecorator.php
+END

@@ -1,0 +1,74 @@
+<div class="header"><h4><?php echo $this->rol['COR_ROL_NAME'];?></h4></div>
+<div class="content-overlay" style="text-align: center;">
+    <form name="privileges" id="privileges_form" action="javascript: savePrivileges();">
+    
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th></th>
+                    <?php foreach ( $this->privileges as $p) { ?>
+                    <th><?php echo $p['name']; ?><br><input onclick="checkChildren(this);" type="checkbox" childrenClass="<?php echo $p['abbreviation']; ?>" name="privileges[<?php echo $p['id']; ?>]" class="<?php echo $p['abbreviation']; ?>"></th>
+                    <?php }?>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ( $this->modules as $m) { ?>
+                <tr class="parent">
+                    <td class="name"><?php echo $m['name']; ?></td>
+                    <?php foreach ( $this->privileges as $p) { ?>
+                    <td>
+                        <input onclick="checkChildren(this);" type="checkbox" parentClass="" childrenClass="parent<?php echo $m['id']; ?>_privilege<?php echo $p['id']; ?>" <?php if ( isset($m['privileges']) && isset($m['privileges'][$p['abbreviation']]) ){ ?>checked="checked" <?php }?>name="privileges[<?php echo $p['id']; ?>][<?php echo $m['id']; ?>]" class="<?php echo $p['abbreviation']; ?> <?php echo $m['id']; ?>_privilege<?php echo $p['id']; ?>">
+                    </td>
+                    <?php }?>
+                    <td></td>
+                </tr> 
+                    <?php foreach ( $m['children'] as $c) { ?>
+                    <tr class="child">
+                        <td class="name"><?php echo $c['name']; ?></td>
+                        <?php foreach ( $this->privileges as $p) { ?>
+                        <td>
+                            <input parentClass="<?php echo $m['id']; ?>_privilege<?php echo $p['id']; ?>" onclick="checkChildren(this);" type="checkbox" <?php if ( isset($c['privileges']) && isset($c['privileges'][$p['abbreviation']]) ){ ?>checked="checked" <?php }?>name="privileges[<?php echo $p['id']; ?>][<?php echo $c['id']; ?>]" class="<?php echo $p['abbreviation']; ?> parent<?php echo $m['id']; ?>_privilege<?php echo $p['id']; ?>">
+                        </td>
+                        <?php }?>
+                        <td></td>
+                    </tr>
+                    <?php }?>
+                <?php }?>
+            </tbody>
+        </table>
+        <input type="hidden" name="rol_id" value="<?php echo $this->rol['COR_ROL_ID'];?>" />
+        <input type="submit" value="Guardar" />
+    </form>
+</div>
+<div class="footer"></div>
+<style>
+    
+</style>
+<script>
+
+function checkChildren(parent){
+	if ( $(parent).prop('checked') ) {
+	    $('.'+$(parent).attr('childrenClass')).prop('checked', true);
+	    $('.'+$(parent).attr('parentClass')).prop('checked', true);
+	}else{
+	    $('.'+$(parent).attr('childrenClass')).prop('checked', false);
+	}
+}
+
+
+function savePrivileges() {
+	$.ajax({
+		type: "POST",
+		url: "<?php echo $this->serverUrl()?>/admin/roles/set-privileges",
+		data: $("#privileges_form").serialize(), // serializes the form's elements.
+		success: function(data)
+		{
+			if ($data = 'ok') {
+				closeOverlay();
+			}
+		}
+	}); 
+}
+
+</script>

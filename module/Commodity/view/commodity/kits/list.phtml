@@ -1,0 +1,86 @@
+	<div class="control">
+		<h3><a href="list">Kits</a></h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add" class="add">Nuevo Kit</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="kits_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Nombre</th>
+                <th>Descripci&oacute;n</th>
+                <th></th>
+            </tr>
+        </thead>
+	</table>
+<script>
+var editorKits;
+
+	var table = $('#kits_table').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo $this->serverUrl()?>/commodity/kits/get-list",
+        "columns": [
+            { data: "BUS_KIT_ID", "visible": false },
+            { data: "BUS_KIT_NAME" },
+            { data: "BUS_KIT_DESCRIPTION" },
+            { data: null,
+              "orderable": false,
+              className: "right",
+              defaultContent: '<a href="javascript:void(0);" alt="Productos" title="Productos" class="basket"></a> <a href="javascript:void(0);" alt="Perfiles" title="Perfiles" class="path"></a> <?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+            }
+        ],
+        "iDisplayLength": 10
+    } ); 
+    
+	<?php if (  \Util\UserSession::isEditPrivilege() ){ ?>
+    // Editar registros directamente en la lista
+	editorKits = new $.fn.dataTable.Editor( {
+        ajax: "<?php echo $this->serverUrl()?>/commodity/kits/update-row",
+        table: "#kits_table",
+        fields: [ {
+	                label: "Id:",
+	                name: "BUS_KIT_ID"
+	            }, {
+	                label: "Nombre:",
+	                name: "BUS_KIT_NAME"
+	            }, {
+	                label: "Descripci&oacute;n:",
+	                name: "BUS_KIT_DESCRIPTION"
+	            }
+	        ]
+	    } );
+
+
+	// Activate an inline edit on click of a table cell
+    $('#kits_table').on( 'click', 'tbody td', function (e) {
+    	editorKits.inline( this , {
+            submitOnBlur: true
+        });
+    } );
+
+	
+    $('#kits_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"edit?id="+data['BUS_KIT_ID']);
+    } );
+
+    <?php } ?>
+
+    <?php if (  \Util\UserSession::isDeletePrivilege() ){ ?>
+	$('#kits_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?id="+data['BUS_KIT_ID']);
+        }
+    } );
+	<?php } ?>
+
+	$('#kits_table').on( 'click', 'a.basket', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"commodities?kid="+data['BUS_KIT_ID']);
+    } );
+
+
+</script>

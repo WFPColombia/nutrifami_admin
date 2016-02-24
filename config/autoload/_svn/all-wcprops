@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/aosmorac/PMA/!svn/ver/3/branches/develo/config/autoload
+END
+local.php.dist
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/aosmorac/PMA/!svn/ver/3/branches/develo/config/autoload/local.php.dist
+END
+global.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/aosmorac/PMA/!svn/ver/4/branches/develo/config/autoload/global.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/aosmorac/PMA/!svn/ver/3/branches/develo/config/autoload/README.md
+END

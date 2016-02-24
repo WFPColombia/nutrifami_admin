@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/composer.json
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/LICENSE.txt
+END
+INSTALL.md
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/INSTALL.md
+END
+CHANGELOG.md
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/CHANGELOG.md
+END
+CONTRIBUTING.md
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/CONTRIBUTING.md
+END
+.coveralls.yml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/.coveralls.yml
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/README.md
+END
+README-GIT.md
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/aosmorac/PMA/!svn/ver/3/branches/develo/vendor/zendframework/zendframework/README-GIT.md
+END
