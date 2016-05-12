@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ZendSkeletonApplication
 =======================
 
@@ -50,3 +51,6 @@ Virtual Host
 ------------
 Afterwards, set up a virtual host to point to the public/ directory of the
 project and you should be ready to go!
+=======
+# nutrifami_admin
+>>>>>>> 39523a944488ae9005ace68ef9dee07000b24a6f

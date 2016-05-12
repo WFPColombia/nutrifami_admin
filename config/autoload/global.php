@@ -14,9 +14,9 @@
 return array(
     'db' => array(
         'driver' => 'Pdo',
-        'dsn'            => 'mysql:dbname=pmacolombia;host=127.0.0.1',
-        'username'       => 'root',
-        'password'       => '',
+        'dsn'            => 'mysql:dbname=nutrifamidev;host=nutrifami.cwy5i3r1f6xk.us-east-1.rds.amazonaws.com',
+        'username'       => 'dev',
+        'password'       => 'nutrifamiDEV',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
