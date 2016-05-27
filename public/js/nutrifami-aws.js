@@ -12,8 +12,8 @@
  */
 AWS_credentials = {
       userName: 'developer'
-    , accessKeyId: 'AKIAIFBZYG6G44KXUE4A'
-    , secretAccessKey: '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'
+    , accessKeyId: ''
+    , secretAccessKey: ''
     , region: 'us-east-1' 
     , defaultBucket: 'nutrifami'    /* Nombre por defecto del bucket en S3 AWS */
 };
