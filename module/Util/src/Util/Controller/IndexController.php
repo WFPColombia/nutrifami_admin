@@ -24,4 +24,8 @@ class IndexController extends AbstractActionController
         // are working when you browse to /index/index/foo
         return array();
     }
+    
+    public function testS3Action(){
+        return array();
+    }
 }

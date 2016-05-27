@@ -1,0 +1,28 @@
+<strong>Module:</strong>        Util &raquo;
+<strong>Controller:</strong>    Index &raquo;
+<strong>Action:</strong>        test-s3
+
+<br>
+
+<p>
+
+    <input type="file" id="file-chooser" /> 
+    <button id="upload-button">Upload to S3</button>
+    <div id="results"></div>
+    
+</p>
+
+<script type="text/javascript">
+
+  nutrifami_aws.s3.load();
+
+  var fileChooser = document.getElementById('file-chooser');
+  var button = document.getElementById('upload-button');
+  var results = document.getElementById('results');
+  button.addEventListener('click', function() {
+      var newFile = fileChooser.files[0];
+      nutrifami_aws.s3.uploadFile(newFile);
+  });
+    
+    
+</script>
