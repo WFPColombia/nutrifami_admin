@@ -44,3 +44,11 @@ $(function(){
     $( "#overlay_content" ).html('');
  }
  
+ function openOverlayLoad(){
+     $( "#overlay_loader" ).show();
+ }
+  function closeOverlayLoad(){
+     $( "#overlay_loader" ).hide();
+ }
+ 
+ 

@@ -7,8 +7,9 @@
 <p>
 
     <input type="file" id="file-chooser" /> 
+    <input type="text" id="file-location" />
     <button id="upload-button">Upload to S3</button>
-    <div id="results"></div>
+    <div id="file-name"></div>
     
 </p>
 
@@ -18,11 +19,13 @@
 
   var fileChooser = document.getElementById('file-chooser');
   var button = document.getElementById('upload-button');
-  var results = document.getElementById('results');
+  var results = document.getElementById('file-name');
   button.addEventListener('click', function() {
       var newFile = fileChooser.files[0];
-      nutrifami_aws.s3.uploadFile(newFile);
+      var fileName = getFileName(newFile.name);
+      var fileLocation = document.getElementById('file-location').value;
+      results.innerHTML = fileName;
+      nutrifami_aws.s3.uploadFile(newFile,fileLocation,fileName);
   });
-    
-    
+   
 </script>

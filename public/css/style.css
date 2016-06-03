@@ -60,7 +60,7 @@ div.container a.brand {
 }
 
 .navbar .header{
-	background: #fff url(/img/mini-logo-pma.png) no-repeat;
+	background: #fff url(/img/mini-logo-nutrifami.png) no-repeat;
     background-size: auto 80px;
     background-position: 0;
 	height: 80px;
@@ -215,13 +215,13 @@ a.path{
 
 
 
-#overlay {
+#overlay, #overlay_loader {
 	position: fixed;
 	top: 0; bottom: 0;
 	left: 0; right: 0;
 	z-index: 9999;
 }
-#overlay .bg{
+#overlay .bg, #overlay_loader .bg{
 	position: absolute;
 	top: 0; height: 100%;
 	left: 0; width: 100%;
@@ -231,6 +231,10 @@ a.path{
 	-moz-opacity: 0.7;          /* Netscape */
 	-khtml-opacity: 0.7;        /* Safari 1.x */
 	opacity: 0.7;               /* Good browsers */
+}
+#overlay_loader #overlay_image {
+    text-align: center;
+    padding-top: 200px;
 }
 #overlay .content{
 	position: absolute;
