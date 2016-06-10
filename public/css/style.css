@@ -142,6 +142,15 @@ a.tree{
 	display: inline-block;
 	cursor: pointer;
 }
+a.lessons{
+	background: url(../img/icons/lessons.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
 a.edit{
 	background: url(../img/icons/edit.png) center no-repeat;
 	background-size: 20px;

@@ -1,0 +1,62 @@
+<div class="control">
+		<h3>Lecciones</h3>
+		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>" class="cancel">Cancelar</a>
+</div>
+<form method="post" action="javascript:sendForm();" name="form_lesson" id="form_lesson">
+    <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+	<tbody>
+            <tr>
+            	<td align="right">Titulo</td>
+                <td align="left">
+                	<input type="text" name="titulo" value="<?php echo $this->module['lec_titulo']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Descripci&oacute;n</td>
+                <td align="left">
+                	<textarea name="descripcion"><?php echo $this->module['lec_descripcion']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Imagen</td>
+                <td align="left">
+                    <input type="file" name="imagen_file" id="imagen_file"><br>
+                    <span id="imagen_url"><?php echo $this->module['lec_imagen']; ?></span>
+                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->module['lec_imagen']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right"></td>
+                <td align="left">
+                	<input type="submit" value="Guardar" />
+                	<input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="mid" value="<?php echo $mid; ?>">
+                </td>
+            </tr>
+        </tbody>
+	</table>
+</form>
+<script type="text/javascript">
+
+  nutrifami_aws.s3.load();
+  
+  function sendForm() {
+    openOverlayLoad();
+    var imagen_file = document.getElementById('imagen_file');
+    if (imagen_file.files.length == 0){
+        $('#form_lesson').attr('action', "save");
+        $("#form_lesson").submit();
+    }else {
+        var newFile = imagen_file.files[0];
+        var fileName = getFileName(newFile.name);   // Nombre del archivo en S3
+        var fileLocation = 'training/images/';
+        $('#image_file_url').val('https://s3.amazonaws.com/nutrifami/'+fileLocation+fileName);
+        nutrifami_aws.s3.uploadFile(newFile,fileLocation,fileName, function(){
+            $('#form_lesson').attr('action', "save");
+            $("#form_lesson").submit();
+        });
+    }
+  };
+
+   
+</script>

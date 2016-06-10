@@ -71,7 +71,7 @@ nutrifami_aws = {
                   if ( err == null ){
                       callback();
                   }else {
-                      alert(msj);  
+                      alert(err);  
                   }           
               });
             } else {

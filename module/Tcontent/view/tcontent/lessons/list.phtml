@@ -1,7 +1,7 @@
 	<div class="control">
-		<h3><a href="list">M&oacute;dulos</a> <?php echo $this->breadcrumbs; ?></h3>
+            <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);">Lecciones</a></a></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
-		  <a href="add" class="add">Nuevo M&oacute;dulo</a>
+		  <a href="add?mid=<?php echo $this->mid; ?>" class="add">Nueva Lección</a>
 		<?php } ?>
 	</div>
 	<table cellpadding="0" cellspacing="0" border="0" class="display" id="modules_table">
@@ -81,11 +81,6 @@ $(document).ready(function() {
     $('#modules_table').on( 'click', 'a.edit', function () {
         var data = table.fnGetData($(this).parents('tr'));
         $(location).attr('href',"edit?id="+data['mod_id']);
-    } );
-
-    $('#modules_table').on( 'click', 'a.lessons', function () {
-        var data = table.fnGetData($(this).parents('tr'));
-        $(location).attr('href',"../lessons/list?mid="+data['mod_id']);
     } );
     
       
