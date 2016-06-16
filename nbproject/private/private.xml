@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/public/css/style.css</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Tcontent/src/Tcontent/Model/Tables/ModuleTable.php</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Tcontent/src/Tcontent/Model/Module.php</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Tcontent/view/tcontent/modules/module_form.phtml</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Application/view/layout/layout.phtml</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Admin/src/Admin/Model/Module.php</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/public/css/login.css</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Util/view/util/index/test-s3.phtml</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/public/js/nutrifami-aws.js</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Tcontent/src/Tcontent/Controller/ModulesController.php</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/public/js/functions.js</file>
-            <file>file:/C:/Desarrollo/nutrifami/admincapacitacion/module/Tcontent/view/tcontent/modules/list.phtml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

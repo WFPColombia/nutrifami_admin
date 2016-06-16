@@ -64,10 +64,14 @@ class LessonsController extends AbstractActionController
         
         $request = $this->getRequest();
         $params = $this->params()->fromQuery();
+        $mid = 0;
+        if (isset($params['mid']) && $params['mid']>0) {
+            $mid= $params['mid'];
+        }
         $queryOptions = \Util\DataTables::getListOptions($params);
-        $moduleObj = new Module();
-        $modules = $moduleObj->getModules($queryOptions);
-        echo json_encode(array('recordsTotal'=>$modules['rows'], 'recordsFiltered'=>$modules['rows'], 'data'=>$modules['data']));
+        $lessonObj = new Lesson();
+        $lessons = $lessonObj->getLessons($queryOptions, $mid);
+        echo json_encode(array('recordsTotal'=>$lessons['rows'], 'recordsFiltered'=>$lessons['rows'], 'data'=>$lessons['data']));
         //echo json_encode(array('data'=>$modules));
         
         return $this->response; //Desabilita View y Layout
@@ -87,8 +91,8 @@ class LessonsController extends AbstractActionController
         
         if ($data = $request->getPost('data')){
             //print_r($_POST); return; 
-            $moduleObj = new Module();
-            if ($moduleObj->updateModule($data)) {
+            $lessonObj = new Lesson();
+            if ($lessonObj->updateLesson($data)) {
                 echo json_encode($_POST);
             }
         }
@@ -150,15 +154,19 @@ class LessonsController extends AbstractActionController
     
     public function editAction(){
         $params = $this->params()->fromQuery();
+        $mid=0;
+        if (isset($params['mid']) && $params['mid']>0) {
+            $mid= $params['mid'];
+        }
         if (isset($params['id']) && $params['id']>0){
         	$id = $params['id'];        
-            $moduleObj = new Module();
-            $module = $moduleObj->getModule($id);
+            $lessonObj = new Lesson();
+            $lesson = $lessonObj->getLesson($id);
             
-            $viewModel = new ViewModel(array('module' => $module, 'id' => $module['mod_id'], 'breadcrumbs' => ' / <a>Edit M&oacute;dulo</a>'));
-            $viewModel->setTemplate('tcontent/modules/module_form.phtml');
+            $viewModel = new ViewModel(array('lesson' => $lesson, 'id' => $lesson['lec_id'], 'mid' => $mid, 'breadcrumbs' => ' / <a>Edit M&oacute;dulo</a>'));
+            $viewModel->setTemplate('tcontent/lessons/lesson_form.phtml');
         }else{
-            $this->redirect()->toUrl('list'); 
+            $this->redirect()->toUrl('list?mid='.$mid); 
         }
         
         return $viewModel;
@@ -173,11 +181,15 @@ class LessonsController extends AbstractActionController
      */
     public function deleteAction(){
         $params = $this->params()->fromQuery();
+        $mid = 0;
+        if (isset($params['mid']) && $params['mid']>0) {
+            $mid= $params['mid'];
+        }
         if (isset($params['id']) && $params['id']>1){
             $data['id'] = $params['id'];
-            $moduleObj = new Module();
-            if ( $moduleObj->deleteModule($data) ) {
-                $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre
+            $lessonObj = new Lesson();
+            if ( $lessonObj->deleteLesson($data) ) {
+                $this->redirect()->toUrl('list?mid='.$mid); // Volver a listar desde el modulo padre
             }
         }
         return $this->response; //Desabilita View y Layout

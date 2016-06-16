@@ -4,7 +4,7 @@
 		  <a href="add?mid=<?php echo $this->mid; ?>" class="add">Nueva Lección</a>
 		<?php } ?>
 	</div>
-	<table cellpadding="0" cellspacing="0" border="0" class="display" id="modules_table">
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="lessons_table">
 		<thead>
             <tr>
             	<th>Id</th>
@@ -22,65 +22,71 @@ var editorModules; // use a global for the submit and return data rendering in t
  
 $(document).ready(function() {
 	
-	var table = $('#modules_table').dataTable( {
+	var table = $('#lessons_table').dataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "<?php echo $this->serverUrl()?>/tcontent/modules/get-list?pid=<?php echo $this->pid; ?>",
+        "ajax": "<?php echo $this->serverUrl()?>/tcontent/lessons/get-list?mid=<?php echo $this->mid; ?>",
         "columns": [
-            { data: "mod_id", "visible": false },
-            { data: "mod_titulo" },
-            { data: "mod_descripcion" },
-            { data: "mod_imagen" },
-            { data: "mod_fecha" },
+            { data: "lec_id", "visible": false },
+            { data: "lec_titulo" },
+            { data: "lec_descripcion" },
+            { data: "lec_imagen" },
+            { data: "lec_fecha" },
             { data: null,
               "orderable": false,
               className: "right",
-              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Lecciones" title="Lecciones" class="lessons"></a> <a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Unidades de informacion" title="Unidades de informacion" class="infounits"></a> <a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
             }
         ],
         "iDisplayLength": 10
     } ); 
 	
 	editorModules = new $.fn.dataTable.Editor( {
-        ajax: "<?php echo $this->serverUrl()?>/tcontent/modules/update-row",
-        table: "#modules_table",
-        idSrc:  'mod_id',
+        ajax: "<?php echo $this->serverUrl()?>/tcontent/lessons/update-row",
+        table: "#lessons_table",
+        idSrc:  'lec_id',
         fields: [ {
 	                label: "Id:",
-	                name: "mod_id"
+	                name: "lec_id"
 	            }, {
 	                label: "Titulo:",
-	                name: "mod_titulo"
+	                name: "lec_titulo"
 	            }, {
 	                label: "Descripci&oacute;n:",
-	                name: "mod_descripcion"
+	                name: "lec_descripcion"
 	            }, {
 	                label: "Imagen:",
-	                name: "mod_imagen"
+	                name: "lec_imagen"
 	            }, {
 	                label: "Fecha:",
-	                name: "mod_fecha"
+	                name: "lec_fecha"
 	            }
 	        ]
 	    } );
 	
 	// Activate an inline edit on click of a table cell
-    $('#modules_table').on( 'click', 'td', function (e) { 
+    $('#lessons_table').on( 'click', 'td', function (e) { 
         editorModules.inline( this , {
             submitOnBlur: true
         });
     } );
 
-    $('#modules_table').on( 'click', 'a.delete', function () {
+    $('#lessons_table').on( 'click', 'a.delete', function () {
     	var data = table.fnGetData($(this).parents('tr'));
         if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
-            $(location).attr('href',"delete?id="+data['mod_id']);
+            $(location).attr('href',"delete?id="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
         }
     } );
 
-    $('#modules_table').on( 'click', 'a.edit', function () {
+    $('#lessons_table').on( 'click', 'a.edit', function () {
         var data = table.fnGetData($(this).parents('tr'));
-        $(location).attr('href',"edit?id="+data['mod_id']);
+        $(location).attr('href',"edit?id="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
+    } );
+    
+    
+    $('#modules_table').on( 'click', 'a.infounits', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"../infounits/list?lid="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
     } );
     
       

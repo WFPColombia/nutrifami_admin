@@ -8,13 +8,13 @@
             <tr>
             	<td align="right">Titulo</td>
                 <td align="left">
-                	<input type="text" name="titulo" value="<?php echo $this->module['lec_titulo']; ?>" />
+                	<input type="text" name="titulo" value="<?php echo $this->lesson['lec_titulo']; ?>" />
                 </td>
             </tr>
             <tr>
             	<td align="right">Descripci&oacute;n</td>
                 <td align="left">
-                	<textarea name="descripcion"><?php echo $this->module['lec_descripcion']; ?></textarea>
+                	<textarea name="descripcion"><?php echo $this->lesson['lec_descripcion']; ?></textarea>
                 </td>
             </tr>
             <tr>
@@ -22,7 +22,7 @@
                 <td align="left">
                     <input type="file" name="imagen_file" id="imagen_file"><br>
                     <span id="imagen_url"><?php echo $this->module['lec_imagen']; ?></span>
-                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->module['lec_imagen']; ?>" />
+                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->lesson['lec_imagen']; ?>" />
                 </td>
             </tr>
             <tr>

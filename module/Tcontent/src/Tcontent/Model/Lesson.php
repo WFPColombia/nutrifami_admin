@@ -57,9 +57,9 @@ class Lesson
      * @param number $pid
      * @return Ambigous <multitype:, multitype:NULL multitype: Ambigous <\ArrayObject, unknown> >
      */
-    public function getLessons($options = Array())
+    public function getLessons($options = Array(), $mid)
     {
-        $lessons = $this->lessonTable->getLessons($options);
+        $lessons = $this->lessonTable->getLessons($options, $mid);
         return $lessons;
     }
     
@@ -83,7 +83,9 @@ class Lesson
         $dataTable['lec_activo'] = 1;
         if ( isset($data['id']) && $data['id']>0 ) {
             $dataTable['lec_id'] = $data['id'];
-            return $this->lessonTable->updateByFieldsLesson($dataTable);
+            if ($this->lessonTable->updateByFieldsLesson($dataTable)){
+                return array("module_id" => $data['mid'] );
+            }
         }else { 
             if ( $new_lesson_id = $this->lessonTable->insertLesson($dataTable) ){
                 $elementModule = array();

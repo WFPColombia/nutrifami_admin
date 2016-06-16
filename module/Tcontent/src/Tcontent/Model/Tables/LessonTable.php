@@ -41,20 +41,23 @@ class LessonTable extends AbstractTableGateway
         }
     }
     
-    public function getLessons($options = Array()){
+    public function getLessons($options = Array(), $mid){
         $result = Array();
-        $resultSet = $this->select(function (Select $select) use ($options) {
+        $resultSet = $this->select(function (Select $select) use ($options, $mid) {
         	$select
-        	   ->where("1 = 1 AND (".$options['where'].") AND lec_activo = 1")
+                   ->join('cap_modulo_elemento', 'cap_modulo_elemento.lec_id = cap_leccion.lec_id', 'mod_id')
+        	   ->where("1 = 1 AND (".$options['where'].") AND lec_activo = 1 AND cap_modulo_elemento.mod_id = ".$mid)
         	   ->order($options['order'])
         	   ->limit($options['limit']['length'])
-        	   ->offset($options['limit']['start']);
+        	   ->offset($options['limit']['start'])
+                   ;
         	//Debug::dump($select->getSqlString()); die;
         });
         $result['data'] = $resultSet->toArray();
         
         $resultSet = $this->select(function (Select $select) use ($options) {
         	$select
+                ->join('cap_modulo_elemento', 'cap_modulo_elemento.lec_id = cap_leccion.lec_id', 'mod_id')
         	->columns(array('num' => new \Zend\Db\Sql\Expression('COUNT(*)')))
         	->where("1 = 1  AND (".$options['where'].") AND lec_activo = 1");
         });
