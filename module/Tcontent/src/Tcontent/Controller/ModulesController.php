@@ -117,6 +117,8 @@ class ModulesController extends AbstractActionController
             $data['titulo'] = $_POST['titulo'];
             $data['descripcion'] = $_POST['descripcion'];
             $data['imagen'] = $_POST['imagen'];
+            $data['audio'] = $_POST['audio'];
+            $data['audio_descripcion'] = $_POST['audio_descripcion'];
             $data['id'] = $_POST['id'];
             $moduleObj = new Module();
             if ( $moduleObj->saveModule($data) ) {

@@ -45,7 +45,7 @@ class LessonTable extends AbstractTableGateway
         $result = Array();
         $resultSet = $this->select(function (Select $select) use ($options, $mid) {
         	$select
-                   ->join('cap_modulo_elemento', 'cap_modulo_elemento.lec_id = cap_leccion.lec_id', 'mod_id')
+                   ->join('cap_modulo_elemento', 'cap_modulo_elemento.lec_id = cap_leccion.lec_id', array('mod_id' => 'mod_id', 'mod_ele_orden' => 'mod_ele_orden'))
         	   ->where("1 = 1 AND (".$options['where'].") AND lec_activo = 1 AND cap_modulo_elemento.mod_id = ".$mid)
         	   ->order($options['order'])
         	   ->limit($options['limit']['length'])

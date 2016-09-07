@@ -1,4 +1,4 @@
-	<div class="control">
+	<div class="control seccion_titulo">
             <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);">Lecciones</a></a></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>" class="add">Nueva Lección</a>
@@ -10,8 +10,10 @@
             	<th>Id</th>
                 <th>Titulo</th>
                 <th>Descripci&oacute;n</th>
-                <th>Imagen</th>
-                <th>Fecha</th>
+                <th>Icono</th>
+                <th>Audio Inicial</th>
+                <th>Audio Final</th>
+                <th>Orden</th>
                 <th></th>
             </tr>
         </thead>
@@ -30,8 +32,22 @@ $(document).ready(function() {
             { data: "lec_id", "visible": false },
             { data: "lec_titulo" },
             { data: "lec_descripcion" },
-            { data: "lec_imagen" },
-            { data: "lec_fecha" },
+            { data: "lec_icono", 
+              "render": function(data, type, row) {
+                    return '<img width="60" src="/img/capacitacion_icons/ico-leccion-'+data+'.png" />';
+                }
+            },
+                { data: "lec_audio", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 100px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
+                { data: "lec_audio_final", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 100px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
+            { data: "mod_ele_orden" },
             { data: null,
               "orderable": false,
               className: "right",
@@ -55,11 +71,8 @@ $(document).ready(function() {
 	                label: "Descripci&oacute;n:",
 	                name: "lec_descripcion"
 	            }, {
-	                label: "Imagen:",
-	                name: "lec_imagen"
-	            }, {
-	                label: "Fecha:",
-	                name: "lec_fecha"
+	                label: "Orden:",
+	                name: "mod_ele_orden"
 	            }
 	        ]
 	    } );

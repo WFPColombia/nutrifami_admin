@@ -40,6 +40,18 @@ class ModuleElementTable extends AbstractTableGateway
         }
     }
     
+    public function updateLesson($data){ 
+        $succes = false;
+        foreach ($data as $id => $d) {
+            if ($this->update($d, "lec_id = $id")){
+                $succes = $d;
+            }else{
+                $succes = false;
+            }
+        }
+        return $succes;
+    }
+    
     
 }
 

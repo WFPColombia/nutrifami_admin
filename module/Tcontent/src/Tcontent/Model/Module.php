@@ -11,6 +11,7 @@
 namespace Tcontent\Model;
 
 use Tcontent\Model\Tables\ModuleTable;
+use Tcontent\Model\Tables\ModuleElementTable;
 use Doctrine\Common\Util\Debug;
 /**********************************************************
 * MODELO Module
@@ -28,10 +29,12 @@ use Doctrine\Common\Util\Debug;
 class Module
 {
     protected $moduleTable;
+    protected $moduleElementTable;
     
     public function __construct()
     {
         $this->moduleTable = new ModuleTable();
+        $this->moduleElementTable = new ModuleElementTable();
     }
     
     
@@ -70,7 +73,13 @@ class Module
         }
         if ( isset($data['imagen']) ) {
             $dataTable['mod_imagen'] = $data['imagen'];
-        }        
+        }      
+        if ( isset($data['audio']) ) {
+            $dataTable['mod_audio'] = $data['audio'];
+        }  
+        if ( isset($data['audio_descripcion']) ) {
+            $dataTable['mod_descripcion_audio'] = $data['audio_descripcion'];
+        }    
         $dataTable['mod_activo'] = 1;
         if ( isset($data['id']) && $data['id']>0 ) {
             $dataTable['mod_id'] = $data['id'];
@@ -97,6 +106,10 @@ class Module
     public function getModule ($id) 
     {
         return $this->moduleTable->getModule($id);
+    }
+    
+    public function updateLesson(Array $data){
+        return $this->moduleElementTable->updateLesson($data);
     }
     
     

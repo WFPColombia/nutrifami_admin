@@ -16,6 +16,7 @@ use Zend\Captcha\Dumb;
 use Zend\Debug\Debug;
 use Tcontent\Model\Lesson;
 use Tcontent\Model\Module;
+use Tcontent\Model\ModuleElement;
 
 /**
  * ModulesController
@@ -90,11 +91,25 @@ class LessonsController extends AbstractActionController
         $request = $this->getRequest();
         
         if ($data = $request->getPost('data')){
-            //print_r($_POST); return; 
-            $lessonObj = new Lesson();
-            if ($lessonObj->updateLesson($data)) {
-                echo json_encode($_POST);
+            //print_r($data); return; 
+            $field = '';
+            foreach ( $data as $d ) {
+                foreach ( $d as $k => $f ){
+                    $field = $k;
+                }
             }
+            //print_r(substr($field, 0, 3)); return;
+            if (substr($field, 0, 3) == 'mod') {
+                $moduleObj = new Module();
+                if ( $moduleObj->updateLesson($data) ) {
+                    echo json_encode($_POST);
+                }
+            }else{
+                $lessonObj = new Lesson();
+                if ($lessonObj->updateLesson($data)) {
+                    echo json_encode($_POST);
+                } 
+            }            
         }
         
         return $this->response; //Desabilita View y Layout

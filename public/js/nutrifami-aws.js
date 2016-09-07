@@ -108,3 +108,21 @@ function getFileName(fileName){
     var sName = d.getFullYear()+''+d.getMonth()+''+d.getDay()+''+d.getHours()+''+d.getMinutes()+''+d.getSeconds()+''+d.getMilliseconds();
     return sName+'.'+getExt(fileName);
 }
+
+
+var wrap = $(window);
+
+wrap.scroll(function (e) {
+    
+  if (wrap.scrollTop() > 100) {
+    $(".navbar-inner").addClass("navbartop");
+    $(".seccion_titulo").addClass("tituloseccion");
+    $(".container.main").addClass("form_custom");
+  } else {
+    $(".navbar-inner").removeClass("navbartop");
+    $(".seccion_titulo").removeClass("tituloseccion");
+    $(".container.main").removeClass("form_custom");
+  }
+  
+});
+

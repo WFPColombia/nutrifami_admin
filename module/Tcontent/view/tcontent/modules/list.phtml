@@ -1,4 +1,4 @@
-	<div class="control">
+	<div class="control seccion_titulo">
 		<h3><a href="list">M&oacute;dulos</a> <?php echo $this->breadcrumbs; ?></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add" class="add">Nuevo M&oacute;dulo</a>
@@ -11,7 +11,8 @@
                 <th>Titulo</th>
                 <th>Descripci&oacute;n</th>
                 <th>Imagen</th>
-                <th>Fecha</th>
+                <th>Audio</th>
+                <th>Audio Descripción</th>
                 <th></th>
             </tr>
         </thead>
@@ -30,8 +31,25 @@ $(document).ready(function() {
             { data: "mod_id", "visible": false },
             { data: "mod_titulo" },
             { data: "mod_descripcion" },
-            { data: "mod_imagen" },
-            { data: "mod_fecha" },
+            { data: "mod_imagen", 
+              "render": function(data, type, row) {
+                    if (data != ''){
+                        return '<img width="100" src="https://s3.amazonaws.com/nutrifami/'+data+'" />';
+                    }else {
+                        return '';
+                    }
+                }
+            },
+                { data: "mod_audio", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 100px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
+                { data: "mod_descripcion_audio", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 100px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
             { data: null,
               "orderable": false,
               className: "right",
@@ -54,12 +72,6 @@ $(document).ready(function() {
 	            }, {
 	                label: "Descripci&oacute;n:",
 	                name: "mod_descripcion"
-	            }, {
-	                label: "Imagen:",
-	                name: "mod_imagen"
-	            }, {
-	                label: "Fecha:",
-	                name: "mod_fecha"
 	            }
 	        ]
 	    } );

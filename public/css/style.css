@@ -1,11 +1,8 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
 	min-width: 1000px;
 }
 
 body .main{
-	padding-top: 70px;
 	min-width: 900px;
 }
 
@@ -83,10 +80,14 @@ div.container a.brand {
 }
 
 .control{
-	display: block;
-	margin: 0 0 30px 0;
-	padding: 0 0 5px 0;
-	border-bottom: #dedede 1px solid;
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #dedede;
+    display: block;
+    left: 0;
+    margin: 0;
+    right: 0;
+    padding: 0;
+    margin-bottom: 20px;
 }
 .control h3{
 	display: inline-block;
@@ -321,3 +322,34 @@ a.path{
 }
 
 
+
+
+.navbartop{
+    position: fixed;
+    top: 0;
+    left: 0; right: 0;
+    z-index: 999;
+}
+.tituloseccion {
+    left: 0;
+    margin: 0;
+    padding: 0 35px;
+    right: 0;
+    top: 40px;
+    position: fixed;
+    z-index: 999;
+}
+.form_custom {
+    margin-top: 120px;
+}
+
+
+.urlsForm{
+    position: relative;
+}
+.urlsForm .delete{
+    cursor: pointer;
+    position: absolute;
+    top: -40px;
+    right: -20px;
+}
