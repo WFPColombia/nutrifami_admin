@@ -11,11 +11,11 @@
  * Objeto con los datos de configuración inicial
  */
 AWS_credentials = {
-      userName: 'developer'
-    , accessKeyId: 'AKIAIFBZYG6G44KXUE4A'
-    , secretAccessKey: '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'
+      userName: ''
+    , accessKeyId: ''
+    , secretAccessKey: ''
     , region: 'us-east-1' 
-    , defaultBucket: 'nutrifami'    /* Nombre por defecto del bucket en S3 AWS */
+    , defaultBucket: ''    /* Nombre por defecto del bucket en S3 AWS */
 };
 
 /*
@@ -108,6 +108,7 @@ function getFileName(fileName){
     var sName = d.getFullYear()+''+d.getMonth()+''+d.getDay()+''+d.getHours()+''+d.getMinutes()+''+d.getSeconds()+''+d.getMilliseconds();
     return sName+'.'+getExt(fileName);
 }
+
 
 
 var wrap = $(window);
