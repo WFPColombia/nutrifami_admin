@@ -16,20 +16,16 @@ class LoginForm extends Form
             'name' => 'username',
             'attributes' => array(
                 'type'  => 'text',
-            ),
-            'options' => array(
-                'label' => 'Usuario',
-            ),
+                'placeholder' => 'Usuario'
+            )
         ));
 
         $this->add(array(
             'name' => 'password',
             'attributes' => array(
                 'type'  => 'password',
-            ),
-            'options' => array(
-                'label' => 'Contraseña',
-            ),
+                'placeholder' => 'Contraseña'
+            )
         ));
 
         $this->add(array(

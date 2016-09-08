@@ -79,7 +79,19 @@ class Lesson
         }
         if ( isset($data['imagen']) ) {
             $dataTable['lec_imagen'] = $data['imagen'];
-        }        
+        }     
+        if ( isset($data['icono']) ) {
+            $dataTable['lec_icono'] = $data['icono'];
+        }   
+        if ( isset($data['audio']) ) {
+            $dataTable['lec_audio'] = $data['audio'];
+        }   
+        if ( isset($data['mensaje_final']) ) {
+            $dataTable['lec_mensaje'] = $data['mensaje_final'];
+        }   
+        if ( isset($data['audio_final']) ) {
+            $dataTable['lec_audio_final'] = $data['audio_final'];
+        }      
         $dataTable['lec_activo'] = 1;
         if ( isset($data['id']) && $data['id']>0 ) {
             $dataTable['lec_id'] = $data['id'];

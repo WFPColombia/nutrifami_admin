@@ -11,11 +11,7 @@ body{
 by using `background-size: cover;`, you will make sure the image will cover everything
 *************************************************************************************/
 body{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url("/img/bg1.jpg");
-    background-attachment: fixed;
+    background: #00c97e;
     position: relative;
     min-height: 550px;
 }
@@ -25,13 +21,6 @@ body{
     display: block;
     margin: 0 auto;
     width: 370px;
-    background: #fff;
-    -webkit-box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.36);
-    -moz-box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.36);
-    box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.36);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     padding: 30px 30px 10px 30px;
     text-align: center;
     margin-top: 100px;
@@ -45,7 +34,6 @@ body{
 
 .lbox .logo {
     background: url("/img/mini-logo-nutrifami.png") no-repeat center top;
-    margin-bottom: 20px;
     height: 109px;
 }
 .lbox form span {
@@ -60,19 +48,22 @@ body{
     line-height: 26.4px;
 }
 .lbox form input[type="text"], .lbox form input[type="password"] {
-    padding: 7px 5px;
-    width: 200px;
-    font-size: 18px;
-    color: #777;
-    border: 1px solid #aaa;
+    padding: 15px 10px;
+    width: 300px;
+    font-size: 22px;
+    color: #ffffff;
+    background: #02d184;
+    border: 0;
+    border-bottom: 1px #acffe0 solid;
     display: inline-block;
 }
 .lbox form input[type="submit"] {
-    padding: 15px 5px;
-    width: 250px;
+    margin-top: 20px;
+    padding: 15px 10px;
+    width: 320px;
     color: #fff;
-    border: 1px solid #ffa800;
-    background: #ffb11b;
+    border: 1px solid #acffe0;
+    background: #00b06e;
     font-size: 18px;
     font-weight: bold;
     -webkit-border-radius: 5px;
@@ -80,7 +71,7 @@ body{
     border-radius: 5px;
 }
 .lbox form input[type="submit"]:hover {
-    background: #ffa800;
+    background: #fef418;
 }
 
 
@@ -88,7 +79,7 @@ footer {
     position: absolute;
     bottom: 0px;
     left: 0; right: 0;
-    color: #fff;
-    border-top: 1px solid #fff;
+    color: #acffe0;
+    border-top: 1px solid #acffe0;
     padding: 10px 20px 0 20px;
 }

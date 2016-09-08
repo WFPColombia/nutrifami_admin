@@ -2,7 +2,7 @@
 		<h3>M&oacute;dulos</h3>
 		<a alt="Cancelar" title="Cancelar" href="list" class="cancel">Cancelar</a>
 </div>
-<form method="post" action="javascript:sendForm();" name="form_module" id="form_module" class="new_edit">
+<form method="post" action="#" name="form_module" id="form_module" class="new_edit">
     <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
 	<tbody>
             <tr>
@@ -59,7 +59,7 @@
             <tr>
             	<td align="right"></td>
                 <td align="left">
-                	<input type="submit" value="Guardar" />
+                    <input type="button" id="guardar_modulo" value="Guardar" />
                 	<input type="hidden" name="id" value="<?php echo $id; ?>">
                 </td>
             </tr>
@@ -70,6 +70,10 @@
 <script type="text/javascript">
 
   nutrifami_aws.s3.load();
+  
+  $('#guardar_modulo').on("click", function(){ 
+      sendForm();
+  });
   
   function sendForm() {
     openOverlayLoad();
@@ -84,7 +88,7 @@
   };
   
   function uploadInputFile (objectFile, cloudFolder, nameInput, callback) {
-        callback = callback || function(){};
+        callback = callback || function(){}; console.log(objectFile.files.length);
         if (objectFile.files.length == 0){
              callback();
         }else {
@@ -95,6 +99,7 @@
                 callback();
             });
         }
+        callback();
   }
   
   function removeFile (urlInput, objectInput) {

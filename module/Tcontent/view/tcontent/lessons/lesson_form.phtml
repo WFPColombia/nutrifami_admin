@@ -1,8 +1,8 @@
-<div class="control">
+<div class="control seccion_titulo">
 		<h3>Lecciones</h3>
 		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>" class="cancel">Cancelar</a>
 </div>
-<form method="post" action="javascript:sendForm();" name="form_lesson" id="form_lesson">
+<form method="post" action="#" name="form_lesson" id="form_lesson" class="new_edit">
     <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
 	<tbody>
             <tr>
@@ -18,17 +18,67 @@
                 </td>
             </tr>
             <tr>
+            	<td align="right">Icono</td>
+                <td align="left">
+                    <div class="icons_list">
+                        <div onclick="seleccionarIcono(1);" class="leccion_icono leccion_icono_1<?php if ($this->lesson['lec_icono'] == 1){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(2);" class="leccion_icono leccion_icono_2<?php if ($this->lesson['lec_icono'] == 2){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(3);" class="leccion_icono leccion_icono_3<?php if ($this->lesson['lec_icono'] == 3){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(4);" class="leccion_icono leccion_icono_4<?php if ($this->lesson['lec_icono'] == 4){ echo ' icon_selected'; } ?>"></div>
+                        <div class="corte"></div>
+                        <input type="hidden" name="icono" id="icono_numero" value="<?php echo $this->lesson['lec_icono']; ?>" />
+                    </div>
+                </td>
+            </tr>
+           <tr>
             	<td align="right">Imagen</td>
                 <td align="left">
                     <input type="file" name="imagen_file" id="imagen_file"><br>
-                    <span id="imagen_url"><?php echo $this->module['lec_imagen']; ?></span>
+                    <span class="urlsForm" id="urlsFormImagen">
+                        <?php if ( $this->lesson['lec_imagen'] != '' ){ ?>
+                        <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->lesson['lec_imagen']; ?>">
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
                     <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->lesson['lec_imagen']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Audio</td>
+                <td align="left">
+                    <input type="file" name="audio_file" id="audio_file"><br>
+                    <span class="urlsForm" id="urlsFormAudio">
+                        <?php if ( $this->lesson['lec_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->lesson['lec_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_file_url', 'urlsFormAudio');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="audio_file_url" name="audio" value="<?php echo $this->lesson['lec_audio']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Mensaje Final</td>
+                <td align="left">
+                	<textarea name="mensaje_final"><?php echo $this->lesson['lec_mensaje']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Audio Final</td>
+                <td align="left">
+                    <input type="file" name="audio_descripcion_file" id="audio_descripcion_file"><br>
+                    <span class="urlsForm" id="urlsFormAudioDescripcion">
+                        <?php if ( $this->lesson['lec_audio_final'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->lesson['lec_audio_final']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_descripcion_file_url', 'urlsFormAudioDescripcion');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="audio_descripcion_file_url" name="audio_descripcion" value="<?php echo $this->lesson['lec_audio_final']; ?>" />
                 </td>
             </tr>
             <tr>
             	<td align="right"></td>
                 <td align="left">
-                	<input type="submit" value="Guardar" />
+                    <input type="button" id="guardar_leccion" value="Guardar" />
                 	<input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="mid" value="<?php echo $mid; ?>">
                 </td>
@@ -40,23 +90,47 @@
 
   nutrifami_aws.s3.load();
   
+    $('#guardar_leccion').on("click", function(){ 
+      sendForm();
+  });
+  
   function sendForm() {
     openOverlayLoad();
-    var imagen_file = document.getElementById('imagen_file');
-    if (imagen_file.files.length == 0){
-        $('#form_lesson').attr('action', "save");
-        $("#form_lesson").submit();
-    }else {
-        var newFile = imagen_file.files[0];
-        var fileName = getFileName(newFile.name);   // Nombre del archivo en S3
-        var fileLocation = 'training/images/';
-        $('#image_file_url').val('https://s3.amazonaws.com/nutrifami/'+fileLocation+fileName);
-        nutrifami_aws.s3.uploadFile(newFile,fileLocation,fileName, function(){
-            $('#form_lesson').attr('action', "save");
-            $("#form_lesson").submit();
+    uploadInputFile(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
+        uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
+            uploadInputFile(document.getElementById('audio_descripcion_file'), 'training/audios/', $('#audio_descripcion_file_url'), function(){
+                $('#form_lesson').attr('action', "save");
+                $("#form_lesson").submit();
+            });
         });
-    }
+    });    
   };
+  
+  function uploadInputFile (objectFile, cloudFolder, nameInput, callback) {
+        callback = callback || function(){};
+        if (objectFile.files.length == 0){
+             callback();
+        }else {
+            var newFile = objectFile.files[0];
+            var fileName = getFileName(newFile.name);   // Nombre del archivo en S3
+            nameInput.val(cloudFolder+fileName);
+            nutrifami_aws.s3.uploadFile(newFile,cloudFolder,fileName, function(){
+                callback();
+            });
+        }
+        callback();
+  }
+  
+  function removeFile (urlInput, objectInput) {
+      $('#'+urlInput).val('');
+      $('#'+objectInput).html('');
+  }
+  
+  function seleccionarIcono (id) {
+      $('.leccion_icono').removeClass('icon_selected');
+      $('.leccion_icono_'+id).addClass('icon_selected');
+      $('#icono_numero').val(id);
+  }
 
    
 </script>

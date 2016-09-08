@@ -11,11 +11,11 @@
  * Objeto con los datos de configuración inicial
  */
 AWS_credentials = {
-      userName: ''
-    , accessKeyId: ''
-    , secretAccessKey: ''
+      userName: 'developer'
+    , accessKeyId: 'AKIAIFBZYG6G44KXUE4A'
+    , secretAccessKey: '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'
     , region: 'us-east-1' 
-    , defaultBucket: ''    /* Nombre por defecto del bucket en S3 AWS */
+    , defaultBucket: 'nutrifami'    /* Nombre por defecto del bucket en S3 AWS */
 };
 
 /*

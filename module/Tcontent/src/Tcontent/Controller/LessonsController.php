@@ -148,7 +148,11 @@ class LessonsController extends AbstractActionController
         if ($request->isPost()) {
             $data['titulo'] = $_POST['titulo'];
             $data['descripcion'] = $_POST['descripcion'];
+            $data['icono'] = $_POST['icono'];
             $data['imagen'] = $_POST['imagen'];
+            $data['audio'] = $_POST['audio'];
+            $data['mensaje_final'] = $_POST['mensaje_final'];
+            $data['audio_final'] = $_POST['audio_descripcion'];
             $data['id'] = $_POST['id'];
             $data['mid'] = $_POST['mid'];
             $lessonObj = new Lesson();
