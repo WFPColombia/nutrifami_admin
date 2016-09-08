@@ -10,7 +10,7 @@
 **********************************************************/
 namespace Tcontent\Model;
 
-use Tcontent\Model\Tables\LessonTable;
+use Tcontent\Model\Tables\UnidadinformacionTable;
 use Tcontent\Model\Tables\LessonElementTable;
 use Doctrine\Common\Util\Debug;
 /**********************************************************
@@ -23,23 +23,17 @@ use Doctrine\Common\Util\Debug;
 *
 * METODOS
 * __construct();
-* getAllLessons();
-* getLessons();
-* updateLesson();
-* saveLesson();
-* deleteLesson();
-* getLesson();
 *
 **********************************************************/
-class Lesson
+class Unidadinformacion
 {
-    protected $lessonTable;
+    protected $unidadinformacionTable;
     protected $lessonElementTable;
 
 
     public function __construct()
     {
-        $this->lessonTable = new LessonTable();
+        $this->unidadinformacionTable = new UnidadinformacionTable();
         $this->lessonElementTable = new LessonElementTable();
     }
     
@@ -48,8 +42,8 @@ class Lesson
      * 
      * @return Ambigous <multitype:, multitype:NULL multitype: Ambigous <\ArrayObject, unknown> >
      */
-    public function getAllLessons(){
-        return $this->lessonTable->fetchAll();
+    public function getAllUnidades(){
+        return $this->unidadinformacionTable->fetchAll();
     }
     
     /**
@@ -57,19 +51,19 @@ class Lesson
      * @param number $pid
      * @return Ambigous <multitype:, multitype:NULL multitype: Ambigous <\ArrayObject, unknown> >
      */
-    public function getLessons($options = Array(), $mid)
+    public function getUnidades($options = Array(), $lid)
     {
-        $lessons = $this->lessonTable->getLessons($options, $mid);
-        return $lessons;
+        $unidades = $this->unidadinformacionTable->getUnidades($options, $lid);
+        return $unidades;
     }
     
     
-    public function updateLesson(Array $data){
-        return $this->lessonTable->updateLesson($data);
+    public function updateUnidad(Array $data){
+        return $this->unidadinformacionTable->updateUnidad($data);
     }    
     
     
-    public function saveLesson($data){ 
+    public function saveUnidad($data){ 
         $dataTable = array();
         if ( isset($data['titulo']) ) {
             $dataTable['lec_titulo'] = $data['titulo'];
@@ -113,27 +107,16 @@ class Lesson
     
     
     public function deleteLesson($data){
-        if ($data['id']>0) {
-            $dataTable['lec_id'] = $data['id'];
-            $dataTable['lec_activo'] = 0;
-            return $this->lessonTable->updateByFieldsLesson($dataTable);
-        }else {
-            return false;
-        }
+        /* Pendiente hasta tener admin de opciones */
     }
     
     
     
-    public function getLesson ($id) 
+    public function getUnidad ($id) 
     {
-        return $this->lessonTable->getLesson($id);
+        return $this->unidadinformacionTable->getUnidad($id);
     }
     
-    
-    
-    public function updateUnidad(Array $data){
-        return $this->lessonElementTable->updateUnidad($data);
-    }
     
 }
 

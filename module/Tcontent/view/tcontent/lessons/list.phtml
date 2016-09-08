@@ -59,7 +59,7 @@ $(document).ready(function() {
         "iDisplayLength": 10
     } ); 
 	
-	editorModules = new $.fn.dataTable.Editor( {
+    editorModules = new $.fn.dataTable.Editor( {
         ajax: "<?php echo $this->serverUrl()?>/tcontent/lessons/update-row",
         table: "#lessons_table",
         idSrc:  'lec_id',
@@ -102,9 +102,9 @@ $(document).ready(function() {
     } );
     
     
-    $('#modules_table').on( 'click', 'a.infounits', function () {
+    $('#lessons_table').on( 'click', 'a.infounits', function () {
         var data = table.fnGetData($(this).parents('tr'));
-        $(location).attr('href',"../infounits/list?lid="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
+        $(location).attr('href',"../unidadinformacion/list?lid="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
     } );
     
       
