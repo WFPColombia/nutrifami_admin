@@ -72,16 +72,16 @@ $(document).ready(function() {
         ajax: "<?php echo $this->serverUrl()?>/tcontent/unidadinformacion/update-row",
         table: "#unidades_table",
         idSrc:  'uni_inf_id',
-        fields: [ {
-	                label: "Id:",
-	                name: "uni_inf_id"
-	            }, {
-	                label: "Titulo:",
-	                name: "uni_inf_titulo"
-	            }, {
-	                label: "Orden:",
-	                name: "lec_ele_orden"
-	            }
+        fields: [{
+                    label: "Id:",
+	            name: "uni_inf_id"
+	        }, {
+                    label: "Titulo:",
+	            name: "uni_inf_titulo"
+	        }, {
+	            label: "Orden:",
+	            name: "lec_ele_orden"
+	        }
 	        ]
 	    } );
 	
@@ -90,6 +90,12 @@ $(document).ready(function() {
         editorUnidades.inline( this , {
             submitOnBlur: true
         });
+    } );
+    
+    
+    $('#unidades_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"edit?id="+data['uni_inf_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>);
     } );
     
       

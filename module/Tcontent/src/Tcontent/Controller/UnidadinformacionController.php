@@ -104,6 +104,53 @@ class UnidadinformacionController extends AbstractActionController
         
         return $this->response; //Desabilita View y Layout
     }
+    
+    
+    
+    public function addAction()
+    {
+        $mid = 0;
+        $lid = 0;
+        $params = $this->params()->fromQuery();
+        if (isset($params['mid']) && $params['mid']>0) {
+            $mid= $params['mid'];
+        }
+        if (isset($params['lid']) && $params['lid']>0) {
+            $lid= $params['lid'];
+        }
+        
+        $viewModel = new ViewModel(array('id' => 0, 'mid' => $mid, 'lid' => $lid, 'breadcrumbs' => ' / <a>Add Unidad de Información</a>'));
+        $viewModel->setTemplate('tcontent/unidadinformacion/unidad_form.phtml');
+        
+        return $viewModel;
+        
+    }
+    
+    
+    
+    public function editAction(){
+        $params = $this->params()->fromQuery();
+        $mid = 0;
+        $lid = 0;
+        if (isset($params['mid']) && $params['mid']>0) {
+            $mid= $params['mid'];
+        }
+        if (isset($params['lid']) && $params['lid']>0) {
+            $lid= $params['lid'];
+        }
+        if (isset($params['id']) && $params['id']>0){
+        	$id = $params['id'];        
+            $unidadObj = new Unidadinformacion();
+            $unidad = $unidadObj->getUnidad($id);
+            
+            $viewModel = new ViewModel(array('unidad' => $unidad, 'id' => $unidad['uni_inf_id'], 'mid' => $mid, 'lid' => $lid, 'breadcrumbs' => ' / <a>Edit Unidad de Informaión</a>'));
+            $viewModel->setTemplate('tcontent/unidadinformacion/unidad_form.phtml');
+        }else{
+            $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid); 
+        }
+        
+        return $viewModel;
+    }
    
     
     

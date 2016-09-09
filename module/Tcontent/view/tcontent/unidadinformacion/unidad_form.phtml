@@ -1,10 +1,22 @@
 <div class="control seccion_titulo">
 		<h3>Lecciones</h3>
-		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>" class="cancel">Cancelar</a>
+		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="cancel">Cancelar</a>
 </div>
 <form method="post" action="#" name="form_lesson" id="form_lesson" class="new_edit">
     <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
 	<tbody>
+            <tr>
+            	<td align="right">Tipo</td>
+                <td align="left">
+                    <select name="tipo">
+                        <option value="1" <?php if ($this->unidad['uni_inf_tip_id'] == 1){echo 'selected="selected"'; } ?>>Contenido</option>
+                        <option value="2" <?php if ($this->unidad['uni_inf_tip_id'] == 2){echo 'selected="selected"'; } ?>>Formar Parejas</option>
+                        <option value="3" <?php if ($this->unidad['uni_inf_tip_id'] == 3){echo 'selected="selected"'; } ?>>Multiple Respuesta</option>
+                        <option value="4" <?php if ($this->unidad['uni_inf_tip_id'] == 4){echo 'selected="selected"'; } ?>>Opción múltiple con única respuesta</option>
+                        <option value="5" <?php if ($this->unidad['uni_inf_tip_id'] == 5){echo 'selected="selected"'; } ?>>Verdaro/Falso</option>
+                    </select>
+                </td>
+            </tr>
             <tr>
             	<td align="right">Titulo</td>
                 <td align="left">
