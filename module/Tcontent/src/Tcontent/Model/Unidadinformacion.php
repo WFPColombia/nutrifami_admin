@@ -65,40 +65,41 @@ class Unidadinformacion
     
     public function saveUnidad($data){ 
         $dataTable = array();
-        if ( isset($data['titulo']) ) {
-            $dataTable['lec_titulo'] = $data['titulo'];
+        if ( isset($data['tipo']) ) {
+            $dataTable['uni_inf_tip_id'] = $data['tipo'];
+            $dataTable['uni_inf_tip_alias'] = 'tipo'.$data['tipo'];
         }
-        if ( isset($data['descripcion']) ) {
-            $dataTable['lec_descripcion'] = $data['descripcion'];
+        if ( isset($data['instruccion']) ) {
+            $dataTable['uni_inf_instruccion'] = $data['instruccion'];
         }
-        if ( isset($data['imagen']) ) {
-            $dataTable['lec_imagen'] = $data['imagen'];
+        if ( isset($data['instruccion_audio']) ) {
+            $dataTable['uni_inf_instruccion_audio'] = $data['instruccion_audio'];
         }     
-        if ( isset($data['icono']) ) {
-            $dataTable['lec_icono'] = $data['icono'];
+        if ( isset($data['pregunta']) ) {
+            $dataTable['uni_inf_titulo'] = $data['pregunta'];
+        }   
+        if ( isset($data['texto']) ) {
+            $dataTable['uni_inf_texto'] = $data['texto'];
         }   
         if ( isset($data['audio']) ) {
-            $dataTable['lec_audio'] = $data['audio'];
+            $dataTable['uni_inf_audio'] = $data['audio'];
         }   
-        if ( isset($data['mensaje_final']) ) {
-            $dataTable['lec_mensaje'] = $data['mensaje_final'];
-        }   
-        if ( isset($data['audio_final']) ) {
-            $dataTable['lec_audio_final'] = $data['audio_final'];
+        if ( isset($data['imagen']) ) {
+            $dataTable['uni_inf_imagen'] = $data['imagen'];
         }      
-        $dataTable['lec_activo'] = 1;
+        $dataTable['uni_inf_activo'] = 1;
         if ( isset($data['id']) && $data['id']>0 ) {
-            $dataTable['lec_id'] = $data['id'];
-            if ($this->lessonTable->updateByFieldsLesson($dataTable)){
-                return array("module_id" => $data['mid'] );
+            $dataTable['uni_inf_id'] = $data['id'];
+            if ($this->unidadinformacionTable->updateByFieldsUnidad($dataTable)){
+                return array("module_id" => $data['mid'], "lesson_id" => $data['lid'] );
             }
         }else { 
-            if ( $new_lesson_id = $this->lessonTable->insertLesson($dataTable) ){
-                $elementModule = array();
-                $elementModule['mod_id'] = $data['mid'];
-                $elementModule['lec_id'] = $new_lesson_id;
-                if ( $new_element_id = $this->moduleElementTable->insertElement($elementModule) ) {
-                    return array("element_id" => $new_element_id, "lesson_id" => $new_lesson_id, "module_id" => $data['mid'] );
+            if ( $new_unidad_id = $this->unidadinformacionTable->insertUnidad($dataTable) ){
+                $elementLesson = array();
+                $elementLesson['lec_id'] = $data['lid'];
+                $elementLesson['uni_inf_id'] = $new_unidad_id;
+                if ( $new_element_id = $this->lessonElementTable->insertElement($elementLesson) ) {
+                    return array("element_id" => $new_element_id, "unidad_id" => $new_unidad_id, "lesson_id" => $data['lid'], "module_id" => $data['mid'] );
                 }
             }
         }
@@ -106,8 +107,10 @@ class Unidadinformacion
     
     
     
-    public function deleteLesson($data){
-        /* Pendiente hasta tener admin de opciones */
+    public function deleteUnidad($dataOrigin){
+        $data['uni_inf_activo'] = 0;
+        $data['uni_inf_id'] = $dataOrigin['id'];
+        return $this->unidadinformacionTable->updateByFieldsUnidad($data);
     }
     
     

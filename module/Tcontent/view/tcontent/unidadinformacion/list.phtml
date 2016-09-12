@@ -98,6 +98,14 @@ $(document).ready(function() {
         $(location).attr('href',"edit?id="+data['uni_inf_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>);
     } );
     
+    
+    $('#unidades_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?id="+data['uni_inf_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>);
+        }
+    } );
+    
       
 } );
 </script>

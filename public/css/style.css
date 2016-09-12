@@ -12,7 +12,7 @@ body .main{
 
 input[type="submit"], input[type="button"]{
 	margin: 0;
-	background: #FF5F00;
+	background: #d200ff;
 	color: #fff;
 	padding: 5px;
 	font-size: 16px;
@@ -21,7 +21,7 @@ input[type="submit"], input[type="button"]{
 	border: #C54900 1px solid;
 }
 input[type="submit"]:hover, input[type="button"]:hover{
-	background: #FF8339;
+	background: #a200c5;
 }
 
 .zf-green {

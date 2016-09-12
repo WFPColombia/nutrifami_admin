@@ -151,7 +151,59 @@ class UnidadinformacionController extends AbstractActionController
         
         return $viewModel;
     }
-   
+    
+    
+    
+    
+    public function saveAction()
+    {
+        $request = $this->getRequest();
+        if ($request->isPost()) { 
+            //print_r($_POST); die;
+            $data['tipo'] = $_POST['tipo'];
+            $data['instruccion'] = $_POST['instruccion'];
+            $data['instruccion_audio'] = $_POST['instruccion_audio'];
+            $data['pregunta'] = $_POST['pregunta'];
+            $data['texto'] = $_POST['texto'];
+            $data['audio'] = $_POST['audio'];
+            $data['imagen'] = $_POST['imagen'];
+            $data['id'] = $_POST['id'];
+            $data['lid'] = $_POST['lid'];
+            $data['mid'] = $_POST['mid'];
+            $unidadObj = new Unidadinformacion();
+            if ( $nObj = $unidadObj->saveUnidad($data) ) { 
+                //print_r( $nObj );
+                $this->redirect()->toUrl('list?mid='.$data['mid'].'&lid='.$data['lid']); // Volver a listar desde el modulo padre
+            }
+        }
+        //Debug::dump($params);
+        
+        return $this->response; //Desabilita View y Layout
+    }
+    
+    
+    
+    
+    public function deleteAction(){
+        $params = $this->params()->fromQuery();
+        $mid = 0;
+        $lid = 0;
+        if (isset($params['mid']) && $params['mid']>0) {
+            $mid= $params['mid'];
+        }
+        if (isset($params['lid']) && $params['lid']>0) {
+            $lid= $params['lid'];
+        }
+        if (isset($params['id']) && $params['id']>1){
+            $data['id'] = $params['id'];
+            $unidadObj = new Unidadinformacion();
+            if ( $unidadObj->deleteUnidad($data) ) {
+                $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid); // Volver a listar desde el modulo padre
+            }
+        }
+        return $this->response; //Desabilita View y Layout
+    }
+    
     
     
 }

@@ -27,7 +27,7 @@ body{
 }
 
 .lbox .error {
-    color: #ff0000;
+    color: #d200ff;
     font-size: 12px;
     text-align: center;
 }
@@ -63,7 +63,7 @@ body{
     width: 320px;
     color: #fff;
     border: 1px solid #acffe0;
-    background: #00b06e;
+    background: #d200ff;
     font-size: 18px;
     font-weight: bold;
     -webkit-border-radius: 5px;
@@ -71,7 +71,32 @@ body{
     border-radius: 5px;
 }
 .lbox form input[type="submit"]:hover {
-    background: #fef418;
+    background: #a200c5;
+}
+
+
+.lbox form input::-webkit-input-placeholder {
+   color: #bfffe7;
+   font-weight: lighter;
+   font-size: 14px;
+}
+
+.lbox form input:-moz-placeholder { /* Firefox 18- */
+   color: #bfffe7;  
+   font-weight: lighter;
+   font-size: 14px;
+}
+
+.lbox form input::-moz-placeholder {  /* Firefox 19+ */
+   color: #bfffe7;  
+   font-weight: lighter;
+   font-size: 14px;
+}
+
+.lbox form input:-ms-input-placeholder {  
+   color: #bfffe7;  
+   font-weight: lighter;
+   font-size: 14px;
 }
 
 
