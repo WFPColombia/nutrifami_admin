@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-            <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> / <a href="javascript:void(0);">Preguntas</a></a></h3>
+            <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> / <a href="javascript:void(0);">Preguntas</a></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="add">Nuevo Elemento</a>
 		<?php } ?>
@@ -104,6 +104,11 @@ $(document).ready(function() {
         if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
             $(location).attr('href',"delete?id="+data['uni_inf_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>);
         }
+    } );
+    
+    $('#unidades_table').on( 'click', 'a.options', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"../unidadopcion/list?uid="+data['uni_inf_id']+"&lid="+<?php echo $this->lid; ?>+"&mid="+<?php echo $this->mid; ?>);
     } );
     
       

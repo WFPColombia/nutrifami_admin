@@ -1,0 +1,24 @@
+	<div class="control seccion_titulo">
+            <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->unidad['uni_inf_titulo']; ?> / <a href="javascript:void(0);">Opciones</a></h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="add">Nuevo Elemento</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="unidades_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Tipo</th>
+                <th>Instrucción</th>
+                <th>Audio Instrucción</th>
+                <th>Titulo/Pregunta</th>
+                <th>Imagen</th>
+                <th>Audio</th>
+                <th>Orden</th>
+                <th></th>
+            </tr>
+        </thead>
+		
+	</table>
+<script>
+</script>
