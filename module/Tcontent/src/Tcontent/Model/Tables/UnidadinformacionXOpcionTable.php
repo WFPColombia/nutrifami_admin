@@ -42,7 +42,7 @@ class UnidadinformacionXOpcionTable extends AbstractTableGateway
     
     public function updateOpcion($data){ 
         $succes = false;
-        foreach ($data as $id => $d) {
+        foreach ($data as $id => $d) { 
             if ($this->update($d, "uni_inf_opc_id = $id")){
                 $succes = $d;
             }else{

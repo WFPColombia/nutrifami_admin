@@ -45,7 +45,7 @@ class UnidadinformacionOpcionTable extends AbstractTableGateway
         $result = Array();
         $resultSet = $this->select(function (Select $select) use ($options, $uid) {
         	$select
-                   ->join('cap_unidadinformacion_x_opcion', 'cap_unidadinformacion_x_opcion.uni_inf_opc_id = cap_unidadinformacion_opcion.uni_inf_opc_id', array('uni_inf_id' => 'uni_inf_id', 'uni_inf_x_opc_orden' => 'uni_inf_x_opc_orden', 'uni_inf_x_opc_correcta' => 'uni_inf_x_opc_correcta'))
+                   ->join('cap_unidadinformacion_x_opcion', 'cap_unidadinformacion_x_opcion.uni_inf_opc_id = cap_unidadinformacion_opcion.uni_inf_opc_id', array('uni_inf_id' => 'uni_inf_id', 'uni_inf_x_opc_orden' => 'uni_inf_x_opc_orden', 'uni_inf_x_opc_correcta' => 'uni_inf_x_opc_correcta', 'uni_inf_opc_feedback' => 'uni_inf_opc_feedback', 'uni_inf_opc_feedback_audio' => 'uni_inf_opc_feedback_audio'))
         	   ->where("1 = 1 AND (".$options['where'].") AND cap_unidadinformacion_x_opcion.uni_inf_id = ".$uid)
         	   ->order($options['order'])
         	   ->limit($options['limit']['length'])
@@ -55,9 +55,9 @@ class UnidadinformacionOpcionTable extends AbstractTableGateway
         });
         $result['data'] = $resultSet->toArray();
         
-        $resultSet = $this->select(function (Select $select) use ($options, $lid) {
+        $resultSet = $this->select(function (Select $select) use ($options, $uid) {
         	$select
-                ->join('cap_unidadinformacion_x_opcion', 'cap_unidadinformacion_x_opcion.uni_inf_opc_id = cap_unidadinformacion_opcion.uni_inf_opc_id', array('uni_inf_id' => 'uni_inf_id', 'uni_inf_x_opc_orden' => 'uni_inf_x_opc_orden', 'uni_inf_x_opc_correcta' => 'uni_inf_x_opc_correcta'))
+                ->join('cap_unidadinformacion_x_opcion', 'cap_unidadinformacion_x_opcion.uni_inf_opc_id = cap_unidadinformacion_opcion.uni_inf_opc_id', array('uni_inf_id' => 'uni_inf_id', 'uni_inf_x_opc_orden' => 'uni_inf_x_opc_orden', 'uni_inf_x_opc_correcta' => 'uni_inf_x_opc_correcta', 'uni_inf_opc_feedback' => 'uni_inf_opc_feedback', 'uni_inf_opc_feedback_audio' => 'uni_inf_opc_feedback_audio'))
         	->columns(array('num' => new \Zend\Db\Sql\Expression('COUNT(*)')))
         	->where("1 = 1 AND (".$options['where'].") AND cap_unidadinformacion_x_opcion.uni_inf_id = ".$uid);
         });

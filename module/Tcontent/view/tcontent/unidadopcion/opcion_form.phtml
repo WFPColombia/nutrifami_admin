@@ -1,51 +1,15 @@
 <div class="control seccion_titulo">
-		<h3>Unidades de Información</h3>
-		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="cancel">Cancelar</a>
+		<h3>Opciones y/o respuestas</h3>
+		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="cancel">Cancelar</a>
 </div>
-<form method="post" action="#" name="form_unidad" id="form_unidad" class="new_edit">
+<form method="post" action="#" name="form_opcion" id="form_opcion" class="new_edit">
     <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
 	<tbody>
-            <tr>
-            	<td align="right">Tipo</td>
-                <td align="left">
-                    <select name="tipo">
-                        <option value="1" <?php if ($this->unidad['uni_inf_tip_id'] == 1){echo 'selected="selected"'; } ?>>Contenido</option>
-                        <option value="2" <?php if ($this->unidad['uni_inf_tip_id'] == 2){echo 'selected="selected"'; } ?>>Formar Parejas</option>
-                        <option value="3" <?php if ($this->unidad['uni_inf_tip_id'] == 3){echo 'selected="selected"'; } ?>>Multiple Respuesta</option>
-                        <option value="4" <?php if ($this->unidad['uni_inf_tip_id'] == 4){echo 'selected="selected"'; } ?>>Opción múltiple con única respuesta</option>
-                        <option value="5" <?php if ($this->unidad['uni_inf_tip_id'] == 5){echo 'selected="selected"'; } ?>>Verdaro/Falso</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-            	<td align="right">Instrucción</td>
-                <td align="left">
-                	<input type="text" name="instruccion" value="<?php echo $this->unidad['uni_inf_instruccion']; ?>" />
-                </td>
-            </tr>
-            <tr>
-            	<td align="right">Instrucción Audio</td>
-                <td align="left">
-                    <input type="file" name="instruccion_audio_file" id="instruccion_audio_file"><br>
-                    <span class="urlsForm" id="urlsFormInstruccionAudio">
-                        <?php if ( $this->unidad['uni_inf_instruccion_audio'] != '' ){ ?>
-                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->unidad['uni_inf_instruccion_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
-                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('instruccion_audio_file_url', 'urlsFormInstruccionAudio');" class="delete" src="/img/icons/cancel.png">
-                        <?php } ?>
-                    </span>
-                    <input type="hidden" id="instruccion_audio_file_url" name="instruccion_audio" value="<?php echo $this->unidad['uni_inf_instruccion_audio']; ?>" />
-                </td>
-            </tr>
-            <tr>
-            	<td align="right">"Pregunta"</td>
-                <td align="left">
-                	<input type="text" name="pregunta" value="<?php echo $this->unidad['uni_inf_titulo']; ?>" />
-                </td>
-            </tr>
+            
             <tr>
             	<td align="right">Texto</td>
                 <td align="left">
-                    <textarea name="texto"><?php echo $this->unidad['uni_inf_texto']; ?></textarea>
+                    <textarea name="texto"><?php echo $this->opcion['uni_inf_opc_texto']; ?></textarea>
                 </td>
             </tr>
             <tr>
@@ -53,25 +17,53 @@
                 <td align="left">
                     <input type="file" name="audio_file" id="audio_file"><br>
                     <span class="urlsForm" id="urlsFormAudio">
-                        <?php if ( $this->unidad['uni_inf_audio'] != '' ){ ?>
-                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->unidad['uni_inf_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <?php if ( $this->opcion['uni_inf_opc_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->opcion['uni_inf_opc_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
                         <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_file_url', 'urlsFormAudio');" class="delete" src="/img/icons/cancel.png">
                         <?php } ?>
                     </span>
-                    <input type="hidden" id="audio_file_url" name="audio" value="<?php echo $this->unidad['uni_inf_audio']; ?>" />
+                    <input type="hidden" id="audio_file_url" name="audio" value="<?php echo $this->opcion['uni_inf_opc_audio']; ?>" />
                 </td>
             </tr>
-           <tr>
+            <tr>
             	<td align="right">Imagen</td>
                 <td align="left">
                     <input type="file" name="imagen_file" id="imagen_file"><br>
                     <span class="urlsForm" id="urlsFormImagen">
-                        <?php if ( $this->unidad['uni_inf_imagen'] != '' ){ ?>
-                        <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->unidad['uni_inf_imagen']; ?>">
+                        <?php if ( $this->opcion['uni_inf_opc_media'] != '' ){ ?>
+                        <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->opcion['uni_inf_opc_media']; ?>">
                         <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png">
                         <?php } ?>
                     </span>
-                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->unidad['uni_inf_imagen']; ?>" />
+                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->opcion['uni_inf_opc_media']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Respuesta Correcta</td>
+                <td align="left">
+                    <select name="tipo">
+                        <option value="1" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 1){echo 'selected="selected"'; } ?>>Correcta</option>
+                        <option value="0" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 0){echo 'selected="selected"'; } ?>>Incorrecta</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Feedback</td>
+                <td align="left">
+                    <textarea name="texto"><?php /*echo $this->opcion['uni_inf_opc_feedback'];*/ ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Feedback Audio</td>
+                <td align="left">
+                    <input type="file" name="feedback_audio_file" id="feedback_audio_file"><br>
+                    <span class="urlsForm" id="urlsFormFeedbackAudio">
+                        <?php /*if ( $this->opcion['uni_inf_opc_feedback_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->opcion['uni_inf_opc_feedback_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('feedback_audio_file_url', 'urlsFormFeedbackAudio');" class="delete" src="/img/icons/cancel.png">
+                        <?php } */?>
+                    </span>
+                    <input type="hidden" id="feedback_audio_file_url" name="audio" value="<?php /*echo $this->opcion['uni_inf_opc_feedback_audio'];*/ ?>" />
                 </td>
             </tr>
             <tr>
@@ -79,6 +71,7 @@
                 <td align="left">
                     <input type="button" id="guardar_unidad" value="Guardar" />
                 	<input type="hidden" name="id" value="<?php echo $this->id; ?>">
+                        <input type="hidden" name="uid" value="<?php echo $this->uid; ?>">
                         <input type="hidden" name="lid" value="<?php echo $this->lid; ?>">
                         <input type="hidden" name="mid" value="<?php echo $this->mid; ?>">
                 </td>

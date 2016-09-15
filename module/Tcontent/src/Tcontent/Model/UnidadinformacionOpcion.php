@@ -53,8 +53,8 @@ class UnidadinformacionOpcion
      */
     public function getOpciones($options = Array(), $uid)
     {
-        $opciones = $this->opcionTable->getOpciones($options. $uid);
-        return $unidades;
+        $opciones = $this->opcionTable->getOpciones($options, $uid);
+        return $opciones;
     }
     
     

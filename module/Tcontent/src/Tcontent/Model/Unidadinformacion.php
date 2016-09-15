@@ -12,6 +12,7 @@ namespace Tcontent\Model;
 
 use Tcontent\Model\Tables\UnidadinformacionTable;
 use Tcontent\Model\Tables\LessonElementTable;
+use Tcontent\Model\Tables\UnidadinformacionXOpcionTable;
 use Doctrine\Common\Util\Debug;
 /**********************************************************
 * MODELO Module
@@ -29,12 +30,14 @@ class Unidadinformacion
 {
     protected $unidadinformacionTable;
     protected $lessonElementTable;
+    protected $unidadXOpcionTable;
 
 
     public function __construct()
     {
         $this->unidadinformacionTable = new UnidadinformacionTable();
         $this->lessonElementTable = new LessonElementTable();
+        $this->unidadXOpcionTable = new UnidadinformacionXOpcionTable();
     }
     
     
@@ -118,6 +121,10 @@ class Unidadinformacion
     public function getUnidad ($id) 
     {
         return $this->unidadinformacionTable->getUnidad($id);
+    }
+    
+    public function updateOpcion(Array $data){
+        return $this->unidadXOpcionTable->updateOpcion($data);
     }
     
     
