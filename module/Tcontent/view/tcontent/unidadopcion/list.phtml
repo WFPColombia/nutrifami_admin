@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-            <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->unidad['uni_inf_titulo']; ?> / <a href="javascript:void(0);">Opciones</a></h3>
+            <h3><a href="/tcontent/modules/list">M&oacute;dulos</a> / <a href="/tcontent/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="/tcontent/unidadinformacion/list?mid=<?php echo $this->module['mod_id']; ?>&lid=<?php echo $this->lesson['lec_id']; ?>"><?php echo $this->lesson['lec_titulo']; ?> / <a><?php echo $this->unidad['uni_inf_titulo']; ?></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="add">Nuevo Elemento</a>
 		<?php } ?>
@@ -99,6 +99,14 @@ $(document).ready(function() {
     $('#opciones_table').on( 'click', 'a.edit', function () {
         var data = table.fnGetData($(this).parents('tr'));
         $(location).attr('href',"edit?id="+data['uni_inf_opc_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>+"&uid="+<?php echo $this->uid; ?>);
+    } );
+    
+    
+    $('#opciones_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?id="+data['uni_inf_opc_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>+"&uid="+<?php echo $this->uid; ?>);
+        }
     } );
     
     

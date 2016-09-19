@@ -48,15 +48,17 @@ class Menu
 	   $menu = '';
 	   if ( count($modules) > 0 ) {
 	       $menu .= '<ul id="jMenu">';
-	       foreach ($modules as $module) {
-	           $menu .= '<li>';
-	           if ($module['url'] != ''){
-	               $menu .= '<a href="'.$module['url'].'">'.$module['name'].'</a>';
-	           }else {
-	               $menu .= '<a>'.$module['name'].'</a>';
-	           }
-	           $menu .= Menu::renderMenu($module['children']);
-	           $menu .= '</li>';
+	       foreach ($modules as $module) { 
+                   if ( !\Util\UserSession::isHidePrivilegeByController($module['url']) ) {
+                        $menu .= '<li>';
+                        if ($module['url'] != ''){
+                            $menu .= '<a href="'.$module['url'].'">'.$module['name'].'</a>';
+                        }else {
+                            $menu .= '<a>'.$module['name'].'</a>';
+                        }
+                        $menu .= Menu::renderMenu($module['children']);
+                        $menu .= '</li>';
+                   }
 	       }
 	       $menu .= '</ul>';
 	   }

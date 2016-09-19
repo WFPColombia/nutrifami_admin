@@ -12,6 +12,7 @@ namespace Tcontent\Model;
 
 use Tcontent\Model\Tables\LessonTable;
 use Tcontent\Model\Tables\LessonElementTable;
+use Tcontent\Model\Tables\ModuleElementTable;
 use Doctrine\Common\Util\Debug;
 /**********************************************************
 * MODELO Module
@@ -40,7 +41,7 @@ class Lesson
     public function __construct()
     {
         $this->lessonTable = new LessonTable();
-        $this->lessonElementTable = new LessonElementTable();
+        $this->moduleElementTable = new ModuleElementTable();
     }
     
     

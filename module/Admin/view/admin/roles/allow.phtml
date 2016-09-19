@@ -26,11 +26,13 @@
                     <?php foreach ( $m['children'] as $c) { ?>
                     <tr class="child">
                         <td class="name"><?php echo $c['name']; ?></td>
-                        <?php foreach ( $this->privileges as $p) { ?>
+                        <?php 
+                            if ( count($this->privileges)>0 ){
+                            foreach ( $this->privileges as $p) { ?>
                         <td>
                             <input parentClass="<?php echo $m['id']; ?>_privilege<?php echo $p['id']; ?>" onclick="checkChildren(this);" type="checkbox" <?php if ( isset($c['privileges']) && isset($c['privileges'][$p['abbreviation']]) ){ ?>checked="checked" <?php }?>name="privileges[<?php echo $p['id']; ?>][<?php echo $c['id']; ?>]" class="<?php echo $p['abbreviation']; ?> parent<?php echo $m['id']; ?>_privilege<?php echo $p['id']; ?>">
                         </td>
-                        <?php }?>
+                            <?php }}?>
                         <td></td>
                     </tr>
                     <?php }?>

@@ -157,7 +157,7 @@ class UnidadopcionController extends AbstractActionController
         	$id = $params['id'];        
             $opcionObj = new UnidadinformacionOpcion();
             $opcion = $opcionObj->getOpcion($id);
-            
+            //print_r($opcion); die;
             $viewModel = new ViewModel(array('opcion' => $opcion, 'id' => $opcion['uni_inf_opc_id'], 'mid' => $mid, 'lid' => $lid, 'uid' => $uid, 'breadcrumbs' => ' / <a>Edit Opción y/o respuesta</a>'));
             $viewModel->setTemplate('tcontent/unidadopcion/opcion_form.phtml');
         }else{
@@ -165,6 +165,67 @@ class UnidadopcionController extends AbstractActionController
         }
         
         return $viewModel;
+    }
+    
+    
+    public function saveAction()
+    {
+        $request = $this->getRequest();
+        $dataOpcion = Array();
+        $dataXUnidad = Array();
+        if ($request->isPost()) { 
+            
+            $mid = $_POST['mid'];
+            $lid = $_POST['lid'];
+            $uid = $_POST['uid'];
+            
+            $dataOpcion['texto'] = $_POST['texto'];
+            $dataOpcion['audio'] = $_POST['audio'];
+            $dataOpcion['imagen'] = $_POST['imagen'];
+            $dataOpcion['id'] = $_POST['id'];
+            
+            $dataXUnidad['correcta'] = $_POST['correcta'];
+            $dataXUnidad['feedback'] = $_POST['feedback'];
+            $dataXUnidad['feedback_audio'] = $_POST['feedback_audio'];
+            $dataXUnidad['oid'] = $_POST['id'];
+            $dataXUnidad['uid'] = $_POST['uid'];
+            
+            $opcionObj = new UnidadinformacionOpcion();
+            if ( $nObj = $opcionObj->saveOpcion($dataOpcion, $dataXUnidad) ) { 
+                //print_r( $nObj );
+                $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid.'&uid='.$uid);  // Volver a listar desde el modulo padre
+            }
+            
+        }
+        //Debug::dump($params);
+        return $this->response; //Desabilita View y Layout
+    }
+    
+    
+    
+    public function deleteAction(){
+        $params = $this->params()->fromQuery();
+        $oid = 0;
+        $uid = 0;
+        $lid = 0;
+        $mid = 0;
+        
+        if (isset($params['id']) && $params['id']>0) { $oid= $params['id']; }
+        if (isset($params['uid']) && $params['uid']>0) { $uid= $params['uid'];; }
+        if (isset($params['lid']) && $params['lid']>0) { $lid= $params['lid']; }
+        if (isset($params['mid']) && $params['mid']>0) { $mid= $params['mid']; }
+        
+        if (isset($params['id']) && $params['id']>0 && isset($params['uid']) && $params['uid']>0) {
+            $dataXUnidad = new UnidadinformacionOpcion();
+            if ( $dataXUnidad->deleteOpcion( array("oid"=>$oid,"uid"=>$uid) ) ) {
+                $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid.'&uid='.$uid);
+            }else {
+                $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid.'&uid='.$uid);
+            }
+        }else {
+            $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid.'&uid='.$uid);
+        }
+        return $this->response; //Desabilita View y Layout
     }
     
     

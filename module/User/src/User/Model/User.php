@@ -129,7 +129,7 @@ class User extends Storage\Session
     public function getModules($userId = 0, $parentId = 1){
         $modules = $this->userTable->getModulesByParent($userId, $parentId);
         $modulesUser = array();
-        foreach ($modules as $module) {
+        foreach ($modules as $module) { 
             $modulesUser[$module['id']] = $module;
             
             // Lista_X_Id Lista de modulos por id

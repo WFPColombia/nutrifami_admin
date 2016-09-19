@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-            <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> / <a href="javascript:void(0);">Preguntas</a></h3>
+            <h3><a href="/tcontent/modules/list">M&oacute;dulos</a> / <a href="/tcontent/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="add">Nuevo Elemento</a>
 		<?php } ?>

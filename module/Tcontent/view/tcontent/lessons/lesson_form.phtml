@@ -90,6 +90,8 @@
 
   nutrifami_aws.s3.load();
   
+  var carga = 0;
+  
     $('#guardar_leccion').on("click", function(){ 
       sendForm();
   });
@@ -99,8 +101,11 @@
     uploadInputFile(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
         uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
             uploadInputFile(document.getElementById('audio_descripcion_file'), 'training/audios/', $('#audio_descripcion_file_url'), function(){
-                $('#form_lesson').attr('action', "save");
-                $("#form_lesson").submit();
+                if ( carga == 0){
+                    carga = 1;
+                    $('#form_lesson').attr('action', "save");
+                    $("#form_lesson").submit();
+                }
             });
         });
     });    
@@ -118,7 +123,7 @@
                 callback();
             });
         }
-        callback();
+        /*callback();*/
   }
   
   function removeFile (urlInput, objectInput) {

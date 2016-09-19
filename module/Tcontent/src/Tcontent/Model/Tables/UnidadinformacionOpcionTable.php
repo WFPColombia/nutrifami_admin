@@ -32,8 +32,13 @@ class UnidadinformacionOpcionTable extends AbstractTableGateway
     
     
     public function getOpcion($id){
-        $params = array('uni_inf_opc_id' => $id);
-        $resultSet = $this->select($params);
+        $resultSet = $this->select(function (Select $select) use ($id) {
+        	$select
+                   ->join('cap_unidadinformacion_x_opcion', 'cap_unidadinformacion_x_opcion.uni_inf_opc_id = cap_unidadinformacion_opcion.uni_inf_opc_id', array('uni_inf_id' => 'uni_inf_id', 'uni_inf_x_opc_orden' => 'uni_inf_x_opc_orden', 'uni_inf_x_opc_correcta' => 'uni_inf_x_opc_correcta', 'uni_inf_opc_feedback' => 'uni_inf_opc_feedback', 'uni_inf_opc_feedback_audio' => 'uni_inf_opc_feedback_audio'))
+        	   ->where("1 = 1 AND cap_unidadinformacion_opcion.uni_inf_opc_id = $id")
+                   ;
+        	//Debug::dump($select->getSqlString()); die;
+        });
         if ($resultRow = $resultSet->toArray()){
         	return $resultRow[0];
         }else {
@@ -46,7 +51,7 @@ class UnidadinformacionOpcionTable extends AbstractTableGateway
         $resultSet = $this->select(function (Select $select) use ($options, $uid) {
         	$select
                    ->join('cap_unidadinformacion_x_opcion', 'cap_unidadinformacion_x_opcion.uni_inf_opc_id = cap_unidadinformacion_opcion.uni_inf_opc_id', array('uni_inf_id' => 'uni_inf_id', 'uni_inf_x_opc_orden' => 'uni_inf_x_opc_orden', 'uni_inf_x_opc_correcta' => 'uni_inf_x_opc_correcta', 'uni_inf_opc_feedback' => 'uni_inf_opc_feedback', 'uni_inf_opc_feedback_audio' => 'uni_inf_opc_feedback_audio'))
-        	   ->where("1 = 1 AND (".$options['where'].") AND cap_unidadinformacion_x_opcion.uni_inf_id = ".$uid)
+        	   ->where("1 = 1 AND (".$options['where'].") AND cap_unidadinformacion_x_opcion.uni_inf_x_opc_visible = 1 AND cap_unidadinformacion_x_opcion.uni_inf_id = ".$uid)
         	   ->order($options['order'])
         	   ->limit($options['limit']['length'])
         	   ->offset($options['limit']['start'])
@@ -59,7 +64,7 @@ class UnidadinformacionOpcionTable extends AbstractTableGateway
         	$select
                 ->join('cap_unidadinformacion_x_opcion', 'cap_unidadinformacion_x_opcion.uni_inf_opc_id = cap_unidadinformacion_opcion.uni_inf_opc_id', array('uni_inf_id' => 'uni_inf_id', 'uni_inf_x_opc_orden' => 'uni_inf_x_opc_orden', 'uni_inf_x_opc_correcta' => 'uni_inf_x_opc_correcta', 'uni_inf_opc_feedback' => 'uni_inf_opc_feedback', 'uni_inf_opc_feedback_audio' => 'uni_inf_opc_feedback_audio'))
         	->columns(array('num' => new \Zend\Db\Sql\Expression('COUNT(*)')))
-        	->where("1 = 1 AND (".$options['where'].") AND cap_unidadinformacion_x_opcion.uni_inf_id = ".$uid);
+        	->where("1 = 1 AND (".$options['where'].") AND cap_unidadinformacion_x_opcion.uni_inf_x_opc_visible = 1 AND cap_unidadinformacion_x_opcion.uni_inf_id = ".$uid);
         });
         $count = $resultSet->toArray();
         $result['rows'] = $count[0]['num'];

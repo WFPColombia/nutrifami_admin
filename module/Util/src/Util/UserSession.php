@@ -105,6 +105,40 @@ class UserSession
     	}
     }
     
+    public static function isHidePrivilege(){
+    	$user = new User();
+    	if ($user->isLogin()) {
+    		$fc = new Request();
+    		$url = $fc->getUri()->getPath();
+    		$data = $user->getActiveUser();
+    		$privileges = $data['modules']['list']['url'][$url]['privileges'];
+    		if ( isset($privileges['HIDE']) && $privileges['HIDE'] ) {
+    			return true;
+    		}else {
+    			return false;
+    		}
+    	}else {
+    		return false;
+    	}
+    }
+    
+    public static function isHidePrivilegeByController($url){
+    	$user = new User();
+    	if ($user->isLogin()) {
+    		$data = $user->getActiveUser(); 
+                if ( isset($data['modules']['list']['url'][$url]['privileges']) ){
+                    $privileges = $data['modules']['list']['url'][$url]['privileges'];
+                    if ( isset($privileges['HIDE']) && $privileges['HIDE'] ) {
+                            return true;
+                    }else {
+                            return false;
+                    }
+                }
+    	}else {
+    		return false;
+    	}
+    }
+    
 }
 
 ?>

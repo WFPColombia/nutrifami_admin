@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-            <h3><a href="list">M&oacute;dulos</a> / <a href="javascript:void(0);"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);">Lecciones</a></h3>
+            <h3><a href="/tcontent/modules/list">M&oacute;dulos</a> / <a><?php echo $this->module['mod_titulo']; ?> </h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>" class="add">Nueva Lección</a>
 		<?php } ?>
