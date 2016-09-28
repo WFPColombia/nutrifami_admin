@@ -1,0 +1,91 @@
+	<div class="control seccion_titulo">
+            <h3><a href="/tcontent/modules/list">M&oacute;dulos</a> / <a href="/tcontent/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> - Tips</a></h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="add">Nuevo Tip</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="tips_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Texto</th>
+                <th>Descripción</th>
+                <th>Tags</th>
+                <th></th>
+            </tr>
+        </thead>
+		
+	</table>
+<script>
+var editorTips; // use a global for the submit and return data rendering in the examples
+ 
+$(document).ready(function() {
+	
+	var table = $('#tips_table').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo $this->serverUrl()?>/tcontent/tip/get-list?lid=<?php echo $this->lid; ?>",
+        "columns": [
+            { data: "tip_id", "visible": false },
+            { data: "tip_texto" },
+            { data: "tip_descripcion" },
+            { data: "tip_tags" },
+            { data: null,
+              "orderable": false,
+              className: "right",
+              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+            }
+        ],
+        "iDisplayLength": 10
+    } ); 
+    
+    
+    editorTips = new $.fn.dataTable.Editor( {
+        ajax: "<?php echo $this->serverUrl()?>/tcontent/tip/update-row",
+        table: "#tips_table",
+        idSrc:  'tip_id',
+        fields: [{
+                    label: "Id:",
+	            name: "tip_id"
+	        }, {
+                    label: "Texto:",
+	            name: "tip_texto"
+	        }, {
+	            label: "Descripción:",
+	            name: "tip_descripcion"
+	        }, {
+	            label: "Tags:",
+	            name: "tip_tags"
+	        }
+	        ]
+	    } );
+	
+	// Activate an inline edit on click of a table cell
+    $('#tips_table').on( 'click', 'td', function (e) { 
+        editorTips.inline( this , {
+            submitOnBlur: true
+        });
+    } );
+    
+    
+    $('#tips_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"edit?id="+data['tip_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>);
+    } );
+    
+    
+    $('#tips_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?id="+data['tip_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>);
+        }
+    } );
+    
+    $('#unidades_table').on( 'click', 'a.options', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"../unidadopcion/list?uid="+data['uni_inf_id']+"&lid="+<?php echo $this->lid; ?>+"&mid="+<?php echo $this->mid; ?>);
+    } );
+    
+      
+} );
+</script>

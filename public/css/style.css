@@ -193,6 +193,15 @@ a.infounits{
 	padding: 0;
 	display: inline-block;
 }
+a.tips{
+	background: url(../img/icons/idea.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
 a.options{
 	background: url(../img/icons/options.png) center no-repeat;
 	background-size: 20px;

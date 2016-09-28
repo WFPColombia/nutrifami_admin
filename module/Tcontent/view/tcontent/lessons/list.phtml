@@ -53,7 +53,7 @@ $(document).ready(function() {
             { data: null,
               "orderable": false,
               className: "right",
-              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Unidades de informacion" title="Unidades de informacion" class="infounits"></a> <a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Tips" title="Tips" class="tips"></a> <a href="javascript:void(0);" alt="Unidades de informacion" title="Unidades de informacion" class="infounits"></a> <a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
             }
         ],
         "iDisplayLength": 10
@@ -105,6 +105,10 @@ $(document).ready(function() {
     $('#lessons_table').on( 'click', 'a.infounits', function () {
         var data = table.fnGetData($(this).parents('tr'));
         $(location).attr('href',"../unidadinformacion/list?lid="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
+    } );
+    $('#lessons_table').on( 'click', 'a.tips', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"../tip/list?lid="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
     } );
     
       

@@ -6,6 +6,7 @@ return array(
             'Tcontent\Controller\Lessons' => 'Tcontent\Controller\LessonsController',
             'Tcontent\Controller\Unidadinformacion' => 'Tcontent\Controller\UnidadinformacionController',
             'Tcontent\Controller\Unidadopcion' => 'Tcontent\Controller\UnidadopcionController',
+            'Tcontent\Controller\Tip' => 'Tcontent\Controller\TipController',
         ),
     ),
     
@@ -63,6 +64,20 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Tcontent\Controller\Unidadopcion',
+                        'action'     => 'list',
+                    ),
+                ),
+            ),
+            'tip' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/tcontent/tip[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Tcontent\Controller\Tip',
                         'action'     => 'list',
                     ),
                 ),
