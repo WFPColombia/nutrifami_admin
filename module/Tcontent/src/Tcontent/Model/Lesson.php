@@ -35,6 +35,7 @@ use Doctrine\Common\Util\Debug;
 class Lesson
 {
     protected $lessonTable;
+    protected $moduleElementTable;
     protected $lessonElementTable;
 
 
@@ -42,6 +43,7 @@ class Lesson
     {
         $this->lessonTable = new LessonTable();
         $this->moduleElementTable = new ModuleElementTable();
+        $this->lessonElementTable = new LessonElementTable();
     }
     
     
