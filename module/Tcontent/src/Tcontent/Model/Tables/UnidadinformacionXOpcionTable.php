@@ -41,7 +41,7 @@ class UnidadinformacionXOpcionTable extends AbstractTableGateway
     }
     
     public function updateOpcion($data){ 
-        $oid = $data['uni_inf_opc_id'];
+        /*$oid = $data['uni_inf_opc_id'];
         unset($data['uni_inf_opc_id']);
         $uid = $data['uni_inf_id'];
         unset($data['uni_inf_id']);
@@ -50,7 +50,16 @@ class UnidadinformacionXOpcionTable extends AbstractTableGateway
             return true;
         }else{
             return false;
+        }*/
+        $succes = false;
+        foreach ($data as $id => $d) { 
+            if ($this->update($d, "uni_inf_opc_id = $id")){
+                $succes = $d;
+            }else{
+                $succes = false;
+            }
         }
+        return $succes;
     }
     
     
