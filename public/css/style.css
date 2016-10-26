@@ -426,7 +426,8 @@ a.path{
 }
 
 .icons_list {
-    max-width: 300px;
+    mix-width: 300px;
+    max-width: 600px;
 }
 
 .icons_list .leccion_icono {
@@ -456,6 +457,70 @@ a.path{
 }
 .leccion_icono_4{
     background: url(/img/capacitacion_icons/ico-leccion-4.png);
+    background-size: cover;
+}
+.leccion_icono_5{
+    background: url(/img/capacitacion_icons/ico-leccion-5.png);
+    background-size: cover;
+}
+.leccion_icono_6{
+    background: url(/img/capacitacion_icons/ico-leccion-6.png);
+    background-size: cover;
+}
+.leccion_icono_7{
+    background: url(/img/capacitacion_icons/ico-leccion-7.png);
+    background-size: cover;
+}
+.leccion_icono_8{
+    background: url(/img/capacitacion_icons/ico-leccion-8.png);
+    background-size: cover;
+}
+.leccion_icono_9{
+    background: url(/img/capacitacion_icons/ico-leccion-9.png);
+    background-size: cover;
+}
+.leccion_icono_10{
+    background: url(/img/capacitacion_icons/ico-leccion-10.png);
+    background-size: cover;
+}
+.leccion_icono_11{
+    background: url(/img/capacitacion_icons/ico-leccion-11.png);
+    background-size: cover;
+}
+.leccion_icono_12{
+    background: url(/img/capacitacion_icons/ico-leccion-12.png);
+    background-size: cover;
+}
+.leccion_icono_13{
+    background: url(/img/capacitacion_icons/ico-leccion-13.png);
+    background-size: cover;
+}
+.leccion_icono_14{
+    background: url(/img/capacitacion_icons/ico-leccion-14.png);
+    background-size: cover;
+}
+.leccion_icono_15{
+    background: url(/img/capacitacion_icons/ico-leccion-15.png);
+    background-size: cover;
+}
+.leccion_icono_16{
+    background: url(/img/capacitacion_icons/ico-leccion-16.png);
+    background-size: cover;
+}
+.leccion_icono_17{
+    background: url(/img/capacitacion_icons/ico-leccion-17.png);
+    background-size: cover;
+}
+.leccion_icono_18{
+    background: url(/img/capacitacion_icons/ico-leccion-18.png);
+    background-size: cover;
+}
+.leccion_icono_19{
+    background: url(/img/capacitacion_icons/ico-leccion-19.png);
+    background-size: cover;
+}
+.leccion_icono_20{
+    background: url(/img/capacitacion_icons/ico-leccion-20.png);
     background-size: cover;
 }
 
