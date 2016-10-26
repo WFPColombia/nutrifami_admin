@@ -121,7 +121,7 @@ class UnidadinformacionOpcion
     
     public function deleteOpcion($dataOrigin){
         $data = array("uni_inf_id"=>$dataOrigin['uid'], "uni_inf_opc_id"=>$dataOrigin['oid'], "uni_inf_x_opc_visible"=>0);
-        if ( $this->unidadXOpcionTable->updateOpcion($data) ) {
+        if ( $this->unidadXOpcionTable->updateByFieldsOpcion($data) ) {
             array("opcion_id" => $data['uni_inf_opc_id']);
         }else {
             array();
