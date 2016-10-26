@@ -85,7 +85,7 @@ class UnidadinformacionOpcion
                 $dataTableUnidad['uni_inf_x_opc_visible'] = 1;
                 $dataTableUnidad['uni_inf_id'] = $dataXUnidad['uid'];
                 $dataTableUnidad['uni_inf_opc_id'] = $dataOpcion['id'];
-                if ( $this->unidadXOpcionTable->updateOpcion($dataTableUnidad) ) {
+                if ( $this->unidadXOpcionTable->updateByFieldsOpcion($dataTableUnidad) ) {
                     array("opcion_id" => $dataOpcion['mid'], "nivel" => "Elemento");
                 }
                 return array("opcion_id" => $dataOpcion['mid']);
@@ -96,7 +96,7 @@ class UnidadinformacionOpcion
                 $dataTableUnidad['uni_inf_x_opc_visible'] = 1;
                 $dataTableUnidad['uni_inf_id'] = $dataXUnidad['uid'];
                 $dataTableUnidad['uni_inf_opc_id'] = $dataOpcion['id'];
-                if ( $this->unidadXOpcionTable->updateOpcion($dataTableUnidad) ) {
+                if ( $this->unidadXOpcionTable->updateByFieldsOpcion($dataTableUnidad) ) {
                     array("opcion_id" => $dataOpcion['mid'], "nivel" => "Elemento");
                 }
             }

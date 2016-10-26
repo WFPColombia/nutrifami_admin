@@ -123,6 +123,8 @@ class ModulesController extends AbstractActionController
             $moduleObj = new Module();
             if ( $moduleObj->saveModule($data) ) {
                 $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre
+            }else {
+                $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre
             }
         }
         //Debug::dump($params);

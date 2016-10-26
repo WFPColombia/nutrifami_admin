@@ -155,6 +155,8 @@ class TipController extends AbstractActionController
             if ( $nObj = $tipObj->saveTip($data) ) { 
                 //print_r( $nObj );
                 $this->redirect()->toUrl('list?mid='.$data['mid'].'&lid='.$data['lid']); // Volver a listar desde el modulo padre
+            }else {
+                $this->redirect()->toUrl('list?mid='.$data['mid'].'&lid='.$data['lid']); // Volver a listar desde el modulo padre
             }
         }
         //Debug::dump($params);

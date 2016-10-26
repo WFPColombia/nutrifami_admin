@@ -194,6 +194,8 @@ class UnidadopcionController extends AbstractActionController
             if ( $nObj = $opcionObj->saveOpcion($dataOpcion, $dataXUnidad) ) { 
                 //print_r( $nObj );
                 $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid.'&uid='.$uid);  // Volver a listar desde el modulo padre
+            }else {
+                $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid.'&uid='.$uid);  // Volver a listar desde el modulo padre
             }
             
         }

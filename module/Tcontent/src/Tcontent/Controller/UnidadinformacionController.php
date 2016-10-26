@@ -174,6 +174,8 @@ class UnidadinformacionController extends AbstractActionController
             if ( $nObj = $unidadObj->saveUnidad($data) ) { 
                 //print_r( $nObj );
                 $this->redirect()->toUrl('list?mid='.$data['mid'].'&lid='.$data['lid']); // Volver a listar desde el modulo padre
+            }else {
+                $this->redirect()->toUrl('list?mid='.$data['mid'].'&lid='.$data['lid']); // Volver a listar desde el modulo padre
             }
         }
         //Debug::dump($params);

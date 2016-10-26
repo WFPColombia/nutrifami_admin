@@ -159,6 +159,8 @@ class LessonsController extends AbstractActionController
             if ( $nObj = $lessonObj->saveLesson($data) ) { 
                 //print_r( $nObj );
                 $this->redirect()->toUrl('list?mid='.$nObj['module_id']); // Volver a listar desde el modulo padre
+            }else {
+                $this->redirect()->toUrl('list?mid='.$data['mid']); // Volver a listar desde el modulo padre
             }
         }
         //Debug::dump($params);
