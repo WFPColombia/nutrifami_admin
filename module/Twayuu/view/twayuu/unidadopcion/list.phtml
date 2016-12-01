@@ -1,0 +1,120 @@
+	<div class="control seccion_titulo">
+            <h3><a href="/twayuu/modules/list">M&oacute;dulos</a> / <a href="/twayuu/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="/twayuu/unidadinformacion/list?mid=<?php echo $this->module['mod_id']; ?>&lid=<?php echo $this->lesson['lec_id']; ?>"><?php echo $this->lesson['lec_titulo']; ?> / <a><?php echo $this->unidad['uni_inf_titulo']; ?></h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="add">Nuevo Elemento</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="opciones_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Texto</th>
+                <th>Audio</th>
+                <th>Imagen</th>
+                <th>Correcta</th>
+                <th>Feedback</th>
+                <th>Feedback Audio</th>
+                <th>Orden</th>
+                <th>Columna</th>
+                <th></th>
+            </tr>
+        </thead>
+		
+	</table>
+<script>
+var editorOpciones; // use a global for the submit and return data rendering in the examples
+ 
+$(document).ready(function() {
+    
+    
+    var table = $('#opciones_table').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo $this->serverUrl()?>/twayuu/unidadopcion/get-list?uid=<?php echo $this->uid; ?>",
+        "columns": [
+            { data: "uni_inf_opc_id", "visible": false },
+            { data: "uni_inf_opc_texto" },
+            { data: "uni_inf_opc_audio", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
+            { data: "uni_inf_opc_media", 
+              "render": function(data, type, row) {
+                    if (data != '' && data != 'null' && data != null){
+                        return '<img width="100" src="https://s3.amazonaws.com/nutrifami/'+data+'" />';
+                    }else {
+                        return '';
+                    }
+                }
+            },
+            { data: "uni_inf_x_opc_correcta" },
+            { data: "uni_inf_opc_feedback" },
+            { data: "uni_inf_opc_feedback_audio", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
+            { data: "uni_inf_x_opc_orden" },
+            { data: "uni_inf_opc_column" },
+            { data: null,
+              "orderable": false,
+              className: "right",
+              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+            }
+        ],
+        "iDisplayLength": 10
+    } ); 
+    
+    
+    editorOpciones = new $.fn.dataTable.Editor( {
+        ajax: "<?php echo $this->serverUrl()?>/twayuu/unidadopcion/update-row",
+        table: "#opciones_table",
+        idSrc:  'uni_inf_opc_id',
+        fields: [{
+                    label: "Id:",
+	            name: "uni_inf_opc_id"
+	        }, {
+                    label: "Texto:",
+	            name: "uni_inf_opc_texto"
+	        }, {
+	            label: "Correcta:",
+	            name: "uni_inf_x_opc_correcta"
+	        }, {
+	            label: "Feedback:",
+	            name: "uni_inf_opc_feedback"
+	        }, {
+	            label: "Orden:",
+	            name: "uni_inf_x_opc_orden"
+	        }, {
+	            label: "Columna:",
+	            name: "uni_inf_opc_column"
+	        }
+	        ]
+	    } );
+	
+	// Activate an inline edit on click of a table cell
+    $('#opciones_table').on( 'click', 'td', function (e) { 
+        editorOpciones.inline( this , {
+            submitOnBlur: true
+        });
+    } );
+    
+    
+    $('#opciones_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"edit?id="+data['uni_inf_opc_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>+"&uid="+<?php echo $this->uid; ?>);
+    } );
+    
+    
+    $('#opciones_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?id="+data['uni_inf_opc_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>+"&uid="+<?php echo $this->uid; ?>);
+        }
+    } );
+    
+    
+});
+    
+</script>

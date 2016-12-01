@@ -8,7 +8,7 @@
 * @author {Abel Oswaldo Moreno Acevedo} <{moreno.abel@gmail.com}>
 **********************************************************/
 
-namespace Tcontent\Controller;
+namespace Twayuu\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -57,7 +57,7 @@ class ModulesController extends AbstractActionController
         $params = $this->params()->fromQuery();
         $queryOptions = \Util\DataTables::getListOptions($params);
         $moduleObj = new Module();
-        $modules = $moduleObj->getModules($queryOptions, 3);
+        $modules = $moduleObj->getModules($queryOptions, 14);
         echo json_encode(array('recordsTotal'=>$modules['rows'], 'recordsFiltered'=>$modules['rows'], 'data'=>$modules['data']));
         //echo json_encode(array('data'=>$modules));
         
@@ -120,7 +120,7 @@ class ModulesController extends AbstractActionController
             $data['audio'] = $_POST['audio'];
             $data['audio_descripcion'] = $_POST['audio_descripcion'];
             $data['id'] = $_POST['id'];
-            $data['cid'] = 3;
+            $data['cid'] = 14;
             $moduleObj = new Module();
             if ( $moduleObj->saveModule($data) ) {
                 $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre

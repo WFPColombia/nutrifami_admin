@@ -41,11 +41,12 @@ class ModuleTable extends AbstractTableGateway
         }
     }
     
-    public function getModules($options = Array()){
+    public function getModules($options = Array(), $cid = 0){
         $result = Array();
-        $resultSet = $this->select(function (Select $select) use ($options) {
+        $resultSet = $this->select(function (Select $select) use ($options, $cid) {
         	$select
-        	   ->where("1 = 1 AND (".$options['where'].") AND mod_activo = 1")
+                   ->join('cap_capacitacion_elemento', 'cap_capacitacion_elemento.mod_id = cap_modulo.mod_id', array('cap_id' => 'cap_id', 'cap_ele_orden' => 'cap_ele_orden'))
+        	   ->where("1 = 1 AND (".$options['where'].") AND mod_activo = 1 AND cap_capacitacion_elemento.cap_id = ".$cid)
         	   ->order($options['order'])
         	   ->limit($options['limit']['length'])
         	   ->offset($options['limit']['start']);
@@ -53,10 +54,11 @@ class ModuleTable extends AbstractTableGateway
         });
         $result['data'] = $resultSet->toArray();
         
-        $resultSet = $this->select(function (Select $select) use ($options) {
+        $resultSet = $this->select(function (Select $select) use ($options, $cid) {
         	$select
+        	->join('cap_capacitacion_elemento', 'cap_capacitacion_elemento.mod_id = cap_modulo.mod_id', 'cap_id')
         	->columns(array('num' => new \Zend\Db\Sql\Expression('COUNT(*)')))
-        	->where("1 = 1  AND (".$options['where'].") AND mod_activo = 1");
+        	->where("1 = 1  AND (".$options['where'].") AND mod_activo = 1 AND cap_capacitacion_elemento.cap_id = ".$cid);
         });
         $count = $resultSet->toArray();
         $result['rows'] = $count[0]['num'];
@@ -90,7 +92,12 @@ class ModuleTable extends AbstractTableGateway
         if ( isset($data['mod_id']) ) {
             unset($data['mod_id']);
         }
-        return $this->insert($data);
+        if ( $this->insert($data) ) {
+            $id = $this->lastInsertValue;
+            return $id;
+        }else {
+            return false;
+        }
     }
     
     

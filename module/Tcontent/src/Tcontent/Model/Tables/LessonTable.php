@@ -55,11 +55,11 @@ class LessonTable extends AbstractTableGateway
         });
         $result['data'] = $resultSet->toArray();
         
-        $resultSet = $this->select(function (Select $select) use ($options) {
+        $resultSet = $this->select(function (Select $select) use ($options, $mid) {
         	$select
                 ->join('cap_modulo_elemento', 'cap_modulo_elemento.lec_id = cap_leccion.lec_id', 'mod_id')
         	->columns(array('num' => new \Zend\Db\Sql\Expression('COUNT(*)')))
-        	->where("1 = 1  AND (".$options['where'].") AND lec_activo = 1");
+        	->where("1 = 1  AND (".$options['where'].") AND lec_activo = 1 AND cap_modulo_elemento.mod_id = ".$mid);
         });
         $count = $resultSet->toArray();
         $result['rows'] = $count[0]['num'];

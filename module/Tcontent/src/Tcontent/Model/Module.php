@@ -12,6 +12,7 @@ namespace Tcontent\Model;
 
 use Tcontent\Model\Tables\ModuleTable;
 use Tcontent\Model\Tables\ModuleElementTable;
+use Tcontent\Model\Tables\CapacitacionElementTable;
 use Doctrine\Common\Util\Debug;
 /**********************************************************
 * MODELO Module
@@ -30,11 +31,13 @@ class Module
 {
     protected $moduleTable;
     protected $moduleElementTable;
+    protected $capacitacionElementTable;
     
     public function __construct()
     {
         $this->moduleTable = new ModuleTable();
         $this->moduleElementTable = new ModuleElementTable();
+        $this->capacitacionElementTable = new CapacitacionElementTable();
     }
     
     
@@ -51,9 +54,9 @@ class Module
      * @param number $pid
      * @return Ambigous <multitype:, multitype:NULL multitype: Ambigous <\ArrayObject, unknown> >
      */
-    public function getModules($options = Array())
+    public function getModules($options = Array(), $cid = 0)
     {
-        $modules = $this->moduleTable->getModules($options);
+        $modules = $this->moduleTable->getModules($options, $cid);
         return $modules;
     }
     
@@ -85,7 +88,16 @@ class Module
             $dataTable['mod_id'] = $data['id'];
             return $this->moduleTable->updateByFieldsModule($dataTable);
         }else { 
-            return $this->moduleTable->insertModule($dataTable);
+            if ( $new_module_id = $this->moduleTable->insertModule($dataTable) ){
+                $elementCap = array();
+                $elementCap['cap_id'] = $data['cid'];
+                $elementCap['mod_id'] = $new_module_id;
+                if ( $new_element_id = $this->capacitacionElementTable->insertElement($elementCap) ) {
+                    return $elementCap;
+                }
+            }else{
+                return Array();
+            }
         }
     }
     

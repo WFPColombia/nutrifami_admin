@@ -1,0 +1,116 @@
+<div class="control seccion_titulo">
+		<h3>M&oacute;dulos</h3>
+		<a alt="Cancelar" title="Cancelar" href="list" class="cancel">Cancelar</a>
+</div>
+<form method="post" action="#" name="form_module" id="form_module" class="new_edit">
+    <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+	<tbody>
+            <tr>
+            	<td align="right">Titulo</td>
+                <td align="left">
+                	<input type="text" name="titulo" value="<?php echo $this->module['mod_titulo']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Descripci&oacute;n</td>
+                <td align="left">
+                	<textarea name="descripcion"><?php echo $this->module['mod_descripcion']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Imagen</td>
+                <td align="left">
+                    <input type="file" name="imagen_file" id="imagen_file"><br>
+                    <span class="urlsForm" id="urlsFormImagen">
+                        <?php if ( $this->module['mod_imagen'] != '' ){ ?>
+                        <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->module['mod_imagen']; ?>">
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->module['mod_imagen']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Audio</td>
+                <td align="left">
+                    <input type="file" name="audio_file" id="audio_file"><br>
+                    <span class="urlsForm" id="urlsFormAudio">
+                        <?php if ( $this->module['mod_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->module['mod_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_file_url', 'urlsFormAudio');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="audio_file_url" name="audio" value="<?php echo $this->module['mod_audio']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Audio Descripción</td>
+                <td align="left">
+                    <input type="file" name="audio_descripcion_file" id="audio_descripcion_file"><br>
+                    <span class="urlsForm" id="urlsFormAudioDescripcion">
+                        <?php if ( $this->module['mod_descripcion_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->module['mod_descripcion_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_descripcion_file_url', 'urlsFormAudioDescripcion');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="audio_descripcion_file_url" name="audio_descripcion" value="<?php echo $this->module['mod_descripcion_audio']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right"></td>
+                <td align="left">
+                    <input type="button" id="guardar_modulo" value="Guardar" />
+                	<input type="hidden" name="id" value="<?php echo $id; ?>">
+                </td>
+            </tr>
+        </tbody>
+	</table>
+</form>
+
+<script type="text/javascript">
+
+  nutrifami_aws.s3.load();
+  
+  var carga = 0;
+  
+  $('#guardar_modulo').on("click", function(){ 
+      sendForm();
+  });
+  
+  function sendForm() {
+    openOverlayLoad();
+    uploadInputFile(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
+        uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
+            uploadInputFile(document.getElementById('audio_descripcion_file'), 'training/audios/', $('#audio_descripcion_file_url'), function(){
+                if ( carga == 0){
+                    carga = 1;
+                    $('#form_module').attr('action', "save");
+                    $("#form_module").submit();
+                }
+            });
+        });
+    });    
+  };
+  
+  function uploadInputFile (objectFile, cloudFolder, nameInput, callback) {
+        callback = callback || function(){}; console.log(objectFile.files.length);
+        if (objectFile.files.length == 0){
+             callback();
+        }else {
+            var newFile = objectFile.files[0];
+            var fileName = getFileName(newFile.name);   // Nombre del archivo en S3
+            nameInput.val(cloudFolder+fileName);
+            nutrifami_aws.s3.uploadFile(newFile,cloudFolder,fileName, function(){
+                callback();
+            });
+        }
+        /*callback();*/
+  }
+  
+  function removeFile (urlInput, objectInput) {
+      $('#'+urlInput).val('');
+      $('#'+objectInput).html('');
+  }
+
+   
+</script>
