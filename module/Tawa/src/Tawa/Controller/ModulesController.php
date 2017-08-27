@@ -120,7 +120,7 @@ class ModulesController extends AbstractActionController
             $data['audio'] = $_POST['audio'];
             $data['audio_descripcion'] = $_POST['audio_descripcion'];
             $data['id'] = $_POST['id'];
-            $data['cid'] = 14;
+            $data['cid'] = 15;
             $moduleObj = new Module();
             if ( $moduleObj->saveModule($data) ) {
                 $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre
