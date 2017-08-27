@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-		<h3><a>Wayuu M&oacute;dulos</a> <?php echo $this->breadcrumbs; ?></h3>
+		<h3><a>AWA M&oacute;dulos</a> <?php echo $this->breadcrumbs; ?></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add" class="add">Nuevo M&oacute;dulo</a>
 		<?php } ?>
@@ -26,7 +26,7 @@ $(document).ready(function() {
 	var table = $('#modules_table').dataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "<?php echo $this->serverUrl()?>/twayuu/modules/get-list?pid=<?php echo $this->pid; ?>",
+        "ajax": "<?php echo $this->serverUrl()?>/tawa/modules/get-list?pid=<?php echo $this->pid; ?>",
         "columns": [
             { data: "mod_id", "visible": false },
             { data: "mod_titulo" },
@@ -60,7 +60,7 @@ $(document).ready(function() {
     } ); 
 	
 	editorModules = new $.fn.dataTable.Editor( {
-        ajax: "<?php echo $this->serverUrl()?>/twayuu/modules/update-row",
+        ajax: "<?php echo $this->serverUrl()?>/tawa/modules/update-row",
         table: "#modules_table",
         idSrc:  'mod_id',
         fields: [ {

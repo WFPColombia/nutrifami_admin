@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-            <h3><a href="/twayuu/modules/list">M&oacute;dulos</a> / <a href="/twayuu/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> - Tips</a></h3>
+            <h3><a href="/tawa/modules/list">M&oacute;dulos</a> / <a href="/tawa/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="javascript:void(0);"><?php echo $this->lesson['lec_titulo']; ?> - Tips</a></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="add">Nuevo Tip</a>
 		<?php } ?>
@@ -24,7 +24,7 @@ $(document).ready(function() {
 	var table = $('#tips_table').dataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "<?php echo $this->serverUrl()?>/twayuu/tip/get-list?lid=<?php echo $this->lid; ?>",
+        "ajax": "<?php echo $this->serverUrl()?>/tawa/tip/get-list?lid=<?php echo $this->lid; ?>",
         "columns": [
             { data: "tip_id", "visible": false },
             { data: "tip_texto" },
@@ -41,7 +41,7 @@ $(document).ready(function() {
     
     
     editorTips = new $.fn.dataTable.Editor( {
-        ajax: "<?php echo $this->serverUrl()?>/twayuu/tip/update-row",
+        ajax: "<?php echo $this->serverUrl()?>/tawa/tip/update-row",
         table: "#tips_table",
         idSrc:  'tip_id',
         fields: [{

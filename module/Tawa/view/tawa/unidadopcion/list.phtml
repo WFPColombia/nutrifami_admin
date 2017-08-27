@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-            <h3><a href="/twayuu/modules/list">M&oacute;dulos</a> / <a href="/twayuu/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="/twayuu/unidadinformacion/list?mid=<?php echo $this->module['mod_id']; ?>&lid=<?php echo $this->lesson['lec_id']; ?>"><?php echo $this->lesson['lec_titulo']; ?> / <a><?php echo $this->unidad['uni_inf_titulo']; ?></h3>
+            <h3><a href="/tawa/modules/list">M&oacute;dulos</a> / <a href="/tawa/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="/tawa/unidadinformacion/list?mid=<?php echo $this->module['mod_id']; ?>&lid=<?php echo $this->lesson['lec_id']; ?>"><?php echo $this->lesson['lec_titulo']; ?> / <a><?php echo $this->unidad['uni_inf_titulo']; ?></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="add">Nuevo Elemento</a>
 		<?php } ?>
@@ -30,7 +30,7 @@ $(document).ready(function() {
     var table = $('#opciones_table').dataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "<?php echo $this->serverUrl()?>/twayuu/unidadopcion/get-list?uid=<?php echo $this->uid; ?>",
+        "ajax": "<?php echo $this->serverUrl()?>/tawa/unidadopcion/get-list?uid=<?php echo $this->uid; ?>",
         "columns": [
             { data: "uni_inf_opc_id", "visible": false },
             { data: "uni_inf_opc_texto" },
@@ -68,7 +68,7 @@ $(document).ready(function() {
     
     
     editorOpciones = new $.fn.dataTable.Editor( {
-        ajax: "<?php echo $this->serverUrl()?>/twayuu/unidadopcion/update-row",
+        ajax: "<?php echo $this->serverUrl()?>/tawa/unidadopcion/update-row",
         table: "#opciones_table",
         idSrc:  'uni_inf_opc_id',
         fields: [{

@@ -1,5 +1,5 @@
 	<div class="control seccion_titulo">
-            <h3><a href="/twayuu/modules/list">M&oacute;dulos</a> / <a><?php echo $this->module['mod_titulo']; ?> </h3>
+            <h3><a href="/tawa/modules/list">M&oacute;dulos</a> / <a><?php echo $this->module['mod_titulo']; ?> </h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
 		  <a href="add?mid=<?php echo $this->mid; ?>" class="add">Nueva Lección</a>
 		<?php } ?>
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	var table = $('#lessons_table').dataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "<?php echo $this->serverUrl()?>/twayuu/lessons/get-list?mid=<?php echo $this->mid; ?>",
+        "ajax": "<?php echo $this->serverUrl()?>/tawa/lessons/get-list?mid=<?php echo $this->mid; ?>",
         "columns": [
             { data: "lec_id", "visible": false },
             { data: "lec_titulo" },
@@ -60,7 +60,7 @@ $(document).ready(function() {
     } ); 
 	
     editorModules = new $.fn.dataTable.Editor( {
-        ajax: "<?php echo $this->serverUrl()?>/twayuu/lessons/update-row",
+        ajax: "<?php echo $this->serverUrl()?>/tawa/lessons/update-row",
         table: "#lessons_table",
         idSrc:  'lec_id',
         fields: [ {
