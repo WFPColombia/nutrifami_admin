@@ -86,6 +86,9 @@ class Unidadinformacion
         }   
         if ( isset($data['audio']) ) {
             $dataTable['uni_inf_audio'] = $data['audio'];
+        }      
+        if ( isset($data['audio']) ) {
+            $dataTable['uni_inf_media'] = $data['audio_texto'];
         }   
         if ( isset($data['imagen']) ) {
             $dataTable['uni_inf_imagen'] = $data['imagen'];

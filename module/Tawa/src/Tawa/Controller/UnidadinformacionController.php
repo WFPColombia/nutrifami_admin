@@ -120,7 +120,7 @@ class UnidadinformacionController extends AbstractActionController
         }
         
         $viewModel = new ViewModel(array('id' => 0, 'mid' => $mid, 'lid' => $lid, 'breadcrumbs' => ' / <a>Add Unidad de Información</a>'));
-        $viewModel->setTemplate('tcontent/unidadinformacion/unidad_form.phtml');
+        $viewModel->setTemplate('tawa/unidadinformacion/unidad_form.phtml');
         
         return $viewModel;
         
@@ -142,9 +142,9 @@ class UnidadinformacionController extends AbstractActionController
         	$id = $params['id'];        
             $unidadObj = new Unidadinformacion();
             $unidad = $unidadObj->getUnidad($id);
-            
+            //print_r($unidad); die;
             $viewModel = new ViewModel(array('unidad' => $unidad, 'id' => $unidad['uni_inf_id'], 'mid' => $mid, 'lid' => $lid, 'breadcrumbs' => ' / <a>Edit Unidad de Informaión</a>'));
-            $viewModel->setTemplate('tcontent/unidadinformacion/unidad_form.phtml');
+            $viewModel->setTemplate('tawa/unidadinformacion/unidad_form.phtml');
         }else{
             $this->redirect()->toUrl('list?mid='.$mid.'&lid='.$lid); 
         }
@@ -166,6 +166,7 @@ class UnidadinformacionController extends AbstractActionController
             $data['pregunta'] = $_POST['pregunta'];
             $data['texto'] = $_POST['texto'];
             $data['audio'] = $_POST['audio'];
+            $data['audio_texto'] = $_POST['audio_texto'];
             $data['imagen'] = $_POST['imagen'];
             $data['id'] = $_POST['id'];
             $data['lid'] = $_POST['lid'];
