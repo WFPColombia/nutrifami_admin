@@ -1,0 +1,129 @@
+<div class="control seccion_titulo">
+		<h3>Opciones y/o respuestas</h3>
+		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="cancel">Cancelar</a>
+</div>
+<form method="post" action="#" name="form_opcion" id="form_opcion" class="new_edit">
+    <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+	<tbody>
+            
+            <tr>
+            	<td align="right">Texto</td>
+                <td align="left">
+                    <textarea name="texto"><?php echo $this->opcion['uni_inf_opc_texto']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Audio</td>
+                <td align="left">
+                    <input type="file" name="audio_file" id="audio_file"><br>
+                    <span class="urlsForm" id="urlsFormAudio">
+                        <?php if ( $this->opcion['uni_inf_opc_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->opcion['uni_inf_opc_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_file_url', 'urlsFormAudio');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="audio_file_url" name="audio" value="<?php echo $this->opcion['uni_inf_opc_audio']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Imagen</td>
+                <td align="left">
+                    <input type="file" name="imagen_file" id="imagen_file"><br>
+                    <span class="urlsForm" id="urlsFormImagen">
+                        <?php if ( $this->opcion['uni_inf_opc_media'] != '' ){ ?>
+                        <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->opcion['uni_inf_opc_media']; ?>">
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->opcion['uni_inf_opc_media']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Respuesta Correcta</td>
+                <td align="left">
+                    <select name="correcta">
+                        <option value="1" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 1){echo 'selected="selected"'; } ?>>Correcta</option>
+                        <option value="0" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 0){echo 'selected="selected"'; } ?>>Incorrecta</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Feedback</td>
+                <td align="left">
+                    <textarea name="feedback"><?php echo $this->opcion['uni_inf_opc_feedback']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Feedback Audio</td>
+                <td align="left">
+                    <input type="file" name="feedback_audio_file" id="feedback_audio_file"><br>
+                    <span class="urlsForm" id="urlsFormFeedbackAudio">
+                        <?php if ( $this->opcion['uni_inf_opc_feedback_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->opcion['uni_inf_opc_feedback_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('feedback_audio_file_url', 'urlsFormFeedbackAudio');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="feedback_audio_file_url" name="feedback_audio" value="<?php echo $this->opcion['uni_inf_opc_feedback_audio']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right"></td>
+                <td align="left">
+                    <input type="button" id="guardar_unidad" value="Guardar" />
+                	<input type="hidden" name="id" value="<?php echo $this->id; ?>">
+                        <input type="hidden" name="uid" value="<?php echo $this->uid; ?>">
+                        <input type="hidden" name="lid" value="<?php echo $this->lid; ?>">
+                        <input type="hidden" name="mid" value="<?php echo $this->mid; ?>">
+                </td>
+            </tr>
+        </tbody>
+	</table>
+</form>
+<script type="text/javascript">
+
+  nutrifami_aws.s3.load();
+  
+  var carga = 0;
+  
+    $('#guardar_unidad').on("click", function(){ 
+      sendForm();
+  });
+  
+  function sendForm() {
+    openOverlayLoad();
+    uploadInputFile(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
+        uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
+            uploadInputFile(document.getElementById('feedback_audio_file'), 'training/audios/', $('#feedback_audio_file_url'), function(){
+                if ( carga == 0){
+                    carga = 1;
+                    $('#form_opcion').attr('action', "save");
+                    $("#form_opcion").submit();
+                }
+            });
+        });
+    });    
+  };
+  
+  function uploadInputFile (objectFile, cloudFolder, nameInput, callback) {
+        callback = callback || function(){}; 
+        if (objectFile.files.length == 0){
+             callback();
+        }else {
+            var newFile = objectFile.files[0];
+            var fileName = getFileName(newFile.name);   // Nombre del archivo en S3
+            nameInput.val(cloudFolder+fileName);
+            nutrifami_aws.s3.uploadFile(newFile,cloudFolder,fileName, function(){
+                callback();
+            });
+        }
+        /*callback();*/
+  }
+  
+  function removeFile (urlInput, objectInput) {
+      $('#'+urlInput).val('');
+      $('#'+objectInput).html('');
+  }
+  
+
+   
+</script>

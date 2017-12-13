@@ -1,0 +1,157 @@
+<div class="control seccion_titulo">
+		<h3>Lecciones</h3>
+		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>" class="cancel">Cancelar</a>
+</div>
+<form method="post" action="#" name="form_lesson" id="form_lesson" class="new_edit">
+    <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+	<tbody>
+            <tr>
+            	<td align="right">Titulo</td>
+                <td align="left">
+                	<input type="text" name="titulo" value="<?php echo $this->lesson['lec_titulo']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Descripci&oacute;n</td>
+                <td align="left">
+                	<textarea name="descripcion"><?php echo $this->lesson['lec_descripcion']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Icono</td>
+                <td align="left">
+                    <div class="icons_list">
+                        <div onclick="seleccionarIcono(1);" class="leccion_icono leccion_icono_1<?php if ($this->lesson['lec_icono'] == 1){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(2);" class="leccion_icono leccion_icono_2<?php if ($this->lesson['lec_icono'] == 2){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(3);" class="leccion_icono leccion_icono_3<?php if ($this->lesson['lec_icono'] == 3){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(4);" class="leccion_icono leccion_icono_4<?php if ($this->lesson['lec_icono'] == 4){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(5);" class="leccion_icono leccion_icono_5<?php if ($this->lesson['lec_icono'] == 5){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(6);" class="leccion_icono leccion_icono_6<?php if ($this->lesson['lec_icono'] == 6){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(7);" class="leccion_icono leccion_icono_7<?php if ($this->lesson['lec_icono'] == 7){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(8);" class="leccion_icono leccion_icono_8<?php if ($this->lesson['lec_icono'] == 8){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(9);" class="leccion_icono leccion_icono_9<?php if ($this->lesson['lec_icono'] == 9){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(10);" class="leccion_icono leccion_icono_10<?php if ($this->lesson['lec_icono'] == 10){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(11);" class="leccion_icono leccion_icono_11<?php if ($this->lesson['lec_icono'] == 11){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(12);" class="leccion_icono leccion_icono_12<?php if ($this->lesson['lec_icono'] == 12){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(13);" class="leccion_icono leccion_icono_13<?php if ($this->lesson['lec_icono'] == 13){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(14);" class="leccion_icono leccion_icono_14<?php if ($this->lesson['lec_icono'] == 14){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(15);" class="leccion_icono leccion_icono_15<?php if ($this->lesson['lec_icono'] == 15){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(16);" class="leccion_icono leccion_icono_16<?php if ($this->lesson['lec_icono'] == 16){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(17);" class="leccion_icono leccion_icono_17<?php if ($this->lesson['lec_icono'] == 17){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(18);" class="leccion_icono leccion_icono_18<?php if ($this->lesson['lec_icono'] == 18){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(19);" class="leccion_icono leccion_icono_19<?php if ($this->lesson['lec_icono'] == 19){ echo ' icon_selected'; } ?>"></div>
+                        <div onclick="seleccionarIcono(20);" class="leccion_icono leccion_icono_20<?php if ($this->lesson['lec_icono'] == 20){ echo ' icon_selected'; } ?>"></div>
+                        <div class="corte"></div>
+                        <input type="hidden" name="icono" id="icono_numero" value="<?php echo $this->lesson['lec_icono']; ?>" />
+                    </div>
+                </td>
+            </tr>
+           <tr>
+            	<td align="right">Imagen</td>
+                <td align="left">
+                    <input type="file" name="imagen_file" id="imagen_file"><br>
+                    <span class="urlsForm" id="urlsFormImagen">
+                        <?php if ( $this->lesson['lec_imagen'] != '' ){ ?>
+                        <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->lesson['lec_imagen']; ?>">
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->lesson['lec_imagen']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Audio</td>
+                <td align="left">
+                    <input type="file" name="audio_file" id="audio_file"><br>
+                    <span class="urlsForm" id="urlsFormAudio">
+                        <?php if ( $this->lesson['lec_audio'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->lesson['lec_audio']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_file_url', 'urlsFormAudio');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="audio_file_url" name="audio" value="<?php echo $this->lesson['lec_audio']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Mensaje Final</td>
+                <td align="left">
+                	<textarea name="mensaje_final"><?php echo $this->lesson['lec_mensaje']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Audio Final</td>
+                <td align="left">
+                    <input type="file" name="audio_descripcion_file" id="audio_descripcion_file"><br>
+                    <span class="urlsForm" id="urlsFormAudioDescripcion">
+                        <?php if ( $this->lesson['lec_audio_final'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->lesson['lec_audio_final']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('audio_descripcion_file_url', 'urlsFormAudioDescripcion');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="audio_descripcion_file_url" name="audio_descripcion" value="<?php echo $this->lesson['lec_audio_final']; ?>" />
+                </td>
+            </tr>
+            <tr>
+            	<td align="right"></td>
+                <td align="left">
+                    <input type="button" id="guardar_leccion" value="Guardar" />
+                	<input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="mid" value="<?php echo $mid; ?>">
+                </td>
+            </tr>
+        </tbody>
+	</table>
+</form>
+<script type="text/javascript">
+
+  nutrifami_aws.s3.load();
+  
+  var carga = 0;
+  
+    $('#guardar_leccion').on("click", function(){ 
+      sendForm();
+  });
+  
+  function sendForm() {
+    openOverlayLoad();
+    uploadInputFile(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
+        uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
+            uploadInputFile(document.getElementById('audio_descripcion_file'), 'training/audios/', $('#audio_descripcion_file_url'), function(){
+                if ( carga == 0){
+                    carga = 1;
+                    $('#form_lesson').attr('action', "save");
+                    $("#form_lesson").submit();
+                }
+            });
+        });
+    });    
+  };
+  
+  function uploadInputFile (objectFile, cloudFolder, nameInput, callback) {
+        callback = callback || function(){};
+        if (objectFile.files.length == 0){
+             callback();
+        }else {
+            var newFile = objectFile.files[0];
+            var fileName = getFileName(newFile.name);   // Nombre del archivo en S3
+            nameInput.val(cloudFolder+fileName);
+            nutrifami_aws.s3.uploadFile(newFile,cloudFolder,fileName, function(){
+                callback();
+            });
+        }
+        /*callback();*/
+  }
+  
+  function removeFile (urlInput, objectInput) {
+      $('#'+urlInput).val('');
+      $('#'+objectInput).html('');
+  }
+  
+  function seleccionarIcono (id) {
+      $('.leccion_icono').removeClass('icon_selected');
+      $('.leccion_icono_'+id).addClass('icon_selected');
+      $('#icono_numero').val(id);
+  }
+
+   
+</script>

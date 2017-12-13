@@ -1,0 +1,116 @@
+	<div class="control seccion_titulo">
+            <h3><a href="/tfrances/modules/list">M&oacute;dulos</a> / <a><?php echo $this->module['mod_titulo']; ?> </h3>
+		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
+		  <a href="add?mid=<?php echo $this->mid; ?>" class="add">Nueva Lección</a>
+		<?php } ?>
+	</div>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="lessons_table">
+		<thead>
+            <tr>
+            	<th>Id</th>
+                <th>Titulo</th>
+                <th>Descripci&oacute;n</th>
+                <th>Icono</th>
+                <th>Audio Inicial</th>
+                <th>Mensaje Final</th>
+                <th>Audio Final</th>
+                <th>Orden</th>
+                <th></th>
+            </tr>
+        </thead>
+		
+	</table>
+<script>
+var editorModules; // use a global for the submit and return data rendering in the examples
+ 
+$(document).ready(function() {
+	
+	var table = $('#lessons_table').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo $this->serverUrl()?>/tfrances/lessons/get-list?mid=<?php echo $this->mid; ?>",
+        "columns": [
+            { data: "lec_id", "visible": false },
+            { data: "lec_titulo" },
+            { data: "lec_descripcion" },
+            { data: "lec_icono", 
+              "render": function(data, type, row) {
+                    return '<img width="60" src="/img/capacitacion_icons/ico-leccion-'+data+'.png" />';
+                }
+            },
+            { data: "lec_audio", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
+            { data: "lec_mensaje" },
+            { data: "lec_audio_final", 
+              "render": function(data, type, row) {
+                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                }
+            },
+            { data: "mod_ele_orden" },
+            { data: null,
+              "orderable": false,
+              className: "right",
+              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Tips" title="Tips" class="tips"></a> <a href="javascript:void(0);" alt="Unidades de informacion" title="Unidades de informacion" class="infounits"></a> <a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+            }
+        ],
+        "iDisplayLength": 10
+    } ); 
+	
+    editorModules = new $.fn.dataTable.Editor( {
+        ajax: "<?php echo $this->serverUrl()?>/tfrances/lessons/update-row",
+        table: "#lessons_table",
+        idSrc:  'lec_id',
+        fields: [ {
+	                label: "Id:",
+	                name: "lec_id"
+	            }, {
+	                label: "Titulo:",
+	                name: "lec_titulo"
+	            }, {
+	                label: "Descripci&oacute;n:",
+	                name: "lec_descripcion"
+	            }, {
+	                label: "Mensaje Final:",
+	                name: "lec_mensaje"
+	            }, {
+	                label: "Orden:",
+	                name: "mod_ele_orden"
+	            }
+	        ]
+	    } );
+	
+	// Activate an inline edit on click of a table cell
+    $('#lessons_table').on( 'click', 'td', function (e) { 
+        editorModules.inline( this , {
+            submitOnBlur: true
+        });
+    } );
+
+    $('#lessons_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+            $(location).attr('href',"delete?id="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
+        }
+    } );
+
+    $('#lessons_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"edit?id="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
+    } );
+    
+    
+    $('#lessons_table').on( 'click', 'a.infounits', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"../unidadinformacion/list?lid="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
+    } );
+    $('#lessons_table').on( 'click', 'a.tips', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $(location).attr('href',"../tip/list?lid="+data['lec_id']+"&mid="+<?php echo $this->mid; ?>);
+    } );
+    
+      
+} );
+</script>

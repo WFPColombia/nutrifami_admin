@@ -1,0 +1,51 @@
+<div class="control seccion_titulo">
+		<h3>Tip</h3>
+		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>" class="cancel">Cancelar</a>
+</div>
+<form method="post" action="#" name="form_tip" id="form_tip" class="new_edit">
+    <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+	<tbody>
+            <tr>
+            	<td align="right">Texto</td>
+                <td align="left">
+                    <textarea name="texto"><?php echo $this->tip['tip_texto']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Descripción</td>
+                <td align="left">
+                    <textarea name="descripcion"><?php echo $this->tip['tip_descripcion']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right">Tags</td>
+                <td align="left">
+                    <textarea name="tags"><?php echo $this->tip['tip_tags']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td align="right"></td>
+                <td align="left">
+                    <input type="button" id="guardar_tip" value="Guardar" />
+                	<input type="hidden" name="id" value="<?php echo $this->id; ?>">
+                        <input type="hidden" name="lid" value="<?php echo $this->lid; ?>">
+                        <input type="hidden" name="mid" value="<?php echo $this->mid; ?>">
+                </td>
+            </tr>
+        </tbody>
+	</table>
+</form>
+<script type="text/javascript">
+  
+  $('#guardar_tip').on("click", function(){ 
+      sendForm();
+  });
+  
+  function sendForm() {
+    $('#form_tip').attr('action', "save");
+    $("#form_tip").submit();    
+  };
+  
+
+   
+</script>
