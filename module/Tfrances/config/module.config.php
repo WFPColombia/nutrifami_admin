@@ -12,82 +12,44 @@ return array(
     
     'router' => array(
         'routes' => array(
-            'modules' => array(
-                'type'    => 'segment',
+            'twayuu' => array(
+                'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/tfrances/modules[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
+                    // Change this to something specific to your module
+                    'route'    => '/tawa',
                     'defaults' => array(
-                        'controller' => 'Tfrances\Controller\Modules',
-                        'action'     => 'list',
+                        // Change this value to reflect the namespace in which
+                        // the controllers for your module are found
+                        '__NAMESPACE__' => 'Tfrances\Controller',
+                        'controller'    => 'Modules',
+                        'action'        => 'list',
                     ),
                 ),
-            ),
-            'lessons' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/tfrances/lessons[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Tfrances\Controller\Lessons',
-                        'action'     => 'list',
-                    ),
-                ),
-            ),
-            'unidadinformacion' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/tfrances/unidadinformacion[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Tfrances\Controller\Unidadinformacion',
-                        'action'     => 'list',
-                    ),
-                ),
-            ),
-            'unidadopcion' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/tfrances/unidadopcion[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Tfrances\Controller\Unidadopcion',
-                        'action'     => 'list',
-                    ),
-                ),
-            ),
-            'tip' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/tfrances/tip[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Tfrances\Controller\Tip',
-                        'action'     => 'list',
+                'may_terminate' => true,
+                'child_routes' => array(
+                    // This route is a sane default when developing a module;
+                    // as you solidify the routes for your module, however,
+                    // you may want to remove it and replace it with more
+                    // specific routes.
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
                     ),
                 ),
             ),
         ),
     ),
-
     'view_manager' => array(
         'template_path_stack' => array(
-            'tfrances' => __DIR__ . '/../view',
+            'Tfrances' => __DIR__ . '/../view',
         ),
     ),
 );

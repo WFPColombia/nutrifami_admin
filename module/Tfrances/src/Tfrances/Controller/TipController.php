@@ -14,9 +14,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Captcha\Dumb;
 use Zend\Debug\Debug;
-use Tfrances\Model\Module;
-use Tfrances\Model\Lesson;
-use Tfrances\Model\Tips;
+use Tcontent\Model\Module;
+use Tcontent\Model\Lesson;
+use Tcontent\Model\Tips;
 
 /**
  * ModulesController
