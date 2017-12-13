@@ -12,11 +12,11 @@ return array(
     
     'router' => array(
         'routes' => array(
-            'twayuu' => array(
+            'tfrances' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/tawa',
+                    'route'    => '/tfrances',
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
                         // the controllers for your module are found

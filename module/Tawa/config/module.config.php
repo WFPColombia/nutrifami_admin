@@ -12,7 +12,7 @@ return array(
     
     'router' => array(
         'routes' => array(
-            'twayuu' => array(
+            'tawa' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module
