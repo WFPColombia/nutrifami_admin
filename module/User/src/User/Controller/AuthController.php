@@ -41,6 +41,8 @@ class AuthController extends AbstractActionController
      */
     public function indexAction()
     {   
+        header("Location: /admin/reports/active-user");
+        die;
         return array();
     }
     
