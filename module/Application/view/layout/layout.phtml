@@ -21,6 +21,7 @@ echo $this->doctype(); ?>
 
         <!-- Scripts -->
         <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                                      ->prependFile($this->basePath() . '/js/sbisdk-all-production.js')
                                       ->prependFile($this->basePath() . '/js/nutrifami-aws.js')
                                       ->prependFile($this->basePath() . 'https://sdk.amazonaws.com/js/aws-sdk-2.3.15.min.js')
                                       ->prependFile($this->basePath() . '/lib/dataTables/extensions/Editor/js/dataTables.editor.js')

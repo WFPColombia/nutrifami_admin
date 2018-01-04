@@ -12,10 +12,10 @@
  */
 AWS_credentials = {
       userName: 'developer'
-    , accessKeyId: 'AKIAIFBZYG6G44KXUE4A'
-    , secretAccessKey: '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'
+    , accessKeyId: 'AKIAIFBZYG6G44KZZZZZ'
+    , secretAccessKey: '1234567DSYl1Q03X8m6sxHvQM2uItqymb1234567'
     , region: 'us-east-1' 
-    , defaultBucket: 'nutrifami'    /* Nombre por defecto del bucket en S3 AWS */
+    , defaultBucket: 'su-bucket'    /* Nombre por defecto del bucket en S3 AWS */
 };
 
 /*
@@ -26,7 +26,6 @@ var nutrifamiS3;
 /*
  * Objeto para manejar funcionalidades de AWS
  * Directo al API
- * Necesita la libreria https://sdk.amazonaws.com/js/aws-sdk-2.3.15.min.js en la misma aplicación
  */
 nutrifami_aws = {
     

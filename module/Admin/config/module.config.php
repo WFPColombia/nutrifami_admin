@@ -5,6 +5,7 @@ return array(
             'Admin\Controller\User' => 'Admin\Controller\UserController',
             'Admin\Controller\Modules' => 'Admin\Controller\ModulesController',
             'Admin\Controller\Roles' => 'Admin\Controller\RolesController',
+            'Admin\Controller\Reports' => 'Admin\Controller\ReportsController',
         ),
     ),
     'router' => array(
