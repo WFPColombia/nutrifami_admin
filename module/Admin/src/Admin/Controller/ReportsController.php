@@ -31,5 +31,13 @@ class ReportsController extends AbstractActionController
         
     }
     
+    public function finishedModulesAction(){
+        
+    }
+    
+    public function ModulesUserAction(){
+        
+    }
+    
     
 }

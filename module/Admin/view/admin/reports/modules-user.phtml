@@ -1,0 +1,57 @@
+	<script type="text/javascript">
+ 
+		Sbi.sdk.services.setBaseUrl({
+	        protocol: 'http'     
+	        , host: 'reports.nutrifami.org'
+	        , port: '8080'
+	        , contextPath: 'SpagoBI'
+	        , controllerPath: 'servlet/AdapterHTTP'
+
+	    });
+		
+ 	var cb = function(result, args, success) {
+        
+		if(success === true) {
+		 this.execTest1();
+        
+		} else {
+			alert('ERROR: Wrong username or password');
+		}
+    	};
+		execTest1 = function() {
+		    var url = Sbi.sdk.api.getDocumentUrl({
+				documentLabel: 'modulos_usuarios'
+				, executionRole: 'nutrifami'
+				, displayToolbar: false
+				, displaySliders: false
+				, iframe: {
+					style: 'border: 0px;'
+				}
+			});
+		    document.getElementById('execiframe').src = url;
+		};
+	Sbi.sdk.api.authenticate({ 
+		params: {
+			user: 'nutrifami'
+			, password: 'pmacolombia'
+		}
+		
+		, callback: {
+			fn: cb
+			, scope: this
+			//, args: {arg1: 'A', arg2: 'B', ...}
+		}
+	});
+	</script>
+        
+        <p>
+            
+            <iframe id="execiframe" src='' height="550px" width="100%"></iframe>
+            
+        </p>
+        
+        <style>
+            iframe {
+                border: none;
+            }
+        </style>
