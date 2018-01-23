@@ -65,11 +65,19 @@
            <tr>
             	<td align="right">Imagen</td>
                 <td align="left">
-                    <input type="file" name="imagen_file" id="imagen_file"><br>
+                    <input type="file" name="imagen_file" id="imagen_file" onchange="loadFileAsURL(this.files[0], 'image_1')"><br>
                     <span class="urlsForm" id="urlsFormImagen">
                         <?php if ( $this->unidad['uni_inf_imagen'] != '' ){ ?>
-                        <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->unidad['uni_inf_imagen']; ?>">
+                        <div class="container_cropper">
+                        <img class="img_cropper" id="image_1" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->unidad['uni_inf_imagen']; ?>">
+                        </div>
                         <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png">
+                        <?php }else { ?>
+                        <div class="container_cropper">
+                        <img class="img_cropper" id="image_1" src="">
+                        </div>
+                        <!--img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->unidad['uni_inf_imagen']; ?>">
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png"-->
                         <?php } ?>
                     </span>
                     <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->unidad['uni_inf_imagen']; ?>" />
@@ -87,11 +95,15 @@
         </tbody>
 	</table>
 </form>
+
+
+<script type="text/javascript" src="/lib/cropper/cropper.js"></script>
 <script type="text/javascript">
 
   nutrifami_aws.s3.load();
   
   var carga = 0;
+  var image_cropped = '';
   
     $('#guardar_unidad').on("click", function(){ 
       sendForm();
@@ -99,7 +111,7 @@
   
   function sendForm() {
     openOverlayLoad();
-    uploadInputFile(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
+    uploadImage(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
         uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
             uploadInputFile(document.getElementById('instruccion_audio_file'), 'training/audios/', $('#instruccion_audio_file_url'), function(){
                 if ( carga == 0){
@@ -127,6 +139,28 @@
         /*callback();*/
   }
   
+  
+    
+  function uploadImage (objectFile, cloudFolder, nameInput, callback){
+        callback = callback || function(){}; console.log(objectFile.files.length);
+        if (objectFile.files.length == 0){
+             callback();
+        }else {
+            var newFile = dataURLtoFile(image_cropped, objectFile.files[0].name);
+            if (newFile.length === 0){
+                callback();
+           }else {
+               var fileName = getFileName(newFile.name);   // Nombre del archivo en S3
+               nameInput.val(cloudFolder+fileName);
+               nutrifami_aws.s3.uploadFile(newFile,cloudFolder,fileName, function(){
+                   callback();
+               });
+           }
+       }
+        
+  }
+  
+  
   function removeFile (urlInput, objectInput) {
       $('#'+urlInput).val('');
       $('#'+objectInput).html('');
@@ -137,6 +171,40 @@
       $('.leccion_icono_'+id).addClass('icon_selected');
       $('#icono_numero').val(id);
   }
+  
+  
+  
+      $('#image_1').cropper({
+        viewMode: 3,
+        dragMode: 'move',
+        autoCropArea: 1,
+        restore: false,
+        modal: false,
+        guides: false,
+        highlight: false,
+        cropBoxMovable: false,
+        cropBoxResizable: false,
+        crop: function(e) {
+            // Output the result data for cropping image.
+            var croppedCanvas = $(this).cropper('getCroppedCanvas');
+            image_cropped = croppedCanvas.toDataURL();
+            //console.log(image_cropped);
+        }
+      }); 
 
    
 </script>
+
+<style>
+    
+        .container_cropper {
+            height: 102px;
+            width: 512px;
+        }
+
+        /* Limit image width to avoid overflow the container */
+        .img_cropper {
+          max-width: 100%; /* This rule is very important, please do not ignore this! */
+        }
+    
+</style>

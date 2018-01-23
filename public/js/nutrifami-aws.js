@@ -82,6 +82,35 @@ nutrifami_aws = {
         },
         
         /*
+         * nutrifami_aws.s3.saveImage(file);
+         * Carga de archivo en s3
+         * @param {file} file   // Objeto de archivo cargado con archivo
+         * @param {string} folder   // Ubicacion en el bucket
+         * @param {string} newName   
+         * @param {function} callback   
+         * @returns {String}
+         */
+        saveImage: function (req, folder, newName, res) {
+            
+            var fileName = newName || req.body.imageName; 
+            // bucketName var below crates a "folder" for each user
+            var bucketName = AWS_credentials.defaultBucket;
+            var params = {
+                Bucket: bucketName
+              , Key: folder+fileName
+              , Body: req
+              , ContentType: 'image/png'
+              , ACL: 'public-read'
+            };
+            nutrifamiS3.upload(params, function (err, data) {
+              if (err) return res.status(500).send(err);
+
+              // TODO: save data to mongo
+              res.json(data);
+            });
+        },
+        
+        /*
          * nutrifami_aws.s3.changeBucket(bucket);
          * Cambia el bucket
          */
@@ -128,3 +157,28 @@ wrap.scroll(function (e) {
   
 });
 
+
+
+ function loadFileAsURL(file, idpreview, callback)
+{
+    callback = callback || function(){};
+    var reader  = new FileReader();
+
+    reader.addEventListener("load", function () {
+      $('#'+idpreview).cropper('reset', true).cropper('replace', reader.result);
+      callback();
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+}
+
+function dataURLtoFile(dataurl, filename) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new File([u8arr], filename, {type:mime});
+}

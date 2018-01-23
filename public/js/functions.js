@@ -52,3 +52,19 @@ $(function(){
  }
  
  
+ 
+ function loadFileAsURL(file)
+{
+    var urlBase64 = '';
+    var reader  = new FileReader();
+
+    reader.addEventListener("load", function () {
+      urlBase64 = reader.result;
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+    
+    console.log(urlBase64);
+}
