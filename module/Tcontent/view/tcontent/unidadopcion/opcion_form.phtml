@@ -106,7 +106,7 @@
   
   function sendForm() {
     openOverlayLoad();
-    uploadImage(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
+    uploadImage(document.getElementById('imagen_file'), document.getElementById('image_file_url').value, 'training/images/', $('#image_file_url'), function(){
         uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
             uploadInputFile(document.getElementById('feedback_audio_file'), 'training/audios/', $('#feedback_audio_file_url'), function(){
                 if ( carga == 0){
@@ -135,12 +135,17 @@
   }
   
   
-    function uploadImage (objectFile, cloudFolder, nameInput, callback){
+  function uploadImage (objectFile, fileName, cloudFolder, nameInput, callback){
         callback = callback || function(){}; console.log(objectFile.files.length);
-        if (objectFile.files.length == 0){
+        if (objectFile.files.length === 0 && fileName === ''){
              callback();
         }else {
-            var newFile = dataURLtoFile(image_cropped, objectFile.files[0].name);
+            var newFile = '';
+            if (objectFile.files.length === 0){
+                newFile = dataURLtoFile(image_cropped, fileName);
+            }else {
+                newFile = dataURLtoFile(image_cropped, objectFile.files[0].name);
+            }
             if (newFile.length === 0){
                 callback();
            }else {
@@ -153,6 +158,8 @@
        }
         
   }
+  
+  
   
   function removeFile (urlInput, objectInput) {
       $('#'+urlInput).val('');

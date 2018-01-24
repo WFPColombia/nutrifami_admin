@@ -22,7 +22,7 @@
                 <td align="left">
                     <input type="file" name="imagen_file" id="imagen_file" onchange="loadFileAsURL(this.files[0], 'image_1')"><br>
                     <span class="urlsForm" id="urlsFormImagen">
-                        <?php if ( $this->module['mod_imagen'] != '' ){ ?>
+                        <?php if ( $this->module['mod_imagen'] != '' ){?>
                         <div class="container_cropper">
                         <img class="img_cropper" id="image_1" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->module['mod_imagen']; ?>">
                         </div>
@@ -87,7 +87,7 @@
   
   function sendForm() {
     openOverlayLoad();
-    uploadImage(document.getElementById('imagen_file'), 'training/images/', $('#image_file_url'), function(){
+    uploadImage(document.getElementById('imagen_file'), document.getElementById('image_file_url').value, 'training/images/', $('#image_file_url'), function(){
         uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
             uploadInputFile(document.getElementById('audio_descripcion_file'), 'training/audios/', $('#audio_descripcion_file_url'), function(){
                 if ( carga == 0){
@@ -115,12 +115,17 @@
         /*callback();*/
   }
   
-  function uploadImage (objectFile, cloudFolder, nameInput, callback){
+  function uploadImage (objectFile, fileName, cloudFolder, nameInput, callback){
         callback = callback || function(){}; console.log(objectFile.files.length);
-        if (objectFile.files.length == 0){
+        if (objectFile.files.length === 0 && fileName === ''){
              callback();
         }else {
-            var newFile = dataURLtoFile(image_cropped, objectFile.files[0].name);
+            var newFile = '';
+            if (objectFile.files.length === 0){
+                newFile = dataURLtoFile(image_cropped, fileName);
+            }else {
+                newFile = dataURLtoFile(image_cropped, objectFile.files[0].name);
+            }
             if (newFile.length === 0){
                 callback();
            }else {
