@@ -141,7 +141,7 @@
   
  
     $('#image_1').cropper({
-        viewMode: 3,
+        /*viewMode: 3,
         dragMode: 'move',
         autoCropArea: 1,
         restore: false,
@@ -149,10 +149,10 @@
         guides: false,
         highlight: false,
         cropBoxMovable: false,
-        cropBoxResizable: false,
+        cropBoxResizable: false,*/
         crop: function(e) {
             // Output the result data for cropping image.
-            var croppedCanvas = $(this).cropper('getCroppedCanvas');
+            var croppedCanvas = $(this).cropper('getCroppedCanvas', { fillColor: '#FFFFFF' });
             image_cropped = croppedCanvas.toDataURL();
             //console.log(image_cropped);
         }
