@@ -191,7 +191,7 @@
         cropBoxResizable: false,*/
         crop: function(e) {
             // Output the result data for cropping image.
-            var croppedCanvas = $(this).cropper('getCroppedCanvas', { fillColor: '#FFFFFF' });
+            var croppedCanvas = $(this).cropper('getCroppedCanvas', { fillColor: '#FFFFFF', width: 1024, height: 204 });
             image_cropped = croppedCanvas.toDataURL();
             //console.log(image_cropped);
         }
