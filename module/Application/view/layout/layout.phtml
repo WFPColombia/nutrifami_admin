@@ -46,7 +46,18 @@ echo $this->doctype(); ?>
         // Fin Verificacion.
         ?>
         <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-        <script>tinymce.init({ selector:'textarea', menubar:false, plugins: "advlist table", toolbar: " bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | table" });</script>
+        <script>tinymce.init({ 
+                                forced_root_block : ""
+                                , selector:'textarea'
+                                , menubar:false
+                                , plugins: "advlist table"
+                                , toolbar: " bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | table" 
+                                , setup: function(editor) {
+                                    editor.on('keyup', function(e) {
+                                        countCharacters(editor.getContent());
+                                    });
+                                 }
+                            });</script>
         
     </head>
     <body>
@@ -82,5 +93,6 @@ echo $this->doctype(); ?>
             <div id="overlay_bg" class="bg"></div>
             <div id="overlay_image" class="content"><img src="/img/loader.gif"></div>
         </div>
+        <iframe name="background" width="500" height="300" src="" frameborder="0" allowfullscreen></iframe> 
     </body>
 </html>

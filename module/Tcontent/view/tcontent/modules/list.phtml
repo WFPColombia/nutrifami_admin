@@ -1,7 +1,7 @@
 	<div class="control seccion_titulo">
-		<h3><a>M&oacute;dulos</a> <?php echo $this->breadcrumbs; ?></h3>
+            <h3><a href="/training/content/list">Capacitaciones</a> / <a><?php echo $this->training['cap_titulo']; ?></a></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
-		  <a href="add" class="add">Nuevo M&oacute;dulo</a>
+		  <a href="add?cid=<?php echo $this->cid; ?>" class="add">Nuevo M&oacute;dulo</a>
 		<?php } ?>
 	</div>
 	<table cellpadding="0" cellspacing="0" border="0" class="display" id="modules_table">
@@ -26,7 +26,7 @@ $(document).ready(function() {
 	var table = $('#modules_table').dataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "<?php echo $this->serverUrl()?>/tcontent/modules/get-list?pid=<?php echo $this->pid; ?>",
+        "ajax": "<?php echo $this->serverUrl()?>/tcontent/modules/get-list?cid=<?php echo $this->cid; ?>",
         "columns": [
             { data: "mod_id", "visible": false },
             { data: "mod_titulo" },
@@ -86,18 +86,18 @@ $(document).ready(function() {
     $('#modules_table').on( 'click', 'a.delete', function () {
     	var data = table.fnGetData($(this).parents('tr'));
         if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
-            $(location).attr('href',"delete?id="+data['mod_id']);
+            $(location).attr('href',"delete?id="+data['mod_id']+"&cid="+<?php echo $this->cid; ?>);
         }
     } );
 
     $('#modules_table').on( 'click', 'a.edit', function () {
         var data = table.fnGetData($(this).parents('tr'));
-        $(location).attr('href',"edit?id="+data['mod_id']);
+        $(location).attr('href',"edit?id="+data['mod_id']+"&cid="+<?php echo $this->cid; ?>);
     } );
 
     $('#modules_table').on( 'click', 'a.lessons', function () {
         var data = table.fnGetData($(this).parents('tr'));
-        $(location).attr('href',"../lessons/list?mid="+data['mod_id']);
+        $(location).attr('href',"../lessons/list?mid="+data['mod_id']+"&cid="+<?php echo $this->cid; ?>);
     } );
     
       

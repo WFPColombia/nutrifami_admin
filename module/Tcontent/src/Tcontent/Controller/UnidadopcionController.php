@@ -180,12 +180,16 @@ class UnidadopcionController extends AbstractActionController
             $uid = $_POST['uid'];
             
             $dataOpcion['texto'] = $_POST['texto'];
+            $dataOpcion['texto'] = str_replace('<p>', '', $dataOpcion['texto']);
+            $dataOpcion['texto'] = str_replace('</p>', '', $dataOpcion['texto']);
             $dataOpcion['audio'] = $_POST['audio'];
             $dataOpcion['imagen'] = $_POST['imagen'];
             $dataOpcion['id'] = $_POST['id'];
             
             $dataXUnidad['correcta'] = $_POST['correcta'];
             $dataXUnidad['feedback'] = $_POST['feedback'];
+            $dataOpcion['feedback'] = str_replace('<p>', '', $dataOpcion['feedback']);
+            $dataOpcion['feedback'] = str_replace('</p>', '', $dataOpcion['feedback']);
             $dataXUnidad['feedback_audio'] = $_POST['feedback_audio'];
             $dataXUnidad['oid'] = $_POST['id'];
             $dataXUnidad['uid'] = $_POST['uid'];

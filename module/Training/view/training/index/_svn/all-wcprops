@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/aosmorac/PMA/!svn/ver/3/branches/develo/module/Album/view/album/album
+END
+delete.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/aosmorac/PMA/!svn/ver/3/branches/develo/module/Album/view/album/album/delete.phtml
+END
+edit.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/aosmorac/PMA/!svn/ver/3/branches/develo/module/Album/view/album/album/edit.phtml
+END
+index.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/aosmorac/PMA/!svn/ver/3/branches/develo/module/Album/view/album/album/index.phtml
+END
+add.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/aosmorac/PMA/!svn/ver/3/branches/develo/module/Album/view/album/album/add.phtml
+END

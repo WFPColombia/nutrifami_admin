@@ -15,6 +15,7 @@ use Zend\View\Model\ViewModel;
 use Zend\Captcha\Dumb;
 use Zend\Debug\Debug;
 use Tcontent\Model\Module;
+use Training\Model\Training;
 
 /**
  * ModulesController
@@ -43,7 +44,15 @@ class ModulesController extends AbstractActionController
     }
     
     public function listAction(){
-        return array();
+        $trainingObj = new Training();
+        $cid= 0;
+        $params = $this->params()->fromQuery();
+        if (isset($params['cid']) && $params['cid']>0) {
+            $cid= $params['cid'];
+        }
+        $training = $trainingObj->getTraining($cid);
+        $viewModel = new ViewModel(array('training' => $training, 'cid' => $cid));
+        return $viewModel;
     }
     
     
@@ -55,9 +64,13 @@ class ModulesController extends AbstractActionController
         
         $request = $this->getRequest();
         $params = $this->params()->fromQuery();
+        $cid= 0;
+        if (isset($params['cid']) && $params['cid']>0) {
+            $cid= $params['cid'];
+        }
         $queryOptions = \Util\DataTables::getListOptions($params);
         $moduleObj = new Module();
-        $modules = $moduleObj->getModules($queryOptions, 3);
+        $modules = $moduleObj->getModules($queryOptions, $cid);
         echo json_encode(array('recordsTotal'=>$modules['rows'], 'recordsFiltered'=>$modules['rows'], 'data'=>$modules['data']));
         //echo json_encode(array('data'=>$modules));
         
@@ -95,9 +108,13 @@ class ModulesController extends AbstractActionController
      */
     public function addAction()
     {
+        $cid= 0;
         $params = $this->params()->fromQuery();
+        if (isset($params['cid']) && $params['cid']>0) {
+            $cid= $params['cid'];
+        }
         
-        $viewModel = new ViewModel(array('id' => 0, 'breadcrumbs' => ' / <a>Add M&oacute;dulo</a>'));
+        $viewModel = new ViewModel(array('id' => 0, 'cid' => $cid, 'breadcrumbs' => ' / <a>Add M&oacute;dulo</a>'));
         $viewModel->setTemplate('tcontent/modules/module_form.phtml');
         
         return $viewModel;
@@ -120,12 +137,12 @@ class ModulesController extends AbstractActionController
             $data['audio'] = $_POST['audio'];
             $data['audio_descripcion'] = $_POST['audio_descripcion'];
             $data['id'] = $_POST['id'];
-            $data['cid'] = 3;
+            $data['cid'] = $_POST['cid'];
             $moduleObj = new Module();
             if ( $moduleObj->saveModule($data) ) {
-                $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre
+                $this->redirect()->toUrl('list?cid='.$data['cid']); // Volver a listar desde el modulo padre
             }else {
-                $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre
+                $this->redirect()->toUrl('list?cid='.$data['cid']); // Volver a listar desde el modulo padre
             }
         }
         //Debug::dump($params);
@@ -139,13 +156,17 @@ class ModulesController extends AbstractActionController
     
     
     public function editAction(){
+        $cid= 0;
         $params = $this->params()->fromQuery();
+        if (isset($params['cid']) && $params['cid']>0) {
+            $cid= $params['cid'];
+        }
         if (isset($params['id']) && $params['id']>0){
         	$id = $params['id'];        
             $moduleObj = new Module();
             $module = $moduleObj->getModule($id);
             
-            $viewModel = new ViewModel(array('module' => $module, 'id' => $module['mod_id'], 'breadcrumbs' => ' / <a>Edit M&oacute;dulo</a>'));
+            $viewModel = new ViewModel(array('module' => $module, 'id' => $module['mod_id'], 'cid' => $cid, 'breadcrumbs' => ' / <a>Edit M&oacute;dulo</a>'));
             $viewModel->setTemplate('tcontent/modules/module_form.phtml');
         }else{
             $this->redirect()->toUrl('list'); 
@@ -162,12 +183,16 @@ class ModulesController extends AbstractActionController
      * @return \Zend\Stdlib\ResponseInterface
      */
     public function deleteAction(){
+        $cid= 0;
         $params = $this->params()->fromQuery();
+        if (isset($params['cid']) && $params['cid']>0) {
+            $cid= $params['cid'];
+        }
         if (isset($params['id']) && $params['id']>1){
             $data['id'] = $params['id'];
             $moduleObj = new Module();
             if ( $moduleObj->deleteModule($data) ) {
-                $this->redirect()->toUrl('list'); // Volver a listar desde el modulo padre
+                $this->redirect()->toUrl('list?cid='.$cid); // Volver a listar desde el modulo padre
             }
         }
         return $this->response; //Desabilita View y Layout

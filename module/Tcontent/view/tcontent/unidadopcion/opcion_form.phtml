@@ -1,5 +1,5 @@
 <div class="control seccion_titulo">
-		<h3>Opciones y/o respuestas</h3>
+		<h3>Opciones y/o respuestas</h3>aaa
 		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="cancel">Cancelar</a>
 </div>
 <form method="post" action="#" name="form_opcion" id="form_opcion" class="new_edit">
@@ -7,9 +7,9 @@
 	<tbody>
             
             <tr>
-            	<td align="right">Texto</td>
+                <td align="right">Texto<p class="error" style="display:none;">El texto debe contener menos de 120 caracteres</p></td>
                 <td align="left">
-                    <textarea name="texto"><?php echo $this->opcion['uni_inf_opc_texto']; ?></textarea>
+                    <textarea name="texto" id="texto_opcion"><?php echo $this->opcion['uni_inf_opc_texto']; ?></textarea>
                 </td>
             </tr>
             <tr>
@@ -184,6 +184,21 @@
             //console.log(image_cropped);
         }
       }); 
+      
+      
+      function countCharacters (contenido) { 
+          var idTag = 'texto_opcion';
+          var number = 120;
+          var regex = /(&nbsp;|<([^>]+)>)/ig;
+          var result = contenido;
+          result = result.replace(regex, "");
+          if ( result.length > number ) {
+              $('.error').show();
+              console.log(result.length);
+          }else {
+              $('.error').hide();
+          } 
+      }
 
    
 </script>

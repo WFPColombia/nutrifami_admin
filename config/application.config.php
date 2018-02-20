@@ -3,7 +3,7 @@ return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
         'Application',
-        'Album','User','Util','Tcontent','Twayuu','Tawa','Tfrances','Admin','Commodity',
+        'Album','User','Util','Tcontent','Twayuu','Tawa','Tfrances','Admin','Commodity', 'Training',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

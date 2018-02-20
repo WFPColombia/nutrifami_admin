@@ -10,6 +10,10 @@ body .main{
     clear: both;
 }
 
+.error {
+    color: #ff0000;
+}
+
 input[type="submit"], input[type="button"]{
 	margin: 0;
 	background: #d200ff;
@@ -174,6 +178,15 @@ a.tree{
 	padding: 0;
 	display: inline-block;
 	cursor: pointer;
+}
+a.modules{
+	background: url(../img/icons/trainings.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
 }
 a.lessons{
 	background: url(../img/icons/lessons.png) center no-repeat;

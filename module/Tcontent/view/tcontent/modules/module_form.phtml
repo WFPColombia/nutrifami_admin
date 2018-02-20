@@ -1,6 +1,6 @@
 <div class="control seccion_titulo">
 		<h3>M&oacute;dulos</h3>
-		<a alt="Cancelar" title="Cancelar" href="list" class="cancel">Cancelar</a>
+		<a alt="Cancelar" title="Cancelar" href="list?cid=<?php echo $this->cid; ?>" class="cancel">Cancelar</a>
 </div>
 <form method="post" action="#" name="form_module" id="form_module" class="new_edit">
     <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
@@ -67,6 +67,7 @@
                 <td align="left">
                     <input type="button" id="guardar_modulo" value="Guardar" />
                 	<input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="cid" value="<?php echo $cid; ?>">
                 </td>
             </tr>
         </tbody>
