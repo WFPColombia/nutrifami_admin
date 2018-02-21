@@ -7,6 +7,16 @@ use Zend\Http\PhpEnvironment\Request;
 class UserSession
 {
        
+    
+    public static function getId() {
+        $user = new User();
+        if ($user->isLogin()) {
+            $data = $user->getActiveUser();
+            return $data['COR_USR_ID'];
+        }
+        return '';
+    }
+    
     public static function getName() {
         $user = new User();
         if ($user->isLogin()) {

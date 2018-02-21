@@ -42,11 +42,11 @@ class TrainingTable extends AbstractTableGateway {
     }
     
     
-    public function getTrainings($options = Array()){
+    public function getTrainings($ids, $options = Array()){
         $result = Array();
-        $resultSet = $this->select(function (Select $select) use ($options) {
+        $resultSet = $this->select(function (Select $select) use ($ids, $options) {
         	$select
-        	   ->where("cap_activo = 1 AND (".$options['where'].")")
+        	   ->where("cap_id IN (".$ids.") AND cap_activo = 1 AND (".$options['where'].")")
         	   ->order($options['order'])
         	   ->limit($options['limit']['length'])
         	   ->offset($options['limit']['start']);
@@ -54,10 +54,10 @@ class TrainingTable extends AbstractTableGateway {
         });
         $result['data'] = $resultSet->toArray();
         
-        $resultSet = $this->select(function (Select $select) use ($options) {
+        $resultSet = $this->select(function (Select $select) use ($ids, $options) {
         	$select
         	->columns(array('num' => new \Zend\Db\Sql\Expression('COUNT(*)')))
-        	->where("cap_activo = 1 AND (".$options['where'].")");
+        	->where("cap_id IN (".$ids.") AND cap_activo = 1 AND (".$options['where'].")");
         });
         $count = $resultSet->toArray();
         $result['rows'] = $count[0]['num'];

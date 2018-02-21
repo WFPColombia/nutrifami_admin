@@ -11,6 +11,7 @@
 namespace Training\Model;
 
 use Training\Model\Tables\TrainingTable;
+use Training\Model\Tables\AdminUsersTrainingTable;
 /**********************************************************
 * MODELO Training
 * =======================================================
@@ -26,11 +27,13 @@ use Training\Model\Tables\TrainingTable;
 class Training {
     
     protected $trainingTable;
+    protected $adminUsersTrainingTable;
 
 
     public function __construct()
     {
         $this->trainingTable = new TrainingTable();
+        $this->adminUsersTrainingTable = new AdminUsersTrainingTable();
     }
     
     public function getAllTrainings(){
@@ -38,8 +41,10 @@ class Training {
     }
     
     public function getTrainings($options = Array())
-    {
-        $trainings = $this->trainingTable->getTrainings($options);
+    {   
+        $ids = $this->adminUsersTrainingTable->getTrainingsIdString(\Util\UserSession::getId());
+        //print_r($ids); die;
+        $trainings = $this->trainingTable->getTrainings($ids, $options);
         return $trainings;
     }
     
