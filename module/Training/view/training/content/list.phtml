@@ -13,9 +13,9 @@
 		<thead>
             <tr>
             	<th>Id</th>
-                <th>Titulo</th>
-                <th>Descripci&oacute;n</th>
-                <th>Idioma</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Language</th>
                 <th>Status</th>
                 <th></th>
             </tr>
@@ -41,7 +41,7 @@
                 { data: null,
                   "orderable": false,
                   className: "right",
-                  defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Modules" title="Modules" class="modules"></a> <a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+                  defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Modules" title="Modules" class="modules"></a> <a href="javascript:void(0);" alt="Edit" title="Edit" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Delete" title="Delete" class="delete"></a> <?php } ?>'
                 }
             ],
             "iDisplayLength": 10

@@ -16,7 +16,7 @@ class LoginForm extends Form
             'name' => 'username',
             'attributes' => array(
                 'type'  => 'text',
-                'placeholder' => 'Usuario'
+                'placeholder' => 'User'
             )
         ));
 
@@ -24,7 +24,7 @@ class LoginForm extends Form
             'name' => 'password',
             'attributes' => array(
                 'type'  => 'password',
-                'placeholder' => 'Contraseña'
+                'placeholder' => 'Password'
             )
         ));
 
@@ -32,7 +32,7 @@ class LoginForm extends Form
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
-                'value' => 'Ingresar',
+                'value' => 'Sign In',
                 'id' => 'submitbutton',
             ),
         ));

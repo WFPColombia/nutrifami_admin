@@ -1,21 +1,21 @@
 	<div class="control seccion_titulo">
-            <h3><a href="/tcontent/modules/list">M&oacute;dulos</a> / <a href="/tcontent/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="/tcontent/unidadinformacion/list?mid=<?php echo $this->module['mod_id']; ?>&lid=<?php echo $this->lesson['lec_id']; ?>"><?php echo $this->lesson['lec_titulo']; ?> / <a><?php echo $this->unidad['uni_inf_titulo']; ?></h3>
+            <h3><a href="/tcontent/modules/list">Modules</a> / <a href="/tcontent/lessons/list?mid=<?php echo $this->module['mod_id']; ?>"><?php echo $this->module['mod_titulo']; ?> / <a href="/tcontent/unidadinformacion/list?mid=<?php echo $this->module['mod_id']; ?>&lid=<?php echo $this->lesson['lec_id']; ?>"><?php echo $this->lesson['lec_titulo']; ?> / <a><?php echo $this->unidad['uni_inf_titulo']; ?></h3>
 		<?php if (  \Util\UserSession::isAddPrivilege() ){ ?>
-		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="add">Nuevo Elemento</a>
+		  <a href="add?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="add">New Element</a>
 		<?php } ?>
 	</div>
 	<table cellpadding="0" cellspacing="0" border="0" class="display" id="opciones_table">
 		<thead>
             <tr>
             	<th>Id</th>
-                <th>Texto</th>
+                <th>Text</th>
                 <th>Audio</th>
-                <th>Imagen</th>
-                <th>Correcta</th>
+                <th>Image</th>
+                <th>Right</th>
                 <th>Feedback</th>
                 <th>Feedback Audio</th>
-                <th>Orden</th>
-                <th>Columna</th>
+                <th>Order</th>
+                <th>Column</th>
                 <th></th>
             </tr>
         </thead>
@@ -60,7 +60,7 @@ $(document).ready(function() {
             { data: null,
               "orderable": false,
               className: "right",
-              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Editar" title="Editar" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Eliminar" title="Eliminar" class="delete"></a> <?php } ?>'
+              defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Edit" title="Edit" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Delete" title="Delete" class="delete"></a> <?php } ?>'
             }
         ],
         "iDisplayLength": 10
@@ -109,7 +109,7 @@ $(document).ready(function() {
     
     $('#opciones_table').on( 'click', 'a.delete', function () {
     	var data = table.fnGetData($(this).parents('tr'));
-        if ( confirm("Se eliminara el elemento. Desea continuar?") == true ){
+        if ( confirm("This element will be deleted. Do you want continue?") == true ){
             $(location).attr('href',"delete?id="+data['uni_inf_opc_id']+"&mid="+<?php echo $this->mid; ?>+"&lid="+<?php echo $this->lid; ?>+"&uid="+<?php echo $this->uid; ?>);
         }
     } );

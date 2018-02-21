@@ -1,13 +1,13 @@
 <div class="control seccion_titulo">
-		<h3>Opciones y/o respuestas</h3>aaa
-		<a alt="Cancelar" title="Cancelar" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="cancel">Cancelar</a>
+		<h3>Options or answers</h3>
+		<a alt="Cancel" title="Cancel" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="cancel">Cancel</a>
 </div>
 <form method="post" action="#" name="form_opcion" id="form_opcion" class="new_edit">
     <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
 	<tbody>
             
             <tr>
-                <td align="right">Texto<p class="error" style="display:none;">El texto debe contener menos de 120 caracteres</p></td>
+                <td align="right">Text<p class="error" style="display:none;">El texto debe contener menos de 120 caracteres</p></td>
                 <td align="left">
                     <textarea name="texto" id="texto_opcion"><?php echo $this->opcion['uni_inf_opc_texto']; ?></textarea>
                 </td>
@@ -26,7 +26,7 @@
                 </td>
             </tr>
             <tr>
-            	<td align="right">Imagen</td>
+            	<td align="right">Image</td>
                 <td align="left">
                     <input type="file" name="imagen_file" id="imagen_file" onchange="loadFileAsURL(this.files[0], 'image_1')"><br>
                     <span class="urlsForm" id="urlsFormImagen">
@@ -51,11 +51,11 @@
                 </td>
             </tr>
             <tr>
-            	<td align="right">Respuesta Correcta</td>
+            	<td align="right">Rigth answer</td>
                 <td align="left">
                     <select name="correcta">
-                        <option value="1" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 1){echo 'selected="selected"'; } ?>>Correcta</option>
-                        <option value="0" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 0){echo 'selected="selected"'; } ?>>Incorrecta</option>
+                        <option value="1" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 1){echo 'selected="selected"'; } ?>>Correct</option>
+                        <option value="0" <?php if ($this->opcion['uni_inf_x_opc_correcta'] == 0){echo 'selected="selected"'; } ?>>incorrect</option>
                     </select>
                 </td>
             </tr>
@@ -81,7 +81,7 @@
             <tr>
             	<td align="right"></td>
                 <td align="left">
-                    <input type="button" id="guardar_unidad" value="Guardar" />
+                    <input type="button" id="guardar_unidad" value="Save" />
                 	<input type="hidden" name="id" value="<?php echo $this->id; ?>">
                         <input type="hidden" name="uid" value="<?php echo $this->uid; ?>">
                         <input type="hidden" name="lid" value="<?php echo $this->lid; ?>">
