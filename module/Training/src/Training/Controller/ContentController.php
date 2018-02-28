@@ -15,6 +15,7 @@ use Zend\View\Model\ViewModel;
 use Zend\Captcha\Dumb;
 use Zend\Debug\Debug;
 use Training\Model\Training;
+use User\Model\User;
 
 /**
  * IndexController
@@ -63,7 +64,15 @@ class ContentController extends AbstractActionController
             $cid= $params['cid'];
         }
         $training = $trainingObj->getTraining($cid);
-        $viewModel = new ViewModel(array('training' => $training, 'cid' => $cid));
+        
+        $userObj = new User();
+        $users = $userObj->getUsersList();
+        $users_list = Array();
+        foreach ( $users as $u ) {
+            $users_list[] = Array('value' => $u['COR_USR_ID'], 'label' => $u['COR_USR_NAME']);
+        }
+        
+        $viewModel = new ViewModel(array('training' => $training, 'cid' => $cid, 'users_list' => json_encode($users_list)));
         return $viewModel;
     }
     
@@ -79,6 +88,42 @@ class ContentController extends AbstractActionController
         $users = $trainingObj->getAdminUsers($queryOptions, $cid);
         //print_r($users); die;
         echo json_encode(array('recordsTotal'=>$users['rows'], 'recordsFiltered'=>$users['rows'], 'data'=>$users['data']));
+        
+        return $this->response; //Desabilita View y Layout
+    }
+    
+    public function saveUserAction(){
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $data['use_id'] = $_POST['input_user_id'];
+            $data['cap_id'] = $_POST['input_training_id'];
+            $data['pro_id'] = $_POST['input_rol'];
+            $trainingObj = new Training();
+            if ( $trainingObj->saveUser($data) ) { 
+                //print_r( $nObj );
+                $this->redirect()->toUrl('/training/content/users?cid='.$data['cap_id']); // Volver a listar capacitaciones
+            }else {
+                echo "Saving Error";
+            }
+        }
+        
+        return $this->response; //Desabilita View y Layout
+    }
+    
+    public function deleteUserAction(){
+        $params = $this->params()->fromQuery();
+        if (isset($params['id']) && $params['id']>1){
+            $data['id'] = $params['id'];
+            $data['cap_id'] = $params['cid'];
+            $trainingObj = new Training();
+            if ( $trainingObj->deleteUser($data) ) {
+                $this->redirect()->toUrl('/training/content/users?cid='.$data['cap_id']); // Volver a listar capacitaciones
+            }else {
+                echo "Deleting Error";
+            }
+        }else {
+            echo "Deleting Error";
+        }
         
         return $this->response; //Desabilita View y Layout
     }

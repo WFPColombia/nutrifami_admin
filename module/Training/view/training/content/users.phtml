@@ -3,7 +3,37 @@
 		<a alt="Cancelar" title="Cancelar" href="list" class="cancel">Cancel</a>
 </div>
 <div class="add-users">
-    Agregar Usuarios
+    <form method="post" action="#" name="form_user" id="form_user" class="new_edit">
+        <table cellpadding="0" cellspacing="0" border="0" class="form_table" align = "center">
+            <tbody>
+                <tr>
+                    <td align="right">User</td>
+                    <td align="left">
+                        <input id="input_user" name="input_user" placeholder="Search a user" />
+                        <input type="hidden" name="input_user_id" id="input_user_id" />
+                        <input type="hidden" name="input_training_id" value="<?php echo $this->cid; ?>" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Rol</td>
+                    <td align="left">
+                            <select name="input_rol" id="input_rol">
+                                <option value="1">Autor</option>
+                                <option value="2">Reviser</option>
+                                <option value="3">Approver</option>
+                                <option value="4">Master</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+            	<td align="right"></td>
+                <td align="left">
+                    <input type="button" id="add_user" value="add" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
 </div>
 
         <table cellpadding="0" cellspacing="0" border="0" class="display" id="users_table">
@@ -39,6 +69,58 @@ $(document).ready(function() {
         "iDisplayLength": 10
     } ); 
     
+    $('#users_table').on( 'click', 'a.edit', function () {
+        var data = table.fnGetData($(this).parents('tr'));
+        $( "#input_user" ).val( data['username'] );
+        $( "#input_user_id" ).val( data['id'] );
+        $( "#input_rol" ).val( data['role_id'] );
+    } );
+    
+    $('#users_table').on( 'click', 'a.delete', function () {
+    	var data = table.fnGetData($(this).parents('tr'));
+        if ( confirm("This element will be deleted. Do you want continue?") == true ){
+            $(location).attr('href',"delete-user?id="+data['id']+"&cid="+<?php echo $this->cid; ?>);
+        }
+    } );
+    
+    
+    
+    
+    
+    
+    var users = <?php echo $this->users_list; ?>;
+    
+        $( "#input_user" ).autocomplete({
+      minLength: 0,
+      source: users,
+      focus: function( event, ui ) {
+        $( "#input_user" ).val( ui.item.label );
+        return false;
+      },
+      select: function( event, ui ) {
+        $( "#input_user" ).val( ui.item.label );
+        $( "#input_user_id" ).val( ui.item.value );
+
+        return false;
+      }
+    })
+    .autocomplete( "instance" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+        .append( "<div>" + item.label + "<br>" + item.desc + "</div>" )
+        .appendTo( ul );
+    };  
+    
+    
+    
 });
+
+
+    $('#add_user').on("click", function(){ 
+        sendForm();
+    });
+    function sendForm() {
+        $('#form_user').attr('action', "save-user");
+        $("#form_user").submit();  
+      };
     
 </script>

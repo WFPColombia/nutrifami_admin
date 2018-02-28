@@ -132,6 +132,8 @@ class TrainingTable extends AbstractTableGateway {
         return $result;
     }
     
+
+    
     
     
 }

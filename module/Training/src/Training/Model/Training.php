@@ -59,4 +59,12 @@ class Training {
         return $users;
     }
     
+    public function saveUser($data){
+        return $this->adminUsersTrainingTable->saveAdminUser($data);
+    }
+    
+    public function deleteUser($data){
+        return $this->adminUsersTrainingTable->deleteAdminUser($data);
+    }
+    
 }

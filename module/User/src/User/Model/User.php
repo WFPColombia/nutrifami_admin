@@ -182,6 +182,15 @@ class User extends Storage\Session
         return $trainingsUser;
     }
     
+    
+    
+    
+    public function getUsersList(){
+        $users = $this->userTable->fetchAll();
+        return $users;
+    }
+    
+    
 }
 
 ?>
