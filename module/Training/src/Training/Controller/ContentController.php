@@ -55,5 +55,33 @@ class ContentController extends AbstractActionController
         return $this->response; //Desabilita View y Layout
     }
     
+    public function usersAction(){
+        $trainingObj = new Training();
+        $cid= 0;
+        $params = $this->params()->fromQuery();
+        if (isset($params['cid']) && $params['cid']>0) {
+            $cid= $params['cid'];
+        }
+        $training = $trainingObj->getTraining($cid);
+        $viewModel = new ViewModel(array('training' => $training, 'cid' => $cid));
+        return $viewModel;
+    }
+    
+    public function getListUsersAction(){
+        $request = $this->getRequest();
+        $params = $this->params()->fromQuery();
+        $queryOptions = \Util\DataTables::getListOptions($params);
+        $trainingObj = new Training();
+        $cid = 0;
+        if (isset($params['cid']) && $params['cid']>0) {
+            $cid= $params['cid'];
+        }
+        $users = $trainingObj->getAdminUsers($queryOptions, $cid);
+        //print_r($users); die;
+        echo json_encode(array('recordsTotal'=>$users['rows'], 'recordsFiltered'=>$users['rows'], 'data'=>$users['data']));
+        
+        return $this->response; //Desabilita View y Layout
+    }
+    
     
 }

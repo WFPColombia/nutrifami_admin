@@ -169,6 +169,15 @@ div.DTE_Inline div.DTE_Field input{
 	height: 30px;
 }
 
+a.users{
+	background: url(../img/icons/users.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
 a.tree{
 	background: url(../img/icons/tree.png) center no-repeat;
 	background-size: 20px;

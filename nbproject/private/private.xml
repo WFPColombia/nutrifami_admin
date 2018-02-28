@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/html/nutrifami_admin/module/Training/src/Training/Model/Training.php</file>
-            <file>file:/var/www/html/nutrifami_admin/module/Training/view/training/content/list.phtml</file>
-            <file>file:/var/www/html/nutrifami_admin/module/Util/src/Util/UserSession.php</file>
-            <file>file:/var/www/html/nutrifami_admin/module/Training/src/Training/Model/Tables/AdminUsersTrainingTable.php</file>
-            <file>file:/var/www/html/nutrifami_admin/module/Training/src/Training/Model/Tables/TrainingTable.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

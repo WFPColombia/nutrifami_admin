@@ -76,5 +76,62 @@ class TrainingTable extends AbstractTableGateway {
     }
     
     
+    public function getAdminUsers($options = Array(), $cid){
+        $result = Array();
+        $resultSet = $this->select(function (Select $select) use ($options, $cid) {
+        	$select
+                   ->join('cap_admin_user_training'
+                           , 'cap_admin_user_training.cap_id = cap_capacitacion.cap_id'
+                           , array()
+                          )
+                   ->join('core_users'
+                           , 'core_users.COR_USR_ID = cap_admin_user_training.use_id'
+                           , array(
+                               'id' => 'COR_USR_ID'
+                               , 'username' => 'COR_USR_NAME'
+                               , 'name' => new Expression("concat(COR_USR_NAME,' ',COR_USR_LAST_NAME)")
+                            )
+                          )
+                   ->join('cap_admin_profile'
+                           , 'cap_admin_profile.pro_id = cap_admin_user_training.pro_id'
+                           , array(
+                               'role' => 'pro_description'
+                               , 'role_name' => 'pro_name'
+                               , 'role_id' => 'pro_id'
+                            )
+                          )
+                   
+        	   ->where("1 = 1 AND (".$options['where'].") AND cap_capacitacion.cap_id = ".$cid)
+        	   ->order($options['order'])
+        	   ->limit($options['limit']['length'])
+        	   ->offset($options['limit']['start'])
+                   ;
+        	//Debug::dump($select->getSqlString()); die;
+        });
+        $result['data'] = $resultSet->toArray();
+        
+        $resultSet = $this->select(function (Select $select) use ($options, $cid) {
+        	$select
+                ->join('cap_admin_user_training'
+                           , 'cap_admin_user_training.cap_id = cap_capacitacion.cap_id'
+                           , array()
+                          )
+                   ->join('core_users'
+                           , 'core_users.COR_USR_ID = cap_admin_user_training.use_id'
+                           , array()
+                          )
+                   ->join('cap_admin_profile'
+                           , 'cap_admin_profile.pro_id = cap_admin_user_training.pro_id'
+                           , array()
+                          )
+                   ->columns(array('num' => new \Zend\Db\Sql\Expression('COUNT(*)')))
+        	   ->where("1 = 1 AND (".$options['where'].") AND cap_capacitacion.cap_id = ".$cid);
+        });
+        $count = $resultSet->toArray();
+        $result['rows'] = $count[0]['num'];
+        return $result;
+    }
+    
+    
     
 }

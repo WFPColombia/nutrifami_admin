@@ -17,6 +17,15 @@ class UserSession
         return '';
     }
     
+    public static function getUsername() {
+        $user = new User();
+        if ($user->isLogin()) {
+            $data = $user->getActiveUser();
+            return $data['COR_USR_NAME'];
+        }
+        return '';
+    }
+    
     public static function getName() {
         $user = new User();
         if ($user->isLogin()) {
@@ -61,7 +70,6 @@ class UserSession
         }
         return '';
     }   
-
     
     
     public static function isAddPrivilege(){
@@ -147,6 +155,38 @@ class UserSession
     	}else {
     		return false;
     	}
+    }
+    
+    
+    public static function getTrainingsInfo(){
+        $user = new User();
+        if ($user->isLogin()) {
+        	$data = $user->getActiveUser();
+        	return $data['trainings'];
+        }
+        return '';
+    }     
+    
+    public static function getTrainingsInfoJSON(){
+        $user = new User();
+        if ($user->isLogin()) {
+        	$data = $user->getActiveUser();
+        	return json_encode($data['trainings']);
+        }
+        return json_encode(Array());
+    }     
+    
+    public static function isMasterTraining($training_id = 0){
+        $user = new User();
+        if ($user->isLogin()) {
+            $data = $user->getActiveUser();
+            if ( isset($data['trainings']['master'][$training_id]) ) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+        return fale;
     }
     
 }

@@ -33,7 +33,7 @@ class UserTable extends AbstractTableGateway
     /**
      * 
      * Devuelve el usuario correspondiente al username 
-     * y contraseña dadas
+     * y contraseï¿½a dadas
      * 
      * @param string $username
      * @param string $password
@@ -111,6 +111,37 @@ class UserTable extends AbstractTableGateway
         		)
         )
         ->where("CRBU.COR_USR_ID = {$userId} AND CMBRP.COR_MOD_ID = {$moduleId}");
+        $statement = $oSql->prepareStatementForSqlObject($oSelect);
+        $oResultSet = $statement->execute();
+        return $oResultSet;
+    }
+    
+    
+    public function getMyTrainings($userId = 0) {
+        $oSql = new Sql( $this->getAdapter() );
+        $oSelect = $oSql
+        ->select()
+        ->from( array("CAUT"=>"cap_admin_user_training") )
+        ->columns( array() )
+        ->join( array("CAP" => "cap_admin_profile"),
+        		"CAUT.pro_id = CAP.pro_id"
+        		, array(
+                          "pro_id"=>"pro_id",
+                          "pro_name"=>"pro_name",
+                          "pro_description"=>"pro_description"
+                       )
+        )
+        ->join( array("CC" => "cap_capacitacion"), 
+                      new Expression("CC.cap_id = CAUT.cap_id AND CC.cap_activo = 1"), 
+                      array(
+                          "id"=>"cap_id",
+                          "name"=>"cap_titulo",
+                          "description"=>"cap_descripcion"
+                       ) 
+        )
+        ->where("CAUT.use_id = {$userId}")
+        ->quantifier('DISTINCT');
+        //Debug::dump($oSelect->getSqlString()); die;
         $statement = $oSql->prepareStatementForSqlObject($oSelect);
         $oResultSet = $statement->execute();
         return $oResultSet;

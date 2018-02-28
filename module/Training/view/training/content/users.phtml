@@ -1,0 +1,44 @@
+<div class="control seccion_titulo">
+		<h3>Usuarios Admin - <?php echo $this->training['cap_titulo']; ?></h3>
+		<a alt="Cancelar" title="Cancelar" href="list" class="cancel">Cancel</a>
+</div>
+<div class="add-users">
+    Agregar Usuarios
+</div>
+
+        <table cellpadding="0" cellspacing="0" border="0" class="display" id="users_table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th></th>
+                </tr>
+            </thead>	
+	</table>
+
+<script>
+var editorUsers; // use a global for the submit and return data rendering in the examples
+ 
+$(document).ready(function() {
+    
+    var table = $('#users_table').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo $this->serverUrl()?>/training/content/get-list-users?cid=<?php echo $this->cid; ?>",
+        "columns": [
+            { data: "username", "visible": false },
+            { data: "name" },
+            { data: "role" },
+            { data: null,
+              "orderable": false,
+              className: "right",
+              defaultContent: '<?php if (  \Util\UserSession::isMasterTraining($this->cid) ){ ?><a href="javascript:void(0);" alt="Edit" title="Edit" class="edit"></a> <a href="javascript:void(0);" alt="Delete" title="Delete" class="delete"></a> <?php } ?>'
+            }
+        ],
+        "iDisplayLength": 10
+    } ); 
+    
+});
+    
+</script>

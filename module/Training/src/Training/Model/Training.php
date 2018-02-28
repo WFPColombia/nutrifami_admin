@@ -53,4 +53,10 @@ class Training {
         return $this->trainingTable->getTraining($id);
     }
     
+    public function getAdminUsers($options = Array(), $cid = 0)
+    {   
+        $users = $this->trainingTable->getAdminUsers($options, $cid);
+        return $users;
+    }
+    
 }

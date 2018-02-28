@@ -71,7 +71,9 @@ class User extends Storage\Session
         $user = $this->userTable->getUser($username, $password);
         if ($user){
             $modules = $this->getModules($user['COR_USR_ID']);  // modulos en arbol
+            $trainings = $this->getTrainings($user['COR_USR_ID']); 
             $user['modules'] = array('list'=>array('id'=>$this->userModules, 'url'=>$this->userModulesUrl), 'tree'=>$modules);
+            $user['trainings'] = $trainings;
             $this->setActiveUser($user);
             return true;
         }
@@ -164,6 +166,20 @@ class User extends Storage\Session
         	$pList[$privilege['privilege']] = true;
         }
         return $pList;
+    }
+    
+    
+    
+    
+    public function getTrainings($userId = 0){ 
+        $trainings = $this->userTable->getMyTrainings($userId); 
+        $trainingsUser = array();
+        foreach ($trainings as $training){
+            if ( !isset($trainingsUser[$training['pro_name']]) )
+                $trainingsUser[$training['pro_name']] = array();
+            $trainingsUser[$training['pro_name']][$training['id']] = $training;
+        }
+        return $trainingsUser;
     }
     
 }
