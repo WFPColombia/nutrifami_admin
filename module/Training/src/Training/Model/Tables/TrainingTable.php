@@ -45,8 +45,10 @@ class TrainingTable extends AbstractTableGateway {
     public function getTrainings($ids, $options = Array()){
         $result = Array();
         $resultSet = $this->select(function (Select $select) use ($ids, $options) {
-        	$select
-        	   ->where("cap_id IN (".$ids.") AND cap_activo = 1 AND (".$options['where'].")")
+        	$select->columns(array('*'))
+                   ->join('cap_status', 'cap_status.sta_id = cap_capacitacion.cap_status', array('status' => 'sta_nombre'))
+                   ->join('cap_idioma', 'cap_idioma.idi_id = cap_capacitacion.cap_idioma', array('idioma' => 'idi_nombre', 'idioma_sigla' => 'idi_abreviatura'))
+        	   ->where("cap_capacitacion.cap_id IN (".$ids.") AND cap_capacitacion.cap_activo = 1 AND (".$options['where'].")")
         	   ->order($options['order'])
         	   ->limit($options['limit']['length'])
         	   ->offset($options['limit']['start']);
