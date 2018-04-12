@@ -57,7 +57,7 @@ class AdminUsersTrainingTable extends AbstractTableGateway {
     }
     
     public function saveAdminUser($data){
-        if ( $this->delete("use_id = ".$data['use_id']+" AND cap_id = ".$data['cap_id']) ) {
+        if ( $this->delete("use_id = ".$data['use_id']." AND cap_id = ".$data['cap_id']) ) {
             if ( $this->insert($data) ) {
                 return true;
             }
