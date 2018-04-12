@@ -1,5 +1,5 @@
 <div class="control seccion_titulo">
-		<h3>Options or answers</h3>
+		<h3>Options or answerss</h3>
 		<a alt="Cancel" title="Cancel" href="list?mid=<?php echo $this->mid; ?>&lid=<?php echo $this->lid; ?>&uid=<?php echo $this->uid; ?>" class="cancel">Cancel</a>
 </div>
 <form method="post" action="#" name="form_opcion" id="form_opcion" class="new_edit">
@@ -7,9 +7,17 @@
 	<tbody>
             
             <tr>
-                <td align="right">Text<p class="error" style="display:none;">El texto debe contener menos de 120 caracteres</p></td>
+                <td align="right">Text
+                    <div class="preview" style="display: none;">
+                        <p class="error">It is recommended not to exceed 120 characters</p>
+                        <div class="card">
+                            <img class="image-2" src="">
+                            <p id="card-text" class="text"></p>
+                        </div>
+                    </div>
+                </td>
                 <td align="left">
-                    <textarea name="texto" id="texto_opcion"><?php echo $this->opcion['uni_inf_opc_texto']; ?></textarea>
+                    <textarea name="texto" onchange="countCharacters(this.value);" id="texto_opcion"><?php echo $this->opcion['uni_inf_opc_texto']; ?></textarea>
                 </td>
             </tr>
             <tr>
@@ -190,9 +198,12 @@
           var idTag = 'texto_opcion';
           var number = 120;
           var regex = /(&nbsp;|<([^>]+)>)/ig;
-          var result = contenido;
+          $(".card p").html(contenido); 
+          $(".card p p").unwrap();
+          var result = $(".card p").html();
           result = result.replace(regex, "");
-          if ( result.length > number ) {
+          if ( result.length > number ) { 
+              $('.preview').show();
               $('.error').show();
               console.log(result.length);
           }else {
@@ -216,4 +227,33 @@
           max-width: 100%; /* This rule is very important, please do not ignore this! */
         }
     
+        .card {
+            background-color: #fff;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            height: 100px;
+            width: 200px;
+            margin: 0 10px 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: url(https://s3.amazonaws.com/nutrifami/<?php echo $this->opcion['uni_inf_opc_media']; ?>);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center; 
+            
+            
+        }
+        .card img {
+            
+        }
+        .card .text, .card p{
+            color: #fff;
+            text-align: center;
+            background:rgb(0,0,0);  
+            background: transparent\9;  
+            background:rgba(0,0,0,0.4);  
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);  
+            zoom: 1; 
+        }
 </style>
