@@ -178,6 +178,15 @@ a.users{
 	padding: 0;
 	display: inline-block;
 }
+a.download{
+	background: url(../img/icons/download.png) center no-repeat;
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	display: inline-block;
+}
 a.tree{
 	background: url(../img/icons/tree.png) center no-repeat;
 	background-size: 20px;

@@ -43,12 +43,21 @@
                 { data: null,
                   "orderable": false,
                   className: "right",
-                  defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Users" title="Users" class="users"></a> <a href="javascript:void(0);" alt="Modules" title="Modules" class="modules"></a> <a href="javascript:void(0);" alt="Edit" title="Edit" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Delete" title="Delete" class="delete"></a> <?php } ?>'
+                  defaultContent: '<?php if (  \Util\UserSession::isEditPrivilege() ){ ?><a href="javascript:void(0);" alt="Download users app" title="Download users app" class="download"></a>  <a href="javascript:void(0);" alt="Users" title="Users" class="users"></a> <a href="javascript:void(0);" alt="Modules" title="Modules" class="modules"></a> <a href="javascript:void(0);" alt="Edit" title="Edit" class="edit"></a> <?php } ?><?php if (  \Util\UserSession::isDeletePrivilege() ){ ?><a href="javascript:void(0);" alt="Delete" title="Delete" class="delete"></a> <?php } ?>'
                 }
             ],
             "iDisplayLength": 10
         } );      
         
+        
+        $('#training_table').on( 'click', 'a.download', function () {
+            var data = table.fnGetData($(this).parents('tr'));
+            if (typeof training_users.master !== 'undefined' && typeof training_users.master[data['cap_id']] !== 'undefined') {
+                $(location).attr('href'," 	https://s3.amazonaws.com/nutrifami/download/ntraining"+data['cap_id']+".csv");
+            }else {
+                alert('You can not edit users for this traing');
+            }
+        });
         
         $('#training_table').on( 'click', 'a.users', function () {
             var data = table.fnGetData($(this).parents('tr'));
