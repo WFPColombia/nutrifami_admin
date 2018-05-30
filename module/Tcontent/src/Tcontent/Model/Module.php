@@ -107,7 +107,13 @@ class Module
         if ($data['id']>0) {
             $dataTable['mod_id'] = $data['id'];
             $dataTable['mod_activo'] = 0;
-            return $this->moduleTable->updateByFieldsModule($dataTable);
+            $dataElementCap = array();
+            $dataElementCap['mod_id'] = $data['id'];
+            if ($this->capacitacionElementTable->delete($dataElementCap)) {
+                return $this->moduleTable->updateByFieldsModule($dataTable);
+            }else {
+                return false;
+            }
         }else {
             return false;
         }
