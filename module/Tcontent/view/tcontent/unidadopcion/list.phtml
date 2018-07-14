@@ -11,7 +11,7 @@
                 <th>Text</th>
                 <th>Audio</th>
                 <th>Image</th>
-                <th>Right</th>
+                <th>Correct</th>
                 <th>Feedback</th>
                 <th>Feedback Audio</th>
                 <th>Order</th>
@@ -36,7 +36,7 @@ $(document).ready(function() {
             { data: "uni_inf_opc_texto" },
             { data: "uni_inf_opc_audio", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
             { data: "uni_inf_opc_media", 
@@ -48,15 +48,27 @@ $(document).ready(function() {
                     }
                 }
             },
-            { data: "uni_inf_x_opc_correcta" },
+            { data: "uni_inf_x_opc_correcta",
+                "render": function(data, type, row){
+                    return '<p style="text-align: center">'+data+'</p>'
+                }
+            },
             { data: "uni_inf_opc_feedback" },
             { data: "uni_inf_opc_feedback_audio", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
-            { data: "uni_inf_x_opc_orden" },
-            { data: "uni_inf_opc_column" },
+            { data: "uni_inf_x_opc_orden",
+                "render": function(data, type, row){
+                    return '<p style="text-align: center">'+data+'</p>'
+                }
+            },
+            { data: "uni_inf_opc_column",
+                "render": function(data, type, row){
+                    return '<p style="text-align: center">'+data+'</p>'
+                }
+            },
             { data: null,
               "orderable": false,
               className: "right",

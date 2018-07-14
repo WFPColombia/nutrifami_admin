@@ -561,3 +561,12 @@ a.path{
 }
 
 
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 15px 10px 2px;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 8px 3px;
+}
+
+

@@ -40,16 +40,21 @@ $(document).ready(function() {
             },
             { data: "lec_audio", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
             { data: "lec_mensaje" },
             { data: "lec_audio_final", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
-            { data: "mod_ele_orden" },
+            { data: "mod_ele_orden",
+                "render": function(data, type, row){
+                    return '<p style="text-align: center">'+data+'</p>'
+                }
+
+            },
             { data: null,
               "orderable": false,
               className: "right",

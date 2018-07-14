@@ -39,7 +39,7 @@ $(document).ready(function() {
             { data: "uni_inf_instruccion" },
             { data: "uni_inf_instruccion_audio", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
             { data: "uni_inf_titulo" },
@@ -54,10 +54,14 @@ $(document).ready(function() {
             },
             { data: "uni_inf_audio", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 80px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
-            { data: "lec_ele_orden" },
+            { data: "lec_ele_orden",
+                "render": function(data, type, row){
+                    return '<p style="text-align: center">'+data+'</p>'
+                }
+            },
             { data: null,
               "orderable": false,
               className: "right",

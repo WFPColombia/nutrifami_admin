@@ -42,12 +42,12 @@ $(document).ready(function() {
             },
                 { data: "mod_audio", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 250px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
                 { data: "mod_descripcion_audio", 
               "render": function(data, type, row) {
-                    return '<audio controls style="width: 250px;"><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
+                    return '<audio controls><source src="https://s3.amazonaws.com/nutrifami/'+data+'" type="audio/mpeg">Explorador no reproduce audio</audio>';
                 }
             },
             { data: null,
