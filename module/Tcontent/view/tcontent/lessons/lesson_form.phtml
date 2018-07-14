@@ -50,12 +50,12 @@
             	<td align="right">Image</td>
                 <td align="left">
                     <input type="file" name="imagen_file" id="imagen_file"><br>
-                    <span class="urlsForm" id="urlsFormImagen">
+                    <div class="urlsForm" id="urlsFormImagen">
                         <?php if ( $this->lesson['lec_imagen'] != '' ){ ?>
                         <img width="200" src="https://s3.amazonaws.com/nutrifami/<?php echo $this->lesson['lec_imagen']; ?>">
                         <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png">
                         <?php } ?>
-                    </span>
+                    </div>
                     <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->lesson['lec_imagen']; ?>" />
                 </td>
             </tr>
