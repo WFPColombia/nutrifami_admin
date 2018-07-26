@@ -80,6 +80,7 @@
                         <img class="delete" alt="Delete" title="Delete" onclick="removeFile('image_file_url', 'urlsFormImagen');" class="delete" src="/img/icons/cancel.png"-->
                         <?php } ?>
                     </div>
+                    <p>height: 300px, width: 828px</p>
                     <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->unidad['uni_inf_imagen']; ?>" />
                 </td>
             </tr>
@@ -180,6 +181,9 @@
   
   
       $('#image_1').cropper({
+        dragMode: 'move',
+        cropBoxResizable: true,
+        aspectRatio: 828 / 300,
         /*viewMode: 3,
         dragMode: 'move',
         autoCropArea: 1,
@@ -191,7 +195,7 @@
         cropBoxResizable: false,*/
         crop: function(e) {
             // Output the result data for cropping image.
-            var croppedCanvas = $(this).cropper('getCroppedCanvas', { width: 1024, height: 204 });
+            var croppedCanvas = $(this).cropper('getCroppedCanvas', { width: 828, height: 300 });
             image_cropped = croppedCanvas.toDataURL();
             //console.log(image_cropped);
         }
@@ -203,8 +207,8 @@
 <style>
     
         .container_cropper {
-            height: 102px;
-            width: 512px;
+            height: 300px;
+            width: 828px;
         }
 
         /* Limit image width to avoid overflow the container */

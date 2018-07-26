@@ -33,6 +33,7 @@
                         </div>
                         <?php } ?>
                     </div>
+                    <p>height: 480px, width: 480px</p>
                     <input type="hidden" id="image_file_url" name="imagen" value="<?php echo $this->module['mod_imagen']; ?>" />
                 </td>
             </tr>
@@ -147,15 +148,18 @@
   
  
     $('#image_1').cropper({
-        /*viewMode: 3,
         dragMode: 'move',
+        cropBoxResizable: true,
+        aspectRatio: 1 / 1,
+        /*
+        viewMode: 1,
         autoCropArea: 1,
         restore: false,
         modal: false,
         guides: false,
         highlight: false,
         cropBoxMovable: false,
-        cropBoxResizable: false,*/
+        */
         crop: function(e) {
             // Output the result data for cropping image.
             var croppedCanvas = $(this).cropper('getCroppedCanvas', { width: 460, height: 460 });
