@@ -38,19 +38,13 @@
                 </td>
             </tr>
             <tr>
-            	<td align="right">"Answer"</td>
+            	<td align="right">Description</td>
                 <td align="left">
                 	<input type="text" name="pregunta" value="<?php echo $this->unidad['uni_inf_titulo']; ?>" />
                 </td>
             </tr>
             <tr>
-            	<td align="right">Text</td>
-                <td align="left">
-                    <textarea name="texto"><?php echo $this->unidad['uni_inf_texto']; ?></textarea>
-                </td>
-            </tr>
-            <tr>
-            	<td align="right">Audio</td>
+                <td align="right">Description Audio</td>
                 <td align="left">
                     <input type="file" name="audio_file" id="audio_file"><br>
                     <span class="urlsForm" id="urlsFormAudio">
@@ -62,6 +56,26 @@
                     <input type="hidden" id="audio_file_url" name="audio" value="<?php echo $this->unidad['uni_inf_audio']; ?>" />
                 </td>
             </tr>
+            <tr>
+            	<td align="right">Text</td>
+                <td align="left">
+                    <textarea name="texto"><?php echo $this->unidad['uni_inf_texto']; ?></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Text Audio</td>
+                <td align="left">
+                    <input type="file" name="text_audio_file" id="text_audio_file"><br>
+                    <span class="urlsForm" id="text_urlsFormAudio">
+                        <?php if ( $this->unidad['uni_inf_media'] != '' ){ ?>
+                        <audio controls><source src="https://s3.amazonaws.com/nutrifami/<?php echo $this->unidad['uni_inf_media']; ?>" type="audio/mpeg">Explorador no reproduce audio</audio>
+                        <img class="delete" alt="Delete" title="Delete" onclick="removeFile('text_audio_file_url', 'text_urlsFormAudio');" class="delete" src="/img/icons/cancel.png">
+                        <?php } ?>
+                    </span>
+                    <input type="hidden" id="text_audio_file_url" name="text_audio" value="<?php echo $this->unidad['uni_inf_media']; ?>" />
+                </td>
+            </tr>
+            
            <tr>
             	<td align="right">Image</td>
                 <td align="left">
@@ -115,11 +129,13 @@
     uploadImage(document.getElementById('imagen_file'), document.getElementById('image_file_url').value, 'training/images/', $('#image_file_url'), function(){
         uploadInputFile(document.getElementById('audio_file'), 'training/audios/', $('#audio_file_url'), function(){
             uploadInputFile(document.getElementById('instruccion_audio_file'), 'training/audios/', $('#instruccion_audio_file_url'), function(){
-                if ( carga == 0){
-                    carga = 1;
-                    $('#form_unidad').attr('action', "save");
-                    $("#form_unidad").submit();
-                }
+                uploadInputFile(document.getElementById('text_audio_file'), 'training/audios/', $('#text_audio_file_url'), function(){
+                    if ( carga == 0){
+                        carga = 1;
+                        $('#form_unidad').attr('action', "save");
+                        $("#form_unidad").submit();
+                    }
+                });
             });
         });
     });    

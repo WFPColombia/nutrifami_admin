@@ -77,6 +77,9 @@ class Unidadinformacion
         }
         if ( isset($data['instruccion_audio']) ) {
             $dataTable['uni_inf_instruccion_audio'] = $data['instruccion_audio'];
+        }  
+        if ( isset($data['text_audio']) ) {
+            $dataTable['uni_inf_media'] = $data['text_audio'];
         }     
         if ( isset($data['pregunta']) ) {
             $dataTable['uni_inf_titulo'] = $data['pregunta'];
@@ -86,10 +89,7 @@ class Unidadinformacion
         }   
         if ( isset($data['audio']) ) {
             $dataTable['uni_inf_audio'] = $data['audio'];
-        }      
-        if ( isset($data['audio']) ) {
-            $dataTable['uni_inf_media'] = $data['audio_texto'];
-        }   
+        }       
         if ( isset($data['imagen']) ) {
             $dataTable['uni_inf_imagen'] = $data['imagen'];
         }      

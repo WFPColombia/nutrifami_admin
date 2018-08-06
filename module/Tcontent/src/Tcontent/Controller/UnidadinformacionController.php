@@ -163,6 +163,7 @@ class UnidadinformacionController extends AbstractActionController
             $data['tipo'] = $_POST['tipo'];
             $data['instruccion'] = $_POST['instruccion'];
             $data['instruccion_audio'] = $_POST['instruccion_audio'];
+            $data['text_audio'] = $_POST['text_audio'];
             $data['pregunta'] = $_POST['pregunta'];
             $data['pregunta'] = str_replace('<p>', '', $data['pregunta']);
             $data['pregunta'] = str_replace('</p>', '', $data['pregunta']);
